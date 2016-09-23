@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="http://jacob.thebault-spieker.com/theme/css/stylesheet.css" />
+  <title>Jacob Thebault-Spieker</title>
+  <!-- <link href="http://jacob.thebault-spieker.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Jacob Thebault-Spieker Atom Feed" /> -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Leaflet / Stamen -->
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+
+  <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.2.4"></script>
+
+  <!-- JQuery -->
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+  <!-- Font Awesome -->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+<body>
+  <div id="map" class="map" style="z-index: -6;"></div>
+  <div class="map-overlay" style="z-index: -4;"></div>
+  <div class="container-fluid" style="padding: 0;">
+    <!-- <div class="row row-no-padding"> -->
+      <!-- <div class="col-md-offset-1 col-md-4" style="margin-right: 0px !important;"> -->
+        <div id="header" class="box-no-padding affix" style="min-width: 200px; float: left; margin-right: 0; width: 25%; margin-left: 5%; padding-right: 0;">
+          <div style="display: inline;">
+            <button type="button" class="add-padding links-toggle" data-toggle="collapse" data-target="#header .toggle">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <img class="img-responsive img-circle" style='margin-top: 20px; padding-left: 50px; padding-right: 50px;' src="http://jacob.thebault-spieker.com/theme/images/profile_pic.jpg" alt="Photo of Jacob">
+          <h2 class='name'>Jacob</h2>
+          <h2 class='name'>Thebault-Spieker</h2>
+          <div class="toggle collapse">
+            <ul id='sidebar' class="no-bullet">
+              <li id="home"><a href="/">Home</a></li>
+              <li id="about"><a href="/about.html">About</a></li>
+              <li id="papers"><a href="/papers.html">Papers</a></li>
+              <li id="ephemera"><a href="/ephemera.html">Ephemera</a></li>
+              <li id='cv'><a href="files/CV.pdf" target="blank">CV&nbsp;<i class="fa fa-file-pdf-o"></i></a></li>
+            </ul>
+            <div style="margin-left: auto; margin-right: auto; text-align: center;">
+              <div class="social add-padding">
+                <h3>Feeds & Inboxes</h3>
+                <a href="https://twitter.com/jts__"><i class="fa fa-twitter fa-2x"></i></a>
+                <a href="http://jacob.thebault-spieker.com/feeds/all.atom.xml"><i class="fa fa-rss fa-2x" aria-hidden="true"></i></a>
+                <!-- below is <a href="mailto:your@email.here"><i class="fa fa-envelope fa-2x"></i></a>, through http://hivelogic.com/enkoder/ Advanced form -->
+                &nbsp; <script type="text/javascript">
+                //<![CDATA[
+                <!--
+                var x="function f(x){var i,o=\"\",l=x.length;for(i=0;i<l;i+=2) {if(i+1<l)o+=" +
+                "x.charAt(i+1);try{o+=x.charAt(i);}catch(e){}}return o;}f(\"ufcnitnof x({)av" +
+                " r,i=o\\\"\\\"o,=l.xelgnhtl,o=;lhwli(e.xhcraoCedtAl(1/)3=!84{)rt{y+xx=l;=+;" +
+                "lc}tahce({)}}of(r=i-l;1>i0=i;--{)+ox=c.ahAr(t)i};erutnro s.buts(r,0lo;)f}\\" +
+                "\"(0)\\\\,P\\\"RZEA10\\\\09\\\\26\\\\0?\\\\\\\\\\\\\\\\\\\\00\\\\0O\\\\`cs4" +
+                "dg4{00\\\\\\\\d/5xr5 4\\\\ \\\\\\\"(\\\\%:d/!)$f\\\"\\\\\\\\\\\\6a03\\\\\\\\"+
+                "3|_L_Q33\\\\0S\\\\05\\\\06\\\\00\\\\\\\\25\\\\0j\\\\P@4V03\\\\\\\\]_0Z00\\\\"+
+                "\\\\O^^k]EDFL@0W03\\\\\\\\TNwsq|F9~$dr4}.r83baxhxb&~hsi`avdn\\\"\\\\f(;} or" +
+                "nture;}))++(y)^(iAtdeCoarchx.e(odrChamCro.fngriSt+=;o27=1y%i;+=)y=0i=f({i+)" +
+                "i+l;i<0;i=r(foh;gten.l=x,l\\\"\\\\\\\"\\\\o=i,r va){,y(x fontincfu)\\\"\")"  ;
+                while(x=eval(x));
+                //-->
+                //]]>
+                </script>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- </div> -->
+      <div class="lightbox add-padding" style="margin-top: 50px; float: left; width: 65%; margin-left: 30%; height: 100%;">
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="http://jacob.thebault-spieker.com/ephemera/2015/08/06/iron-blogging-protest-and-community-organizing-in-an-on-demand-world/" rel="bookmark"
+         title="Permalink to Iron Blogging - Protest and Community Organizing in an On-Demand World">Iron Blogging - Protest and Community Organizing in an On-Demand World</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <abbr class="published" title="2015-08-06T00:00:00-05:00">
+      Thu 06 August 2015
+    </abbr>
+    <abbr class="modified" title="2015-08-13T00:00:00-05:00">
+      Thu 13 August 2015
+    </abbr>
+    <address class="vcard author">
+      By           <a class="url fn" href="http://jacob.thebault-spieker.com/author/jacob-thebault-spieker.html">Jacob Thebault-Spieker</a>
+    </address>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <blockquote>
+<p><em>This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.</em></p>
+</blockquote>
+<p>Labor movements, over time (at least in the United States), have had success because of collective action; many voices acting as one unified front. Often, this starts as an organizational process by workers, or their representatives in a union. When employers and workers cannot come to an agreement that meets the needs of the workers, this can lead to picketing or a strike. Sometimes this form of protest works, and the employer gives the workers what they're looking for.</p>
+<p>There's historical precedence of employers bringing in "scab" workers, or temporary workers that keep the business running. In unions, and with people who are concerned about labor rights, it is and was considered a breach of solidarity for workers to show up to work and get paid, or customers that continued to do business with the employer, during a strike. The idea being, of course, that workers should be participating in the strike, and customers should be boycotting the employer, if they care about fair working conditions. There is even a phrase: "don't cross the picket line".</p>
+<p>In a world where we continue to automate jobs, and forms of knowledge-work become more and more algorithmically mediated through platforms and mobile apps (like the peer/gig/on-demand/sharing economy), what changes?</p>
+<p>There are a number of examples of people and projects developing technologies <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup><sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup>, or doing community organizing <sup id="fnref:3"><a class="footnote-ref" href="#fn:3" rel="footnote">3</a></sup>, to help meet the infrastructural needs of collective action in the peer/gig/on-demand/sharing economy. People are thinking about <em>how</em> workers strike, in this new technologically-mediated economy. So, it seems like a natural extension to ask the question: what happens when employers and workers (<em><em>ahem</em></em>: they're <em>not</em> employees) <em>do</em> disagree, and unionized or empowered workers strike?</p>
+<p>I mentioned solidarity, and that's a pretty loaded political word, but in this context, it seems to mean a collaborative agreement, across the worker-consumer boundary, that the employer isn't being reasonable. By picketing, workers delineated a geographic and symbolic border, and said, essentially: "if you agree with us, don't enter this area". What does a "picket line" look like when workers travel <em>to the customer</em>, and there is no centralized place where workers and customers interact? How do peer/gig/on-demand/sharing economy workers delineate a border, that people who agree with striking workers (other workers and consumers alike) know not to cross? Software mediates the interaction between workers and consumers or employers, just as physical space did before. How do workers delineate a picket line in a software-mediated world? How do consumers understand this picket line, and choose to act accordingly, in solidarity?</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a href="http://www.wearedynamo.org">Dyanmo</a>&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="http://blog.fuselabs.org/post/125185306896/worker-centric-labor-markets">MSR FUSE Labs</a>&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://twitter.com/lippytak/status/628044902127923200">https://twitter.com/lippytak/status/628044902127923200</a>&#160;<a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+  </div><!-- /.entry-content -->
+</section>
+      </div>
+    <!-- </div> -->
+  </div>
+</body>
+<script type="text/javascript">
+var layer = new L.StamenTileLayer("watercolor");
+var map = new L.Map("map", {
+  center: new L.LatLng(44.95, -93.1),
+  zoom: 11,
+  dragging: false,
+  doubleClickZoom: false,
+  scrollWheelZoom: false,
+  boxZoom: false,
+  keyboard: false,
+  zoomControl: false,
+  attributionControl: false
+});
+map.addLayer(layer);
+
+current = '';
+applied = false;
+$( document ).ready(function() {
+  $("#index").addClass('active');
+  $("#sidebar").children().each(function(e) {
+    if(applied) {
+      return;
+    }
+
+    var id = $(this).attr('id');
+
+    if (window.location.href.indexOf(id) != -1) {
+      $("#"+id).addClass('active')
+      applied = true;
+    } else {
+      $("#"+id).removeClass('active')
+      applied = false;
+    }
+  })
+
+  if(!applied) {
+      $("#home").addClass('active')
+  }
+})
+
+// $('#header').affix({
+//   offset: {
+//     top: 50
+//   }
+// });
+
+</script>

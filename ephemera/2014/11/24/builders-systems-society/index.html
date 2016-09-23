@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="http://jacob.thebault-spieker.com/theme/css/stylesheet.css" />
+  <title>Jacob Thebault-Spieker</title>
+  <!-- <link href="http://jacob.thebault-spieker.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Jacob Thebault-Spieker Atom Feed" /> -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Leaflet / Stamen -->
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+
+  <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.2.4"></script>
+
+  <!-- JQuery -->
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+  <!-- Font Awesome -->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+<body>
+  <div id="map" class="map" style="z-index: -6;"></div>
+  <div class="map-overlay" style="z-index: -4;"></div>
+  <div class="container-fluid" style="padding: 0;">
+    <!-- <div class="row row-no-padding"> -->
+      <!-- <div class="col-md-offset-1 col-md-4" style="margin-right: 0px !important;"> -->
+        <div id="header" class="box-no-padding affix" style="min-width: 200px; float: left; margin-right: 0; width: 25%; margin-left: 5%; padding-right: 0;">
+          <div style="display: inline;">
+            <button type="button" class="add-padding links-toggle" data-toggle="collapse" data-target="#header .toggle">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <img class="img-responsive img-circle" style='margin-top: 20px; padding-left: 50px; padding-right: 50px;' src="http://jacob.thebault-spieker.com/theme/images/profile_pic.jpg" alt="Photo of Jacob">
+          <h2 class='name'>Jacob</h2>
+          <h2 class='name'>Thebault-Spieker</h2>
+          <div class="toggle collapse">
+            <ul id='sidebar' class="no-bullet">
+              <li id="home"><a href="/">Home</a></li>
+              <li id="about"><a href="/about.html">About</a></li>
+              <li id="papers"><a href="/papers.html">Papers</a></li>
+              <li id="ephemera"><a href="/ephemera.html">Ephemera</a></li>
+              <li id='cv'><a href="files/CV.pdf" target="blank">CV&nbsp;<i class="fa fa-file-pdf-o"></i></a></li>
+            </ul>
+            <div style="margin-left: auto; margin-right: auto; text-align: center;">
+              <div class="social add-padding">
+                <h3>Feeds & Inboxes</h3>
+                <a href="https://twitter.com/jts__"><i class="fa fa-twitter fa-2x"></i></a>
+                <a href="http://jacob.thebault-spieker.com/feeds/all.atom.xml"><i class="fa fa-rss fa-2x" aria-hidden="true"></i></a>
+                <!-- below is <a href="mailto:your@email.here"><i class="fa fa-envelope fa-2x"></i></a>, through http://hivelogic.com/enkoder/ Advanced form -->
+                &nbsp; <script type="text/javascript">
+                //<![CDATA[
+                <!--
+                var x="function f(x){var i,o=\"\",l=x.length;for(i=0;i<l;i+=2) {if(i+1<l)o+=" +
+                "x.charAt(i+1);try{o+=x.charAt(i);}catch(e){}}return o;}f(\"ufcnitnof x({)av" +
+                " r,i=o\\\"\\\"o,=l.xelgnhtl,o=;lhwli(e.xhcraoCedtAl(1/)3=!84{)rt{y+xx=l;=+;" +
+                "lc}tahce({)}}of(r=i-l;1>i0=i;--{)+ox=c.ahAr(t)i};erutnro s.buts(r,0lo;)f}\\" +
+                "\"(0)\\\\,P\\\"RZEA10\\\\09\\\\26\\\\0?\\\\\\\\\\\\\\\\\\\\00\\\\0O\\\\`cs4" +
+                "dg4{00\\\\\\\\d/5xr5 4\\\\ \\\\\\\"(\\\\%:d/!)$f\\\"\\\\\\\\\\\\6a03\\\\\\\\"+
+                "3|_L_Q33\\\\0S\\\\05\\\\06\\\\00\\\\\\\\25\\\\0j\\\\P@4V03\\\\\\\\]_0Z00\\\\"+
+                "\\\\O^^k]EDFL@0W03\\\\\\\\TNwsq|F9~$dr4}.r83baxhxb&~hsi`avdn\\\"\\\\f(;} or" +
+                "nture;}))++(y)^(iAtdeCoarchx.e(odrChamCro.fngriSt+=;o27=1y%i;+=)y=0i=f({i+)" +
+                "i+l;i<0;i=r(foh;gten.l=x,l\\\"\\\\\\\"\\\\o=i,r va){,y(x fontincfu)\\\"\")"  ;
+                while(x=eval(x));
+                //-->
+                //]]>
+                </script>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- </div> -->
+      <div class="lightbox add-padding" style="margin-top: 50px; float: left; width: 65%; margin-left: 30%; height: 100%;">
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="http://jacob.thebault-spieker.com/ephemera/2014/11/24/builders-systems-society/" rel="bookmark"
+         title="Permalink to builders. systems. society.">builders. systems. society.</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <abbr class="published" title="2014-11-24T00:00:00-06:00">
+      Mon 24 November 2014
+    </abbr>
+    <abbr class="modified" title="2014-11-25T00:00:00-06:00">
+      Tue 25 November 2014
+    </abbr>
+    <address class="vcard author">
+      By           <a class="url fn" href="http://jacob.thebault-spieker.com/author/jacob-thebault-spieker.html">Jacob Thebault-Spieker</a>
+    </address>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <p><em>I'm starting to write this ~2 hours and 45 minutes after the decision not to indict Darren Wilson (the police office who killed 18-year-old Mike Brown, a black man) was handed down by the Grand Jury in this case. As such, my thoughts on this are very defined by this context, leading me to write this post. <strong>Please</strong> If you haven't, <strong>go read stuff by people who aren't like me</strong><sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup>. If you have, do some more, then come back if you want</em>.</p>
+<p>As academics, we're in a unique position. We have (or are developing) the skills to understand how systems-design affects people. People using the system, people interacting with people using the system, or even people living in a society where the system has influence.</p>
+<p>As technologists, system builders, we're also in a unique position. We are very explicitly (as programming languages are wont to impose) making design, engineering, and interaction decisions that influence the effect our systems have. Our decisions impact people<sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup>.</p>
+<p>In watching the developements in Ferguson, MO over these last few months, culminating in tonight, I'm overwhelmed by a feeling that our broader societal system has broken down. It is naïve to say that this societal system (the one we call "society") is broken in all ways, or that it has broken recently. Even so, parts feel broken. There are a lot of ways to talk about "broken", and there are a lot of ways to ascribe blame or fault. I don't wish to do either here, but our <a href="http://www.people-press.org/2014/06/12/political-polarization-in-the-american-public/">society is as polarized as it has been in 2 decades</a>, and that's not because we all perceive everything to be fine. I would venture to say that most people would say society has broken down in some way<sup id="fnref:3"><a class="footnote-ref" href="#fn:3" rel="footnote">3</a></sup> (this could range from infrastructure, to gun laws in either direction, even to money in politics).</p>
+<p>In the context of my reasons for writing this: consider, for a moment, police forces as a "technology" (and I mean this in a very loose way, as a societal role that provides certain things), with affordances society is generally interested in. What are the design, engineering, and interaction decisions<sup id="fnref:4"><a class="footnote-ref" href="#fn:4" rel="footnote">4</a></sup> that create and cause the unwanted, unintended behavior<sup id="fnref:5"><a class="footnote-ref" href="#fn:5" rel="footnote">5</a></sup> (like militarization of our police forces, or the continued killing of young, black, men and boys)? What are these anti-patterns?</p>
+<p>As technologist, system-building, academics, what can we bring to the table? I don't believe we're the only people who can understand systems, nor do I believe the techno-utopian suggestion that technology solves all bad in the world. But, are we asking ourselves this question enough? Are we thinking enough about our role in the societal system, and the interactions that our work has with the "parent-system" (society)? Are the "child-systems" we build reflecting and amplifying the break-downs of the parent-system we inherit from? Or can we work to counteract these break-downs? How much is our own concept of "us" (that is, the people we bring into our field) affecting our capacity to ask or address these questions?</p>
+<p>As technologists, system builders, what happens when a system breaks? What happens when there is an architectural issue so deep within the system that it's causing unwanted, unintended behavior? We patch it, we fix it, in some cases, we re-build it from the ground up. If we ignore it, we're doing a disservice.</p>
+<p>As academics, what impact does a broken system have on the people using it? What impact does a broken system have on people interacting with people using the system? What impact does a broken system have on people living in a society where the broken system has influence?</p>
+<p>I have a lot of questions, and not a lot of answers. But: this topic is why I'm a PhD student.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>I'm a white, middle-class, cisgendered man, and a PhD student. I'm implicitly privileged.&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>"People using the system, people interacting with people using the system, or even people living in a society where the system has influence."&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>For me, in this moment, this feeling is coming from our treatment of black people in this country. At other times it derives from the societal treatment of women, people living in this country without the proper documentation, LGBTQ people, and other oppressed groups.&#160;<a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>Or "locally optimal" decisions that lead to emergent behaviors, but that's a conversation for another time.&#160;<a class="footnote-backref" href="#fnref:4" rev="footnote" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>Historically, perhaps not always unintended, but again, conversation for another time.&#160;<a class="footnote-backref" href="#fnref:5" rev="footnote" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+  </div><!-- /.entry-content -->
+</section>
+      </div>
+    <!-- </div> -->
+  </div>
+</body>
+<script type="text/javascript">
+var layer = new L.StamenTileLayer("watercolor");
+var map = new L.Map("map", {
+  center: new L.LatLng(44.95, -93.1),
+  zoom: 11,
+  dragging: false,
+  doubleClickZoom: false,
+  scrollWheelZoom: false,
+  boxZoom: false,
+  keyboard: false,
+  zoomControl: false,
+  attributionControl: false
+});
+map.addLayer(layer);
+
+current = '';
+applied = false;
+$( document ).ready(function() {
+  $("#index").addClass('active');
+  $("#sidebar").children().each(function(e) {
+    if(applied) {
+      return;
+    }
+
+    var id = $(this).attr('id');
+
+    if (window.location.href.indexOf(id) != -1) {
+      $("#"+id).addClass('active')
+      applied = true;
+    } else {
+      $("#"+id).removeClass('active')
+      applied = false;
+    }
+  })
+
+  if(!applied) {
+      $("#home").addClass('active')
+  }
+})
+
+// $('#header').affix({
+//   offset: {
+//     top: 50
+//   }
+// });
+
+</script>
