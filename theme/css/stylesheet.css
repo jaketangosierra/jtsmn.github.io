@@ -1,0 +1,233 @@
+body {
+	@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+	font-family: 'Poiret One', cursive;
+	/*font-family: 'Georgia', serif !important;*/
+	font-weight: 400;
+	font-size: 14pt !important;
+}
+a {
+	color: #000 !important;
+	text-decoration: underline !important;
+}
+hr {
+	border: 0 !important;
+	height: 2px !important;
+	padding: 0;
+	background-image: linear-gradient(to right, rgba(128, 128, 128, 0), rgba(128, 128, 128, 0.75), rgba(128, 128, 128, 0.75), rgba(128, 128, 128, 0)) !important;
+}
+a:hover {
+	color: #000 !important;
+	background-color: #FFF !important;
+	/*text-decoration: none;*/
+}
+.name {
+	text-transform: uppercase;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+blockquote {
+	font-size: 8pt;
+}
+/*@media (max-width: 768px) { /* mobile view */
+  /*#header  {*/
+    /*position: relative;*/
+    /*// or any other property to achieve the desired*/
+  /*}*/
+/*}*/
+.box, .box-no-padding, .quote {
+	background-color: rgba(255,255,255,0.60);
+}
+.lightbox {
+	background-color: rgba(255,255,255,0.80);
+	top: 20px;
+}
+.box, .box-no-padding, .lightbox {
+		z-index: 10;
+    margin-top: 50px;
+}
+.lightbox h3 {
+	font-variant: small-caps;
+	display: run-in;
+}
+.add-padding {
+	padding: 20px;
+}
+.papers ul {
+  list-style: none;
+}
+.add-padding a {
+	text-decoration: none;
+	background-color: transparent;
+}
+.no-bullet, .debullet {
+	width: 100%;
+	list-style-type: none;
+}
+.no-bullet a {
+	text-decoration: none !important;
+	background-color: transparent !important;
+	/*padding-left: 10px;*/
+}
+.no-bullet li {
+	font-size: 16pt;
+	font-variant: small-caps;
+	width: 100%;
+	color: #000 !important;
+	padding-left: 15px;
+}
+.allcaps, .smallcaps {
+	text-decoration: none;
+}
+.allcaps {
+	text-transform: uppercase;
+}
+.smallcaps {
+	font-variant: small-caps;
+}
+.active {
+	text-decoration: none;
+}
+.circular {
+	margin-left: auto;
+	margin-right: auto;
+	width: 300px;
+	height: 300px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	background: url('./profile_pic.jpg') no-repeat;
+	}
+
+.circular img {
+	opacity: 0;
+	filter: alpha(opacity=0);
+	}
+
+.active, .no-bullet li:hover {
+	display: block;
+	min-width: 100%;
+	text-decoration: none;
+	background-color: rgba(255,255,255,0.55) !important;
+	color: #000 !important;
+	/*padding-left: 5px;*/
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+.no-bullet-social {
+	text-indent: -1.5em;
+	list-style-position: outside;
+	list-style-type: none;
+}
+.social a {
+	text-decoration: none;
+}
+.spacing {
+	/*display: block;*/
+	text-align: center;
+}
+.spacing * {
+  background-color: rgba(0, 0, 0, 0.5);
+	font-size: 16pt;
+	padding-left: 1em;
+	letter-spacing: 1em;
+	color: white;
+}
+.author-date {
+	font-size: 12pt;
+	left-margin: 2%;
+}
+
+.map {
+	position: fixed;
+	z-index: -500;
+	width: 100%;
+	height: 100%;
+}
+.map-overlay {
+	background-color: #000;
+	opacity: 0.75;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: -250;
+}
+
+@media (min-width: 992px) {
+    .links-toggle {
+        display: none;
+    }
+    #header .toggle {
+        display: block;
+    }
+}
+.links-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    background-color: #000;
+    border: 1px solid #FFF;
+    /*border-radius: 4px;*/
+    box-shadow: 0 1px 0 rgba(0,0,0,0.25);
+}
+.links-toggle:hover, .links-toggle:active {
+  background-color: rgba(0, 0, 0, 0.5);
+  /*background-color: #FFF;*/
+}
+.links-toggle .icon-bar {
+    background-color: #ffffff;
+    display: block;
+    margin: 3px 0;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.25);
+}
+.links-toggle:hover .icon-bar {
+    box-shadow: 0 1px 0 rgba(0,0,0,0.5);
+}
+/* By default it's not affixed in mobile views, so undo that */
+#header.affix {
+  position: static;
+}
+/* Show and affix the side nav when space allows it */
+@media screen and (min-width: 992px) {
+  #header .nav > .active > ul {
+    display: block;
+  }
+  /* Widen the fixed sidebar */
+  #header.affix,
+  #header.affix-bottom {
+    width: 263px;
+  }
+  #header.affix {
+    position: fixed; /* Undo the static from mobile first approach */
+    /*top: 20px;*/
+  }
+  #header.affix-bottom {
+    position: absolute; /* Undo the static from mobile first approach */
+  }
+
+}
+@media screen and (min-width: 1200px) {
+  /* Widen the fixed sidebar again */
+  #header.affix-bottom,
+  #header.affix {
+    width: 330px;
+  }
+}
+.breadcrumb {
+	background: transparent;
+}
+
+.modified, .published {
+	font-size: 10pt;
+}
+.acmdlstat {
+	padding-top: 0;
+	padding-bottom: 0;
+}

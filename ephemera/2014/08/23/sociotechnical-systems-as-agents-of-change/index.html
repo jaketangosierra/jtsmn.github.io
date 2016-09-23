@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="http://jacob.thebault-spieker.com/theme/css/stylesheet.css" />
+  <title>Jacob Thebault-Spieker</title>
+  <!-- <link href="http://jacob.thebault-spieker.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Jacob Thebault-Spieker Atom Feed" /> -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Leaflet / Stamen -->
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+
+  <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.2.4"></script>
+
+  <!-- JQuery -->
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+  <!-- Font Awesome -->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+<body>
+  <div id="map" class="map" style="z-index: -6;"></div>
+  <div class="map-overlay" style="z-index: -4;"></div>
+  <div class="container-fluid" style="padding: 0;">
+    <!-- <div class="row row-no-padding"> -->
+      <!-- <div class="col-md-offset-1 col-md-4" style="margin-right: 0px !important;"> -->
+        <div id="header" class="box-no-padding affix" style="min-width: 200px; float: left; margin-right: 0; width: 25%; margin-left: 5%; padding-right: 0;">
+          <div style="display: inline;">
+            <button type="button" class="add-padding links-toggle" data-toggle="collapse" data-target="#header .toggle">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <img class="img-responsive img-circle" style='margin-top: 20px; padding-left: 50px; padding-right: 50px;' src="http://jacob.thebault-spieker.com/theme/images/profile_pic.jpg" alt="Photo of Jacob">
+          <h2 class='name'>Jacob</h2>
+          <h2 class='name'>Thebault-Spieker</h2>
+          <div class="toggle collapse">
+            <ul id='sidebar' class="no-bullet">
+              <li id="home"><a href="/">Home</a></li>
+              <li id="about"><a href="/about.html">About</a></li>
+              <li id="papers"><a href="/papers.html">Papers</a></li>
+              <li id="ephemera"><a href="/ephemera.html">Ephemera</a></li>
+              <li id='cv'><a href="files/CV.pdf" target="blank">CV&nbsp;<i class="fa fa-file-pdf-o"></i></a></li>
+            </ul>
+            <div style="margin-left: auto; margin-right: auto; text-align: center;">
+              <div class="social add-padding">
+                <h3>Feeds & Inboxes</h3>
+                <a href="https://twitter.com/jts__"><i class="fa fa-twitter fa-2x"></i></a>
+                <a href="http://jacob.thebault-spieker.com/feeds/all.atom.xml"><i class="fa fa-rss fa-2x" aria-hidden="true"></i></a>
+                <!-- below is <a href="mailto:your@email.here"><i class="fa fa-envelope fa-2x"></i></a>, through http://hivelogic.com/enkoder/ Advanced form -->
+                &nbsp; <script type="text/javascript">
+                //<![CDATA[
+                <!--
+                var x="function f(x){var i,o=\"\",l=x.length;for(i=0;i<l;i+=2) {if(i+1<l)o+=" +
+                "x.charAt(i+1);try{o+=x.charAt(i);}catch(e){}}return o;}f(\"ufcnitnof x({)av" +
+                " r,i=o\\\"\\\"o,=l.xelgnhtl,o=;lhwli(e.xhcraoCedtAl(1/)3=!84{)rt{y+xx=l;=+;" +
+                "lc}tahce({)}}of(r=i-l;1>i0=i;--{)+ox=c.ahAr(t)i};erutnro s.buts(r,0lo;)f}\\" +
+                "\"(0)\\\\,P\\\"RZEA10\\\\09\\\\26\\\\0?\\\\\\\\\\\\\\\\\\\\00\\\\0O\\\\`cs4" +
+                "dg4{00\\\\\\\\d/5xr5 4\\\\ \\\\\\\"(\\\\%:d/!)$f\\\"\\\\\\\\\\\\6a03\\\\\\\\"+
+                "3|_L_Q33\\\\0S\\\\05\\\\06\\\\00\\\\\\\\25\\\\0j\\\\P@4V03\\\\\\\\]_0Z00\\\\"+
+                "\\\\O^^k]EDFL@0W03\\\\\\\\TNwsq|F9~$dr4}.r83baxhxb&~hsi`avdn\\\"\\\\f(;} or" +
+                "nture;}))++(y)^(iAtdeCoarchx.e(odrChamCro.fngriSt+=;o27=1y%i;+=)y=0i=f({i+)" +
+                "i+l;i<0;i=r(foh;gten.l=x,l\\\"\\\\\\\"\\\\o=i,r va){,y(x fontincfu)\\\"\")"  ;
+                while(x=eval(x));
+                //-->
+                //]]>
+                </script>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- </div> -->
+      <div class="lightbox add-padding" style="margin-top: 50px; float: left; width: 65%; margin-left: 30%; height: 100%;">
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="http://jacob.thebault-spieker.com/ephemera/2014/08/23/sociotechnical-systems-as-agents-of-change/" rel="bookmark"
+         title="Permalink to Sociotechnical Systems as Agents of Change">Sociotechnical Systems as Agents of Change</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <abbr class="published" title="2014-08-23T00:00:00-05:00">
+      Sat 23 August 2014
+    </abbr>
+    <abbr class="modified" title="2014-08-23T00:00:00-05:00">
+      Sat 23 August 2014
+    </abbr>
+    <address class="vcard author">
+      By           <a class="url fn" href="http://jacob.thebault-spieker.com/author/jacob-thebault-spieker.html">Jacob Thebault-Spieker</a>
+    </address>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <p><strong>Update:</strong>
+According to the article danah boyd sent out, Twitter says:</p>
+<blockquote>
+<p>We select each tweet using a variety of signals, including how popular it is
+and how people in your network are interacting with it.</p>
+</blockquote>
+<p>As <a href="http://jeffreynichols.com">Jeff Nichols</a>
+(<a href="http://twitter.com/jwnichls">\@jwnichls</a> on Twitter) pointed out, this can be
+a positive thing, and for some is what they use Twitter for. This strikes me as
+not anti-homophily, the way danah boyd suggests, but instead what Recommender
+Systems people call "serendipity". It seems it can't be anti-homphily if this
+is partially based on people in your network's interactions. I'm not certain
+this changes the higher-level point of the original posting, but it does add
+some context. I've modified the original posting to reflect this context.</p>
+<p>--</p>
+<p>Twitter has been inserting tweets into other people's timelines, based on the
+favoriting patterns of those tweets and how your own social network is
+interacting with these tweets. That is, it's possible for me to favorite a
+tweet, and because I've done so, it will appear in others' timelines.</p>
+<p><a href="http://www.danah.org">danah boyd</a> (<a href="http://twitter.com/zephoria">\@zephoria</a> on
+Twitter) suggests that this may be an anti-homophily move:</p>
+<blockquote class="twitter-tweet" lang="en"><p>I&#39;m not surprised that people don&#39;t like being exposed to random tweets, but I see this as an anti-homophily move: <a href="http://t.co/RDst21PoZ8">http://t.co/RDst21PoZ8</a></p>&mdash; danah boyd (@zephoria) <a href="https://twitter.com/zephoria/statuses/503273388442652673">August 23, 2014</a></blockquote>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet" lang="en"><p>What would it take for people to actually get excited by being exposed to perspectives from strangers? <a href="https://twitter.com/hashtag/dreaming?src=hash">#dreaming</a></p>&mdash; danah boyd (@zephoria) <a href="https://twitter.com/zephoria/statuses/503273545263480832">August 23, 2014</a></blockquote>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>I find this argument very intriguing, because I have two orthogonal reactions
+to this idea. I am going break these ideas into sections, because I think they
+deserve their own treatment.</p>
+<h2>The role of the platform ought to be neutral</h2>
+<p>My first reaction to this concept was approximately "<em>why does Twitter get to
+decide that I need less homophily in my timeline?</em>". I think this fair
+from an autonomy perspective, don't people deserve to choose what
+they view? There's a number of ways Twitter could also use this mechanism that
+isn't a "pure" anti-homophily effort, from advertising to a curated "Twitter"
+experience designed to keep you engaged on their site. Under this framing,
+inserting others' tweets into my timeline struck me as invasive, and the
+opposite of the reason I use Twitter. I <em>like</em> the process of choosing what
+shows in my timeline. <em>I</em> get to choose to be homophilic or not.</p>
+<h2>The platform ought to recognize the power that it has, and pursue "social good".</h2>
+<p>However, the recent events in Ferguson are a stark reminder of the socialized,
+institutionalized racism that still occurs in the United States. How does
+society combat this? There are structural approaches, like oversight of police
+forces. However, there are a number of underlying mechanisms (historical, or
+legal structures) at play that lead to this sort of racialized response (let
+alone the shooting of Michael Brown that sparked these protests). One of these
+mechanisms has been said to be <a href="http://en.wikipedia.org/wiki/Social_Distance_Corollary">social
+distance</a>, which leads
+to <a href="http://en.wikipedia.org/wiki/Othering">othering</a>.</p>
+<p>Twitter, as a medium, played a role in dissemination of information on the
+ground, discussion of race issues, and a more timely exposure to these events
+than other news media. It also served as a platform for people saying very
+bigoted, racist things, while supporting the actions of the police. Homophily
+allowed people to choose which side of this issue they were exposed to through
+Twitter. Anti-homophily <em>could</em> have served to expose those who were
+ambivalent, or supporting the police action, to an alternative view of these
+events (there are questions of safety and harassment that would need to be
+addressed, certainly).</p>
+<p>As the platform owners, Twitter is in a unique position to make these kinds of
+decisions. Is being "exposed to perspectives from strangers" a positive thing?
+Conceivably, a move by Twitter to counteract homophily could serve to decrease
+social distance and reducing the othering effects.</p>
+<h2>Overall</h2>
+<p>This is an example of what anti-homophily could bring to bear on the
+Twitter platform, and danah boyd certainly seems to believe that non-homophily
+is a good thing (at least if people are excited by it on their own).</p>
+<p>If she is right, and Twitter is using favorites as a way to counteract
+homophily on their platform, what obligations do they have? What is Twitter's
+purpose behind anti-homophily measures? How do builders of sociotechnical systems
+choose the attributes that support "social good" (for whatever that means in a given
+context)?</p>
+<p>If Twitter can make the argument that favorites-as-anti-homophily does decrease
+social distance among their users, or perhaps even supports users choosing to
+counteract homophily on their own, I find this argument compelling. It situates
+platforms as "social change" shephards, or perhaps in extreme cases, digital
+community organizers. Is this a role platform owners identify as one they're
+taking on?  How does one separate the algorithmic change imposed on their
+users, and the obligation to monitor and curate this change, even if the change
+is for business purposes?</p>
+  </div><!-- /.entry-content -->
+</section>
+      </div>
+    <!-- </div> -->
+  </div>
+</body>
+<script type="text/javascript">
+var layer = new L.StamenTileLayer("watercolor");
+var map = new L.Map("map", {
+  center: new L.LatLng(44.95, -93.1),
+  zoom: 11,
+  dragging: false,
+  doubleClickZoom: false,
+  scrollWheelZoom: false,
+  boxZoom: false,
+  keyboard: false,
+  zoomControl: false,
+  attributionControl: false
+});
+map.addLayer(layer);
+
+current = '';
+applied = false;
+$( document ).ready(function() {
+  $("#index").addClass('active');
+  $("#sidebar").children().each(function(e) {
+    if(applied) {
+      return;
+    }
+
+    var id = $(this).attr('id');
+
+    if (window.location.href.indexOf(id) != -1) {
+      $("#"+id).addClass('active')
+      applied = true;
+    } else {
+      $("#"+id).removeClass('active')
+      applied = false;
+    }
+  })
+
+  if(!applied) {
+      $("#home").addClass('active')
+  }
+})
+
+// $('#header').affix({
+//   offset: {
+//     top: 50
+//   }
+// });
+
+</script>
