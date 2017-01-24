@@ -1,10 +1,15 @@
 body {
-	@import url(https://fonts.googleapis.com/css?family=Poiret+One);
-	font-family: 'Poiret One', cursive;
+	/*@import url(https://fonts.googleapis.com/css?family=Poiret+One);*/
+	font-family: 'Garamond', serif !important
 	/*font-family: 'Georgia', serif !important;*/
 	font-weight: 400;
 	font-size: 14pt !important;
 }
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Gill Sans', sans-serif !important;
+}
+
 a {
 	color: #000 !important;
 	text-decoration: underline !important;
@@ -230,4 +235,9 @@ blockquote {
 .acmdlstat {
 	padding-top: 0;
 	padding-bottom: 0;
+}
+
+ul {
+	list-style-type: none !important;
+  padding-left: 0 !important;
 }

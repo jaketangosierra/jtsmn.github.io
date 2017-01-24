@@ -16,8 +16,8 @@
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
 
   <!-- Font Awesome -->
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -47,7 +47,8 @@
               <li id="about"><a href="/about.html">About</a></li>
               <li id="papers"><a href="/papers.html">Papers</a></li>
               <li id="ephemera"><a href="/ephemera.html">Ephemera</a></li>
-              <li id='cv'><a href="files/CV.pdf" target="blank">CV&nbsp;<i class="fa fa-file-pdf-o"></i></a></li>
+              <li id='cv'><a href="/curriculum-vitae.html" target="blank">Curriculum Vitae&nbsp;<i class="fa fa-external-link"></i></a></li>
+              <li id='cv_pdf'>&emsp;(or as <a href='/cv.pdf'>PDF&nbsp;<i class="fa fa-file-pdf-o"></i></a>)</li>
             </ul>
             <div style="margin-left: auto; margin-right: auto; text-align: center;">
               <div class="social add-padding">
@@ -86,12 +87,12 @@
  
   </header>
   <footer class="post-info">
-    <abbr class="published" title="2015-12-06T00:00:00-06:00">
+    <time class="published" datetime="2015-12-06T00:00:00-06:00">
       Sun 06 December 2015
-    </abbr>
-    <abbr class="modified" title="2015-12-06T00:00:00-06:00">
+    </time>
+    <time class="modified" datetime="2015-12-06T00:00:00-06:00">
       Sun 06 December 2015
-    </abbr>
+    </time>
     <address class="vcard author">
       By           <a class="url fn" href="../../../../../author/jacob-thebault-spieker.html">Jacob Thebault-Spieker</a>
     </address>
@@ -100,26 +101,25 @@
     <blockquote>
 <p><em>This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.</em></p>
 </blockquote>
-<p><a href="http://socio-technologist.blogspot.com/2015/12/disparate-impact-of-damage-detection-on.html">Aaron Halfaker</a> just (like, you know, <em>today</em>) posted some of his thoughts and early work based on a conversation we had about disparate impact in Wikipedia, both in terms of actual effect on individuals, and as a metaphor or framing for how to think about issues of bias and systemic disparity. Go read his thing, he does a good job of introducing the topic, and that's not my point here.</p>
+<p><a href="http://socio-technologist.blogspot.com/2015/12/disparate-impact-of-damage-detection-on.html">Aaron Halfaker</a> just (like, you know, <em>today</em>) posted some of his thoughts and early work based on a conversation we had about disparate impact in Wikipedia, both in terms of actual effect on individuals, and as a metaphor or framing for how to think about issues of bias and systemic disparity. Go read his thing, he does a good job of introducing the topic, and that’s not my point here.</p>
 <p>He says:</p>
 <blockquote>
-<p><strong>Protected Class</strong>. In US law, it seems that this term is generally reserved for race, gender, and ability.  In the case of Wikipedia, we don't know these demographics.  They could be involved and I think they likely are, but I think that anonymous editors and newcomers should also be considered a protected class in Wikipedia.</p>
+<p><strong>Protected Class</strong>. In US law, it seems that this term is generally reserved for race, gender, and ability. In the case of Wikipedia, we don’t know these demographics. They could be involved and I think they likely are, but I think that anonymous editors and newcomers should also be considered a protected class in Wikipedia.</p>
 </blockquote>
-<p>There's some interesting stuff here that I want to try to unpack.</p>
-<p>Aaron is right, <strong>protected class</strong> has a legal definition <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup>. Laws are the societally defined set of ways we delineate what is acceptable. Societally, we have decided that there are (and ought to be) legal ramifications if there is discrimination (or disparately impactful discriminatory processes), in the United States.</p>
+<p>There’s some interesting stuff here that I want to try to unpack.</p>
+<p>Aaron is right, <strong>protected class</strong> has a legal definition.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> Laws are the societally defined set of ways we delineate what is acceptable. Societally, we have decided that there are (and ought to be) legal ramifications if there is discrimination (or disparately impactful discriminatory processes), in the United States.</p>
 <p>He also argues for <em>expanding</em> the definition of <strong>protected class</strong>, because the sociotechnical systems that Wikipedia has built (like ORES) put barriers in place for newcomers and anonymous editors to be successful. Wikipedia (or really, people who work on Wikipedia) has a community-defined set of ways to delineate what is acceptable.</p>
-<p>In general society, the groups of people we consider members of a protected class are defined in law, based on history and value judgements made at the time (Voting Rights Act, etc.). If, at some point in time, society sought to change these categories, there would be an expectation of accountability to this process, and one would be expected to show strong evidence that any groups being removed wouldn't be harmed, and that groups being added have received a certain degree of societal harm (i.e. it would be difficult to argue that white men who make $1,000,000 or more ought to be a protected class).</p>
-<p>In Wikipedia, the algorithms and statistics that back them decides who gets treated as a protected class, this is the point Aaron is seeking to address. But what does accountability of this process look like? What is the <em>computationally actionable</em> threshold for adding or removing groups from the models being used? <em>Who</em> decides which groups hit this threshold? <em>How</em> do groups who do feel they're being disparately impacted voice this concern and build their case? Can this be dynamically, sociotechnically available?</p>
-<p>I don't raise these questions to suggest mistrust towards Aaron nor Wikimedia (the shepherds of ORES right now), quite the opposite. I'm very excited by the work he and they are doing, I think ORES has a strong ability to even out some of the disparities that likely exist. However, I also believe this is <em>only true</em> when ORES is able to dynamically mitigate disparate impact for groups that are being disadvantaged.</p>
-<p>I'm super interested in these ideas, and Aaron and I will keep talking about them, but I'd be interested in other's thoughts as well.</p>
-<div class="footnote">
+<p>In general society, the groups of people we consider members of a protected class are defined in law, based on history and value judgements made at the time (Voting Rights Act, etc.). If, at some point in time, society sought to change these categories, there would be an expectation of accountability to this process, and one would be expected to show strong evidence that any groups being removed wouldn’t be harmed, and that groups being added have received a certain degree of societal harm (i.e. it would be difficult to argue that white men who make $1,000,000 or more ought to be a protected class).</p>
+<p>In Wikipedia, the algorithms and statistics that back them decides who gets treated as a protected class, this is the point Aaron is seeking to address. But what does accountability of this process look like? What is the <em>computationally actionable</em> threshold for adding or removing groups from the models being used? <em>Who</em> decides which groups hit this threshold? <em>How</em> do groups who do feel they’re being disparately impacted voice this concern and build their case? Can this be dynamically, sociotechnically available?</p>
+<p>I don’t raise these questions to suggest mistrust towards Aaron nor Wikimedia (the shepherds of ORES right now), quite the opposite. I’m very excited by the work he and they are doing, I think ORES has a strong ability to even out some of the disparities that likely exist. However, I also believe this is <em>only true</em> when ORES is able to dynamically mitigate disparate impact for groups that are being disadvantaged.</p>
+<p>I’m super interested in these ideas, and Aaron and I will keep talking about them, but I’d be interested in other’s thoughts as well.</p>
+<section class="footnotes">
 <hr />
 <ol>
-<li id="fn:1">
-<p>via <a href="https://en.wikipedia.org/wiki/Protected_class#cite_note-Finduslaw-1">Wikipedia</a>, which cites law&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
+<li id="fn1"><p>via <a href="https://en.wikipedia.org/wiki/Protected_class#cite_note-Finduslaw-1">Wikipedia</a>, which cites law<a href="#fnref1">↩</a></p></li>
 </ol>
-</div>
+</section>
+
   </div><!-- /.entry-content -->
 </section>
       </div>

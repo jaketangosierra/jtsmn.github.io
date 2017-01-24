@@ -16,8 +16,8 @@
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
 
   <!-- Font Awesome -->
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -47,7 +47,8 @@
               <li id="about"><a href="/about.html">About</a></li>
               <li id="papers"><a href="/papers.html">Papers</a></li>
               <li id="ephemera"><a href="/ephemera.html">Ephemera</a></li>
-              <li id='cv'><a href="files/CV.pdf" target="blank">CV&nbsp;<i class="fa fa-file-pdf-o"></i></a></li>
+              <li id='cv'><a href="/curriculum-vitae.html" target="blank">Curriculum Vitae&nbsp;<i class="fa fa-external-link"></i></a></li>
+              <li id='cv_pdf'>&emsp;(or as <a href='/cv.pdf'>PDF&nbsp;<i class="fa fa-file-pdf-o"></i></a>)</li>
             </ul>
             <div style="margin-left: auto; margin-right: auto; text-align: center;">
               <div class="social add-padding">
@@ -86,46 +87,37 @@
  
   </header>
   <footer class="post-info">
-    <abbr class="published" title="2014-11-24T00:00:00-06:00">
+    <time class="published" datetime="2014-11-24T00:00:00-06:00">
       Mon 24 November 2014
-    </abbr>
-    <abbr class="modified" title="2014-11-25T00:00:00-06:00">
+    </time>
+    <time class="modified" datetime="2014-11-25T00:00:00-06:00">
       Tue 25 November 2014
-    </abbr>
+    </time>
     <address class="vcard author">
       By           <a class="url fn" href="../../../../../author/jacob-thebault-spieker.html">Jacob Thebault-Spieker</a>
     </address>
   </footer><!-- /.post-info -->
   <div class="entry-content">
-    <p><em>I'm starting to write this ~2 hours and 45 minutes after the decision not to indict Darren Wilson (the police office who killed 18-year-old Mike Brown, a black man) was handed down by the Grand Jury in this case. As such, my thoughts on this are very defined by this context, leading me to write this post. <strong>Please</strong> If you haven't, <strong>go read stuff by people who aren't like me</strong><sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup>. If you have, do some more, then come back if you want</em>.</p>
-<p>As academics, we're in a unique position. We have (or are developing) the skills to understand how systems-design affects people. People using the system, people interacting with people using the system, or even people living in a society where the system has influence.</p>
-<p>As technologists, system builders, we're also in a unique position. We are very explicitly (as programming languages are wont to impose) making design, engineering, and interaction decisions that influence the effect our systems have. Our decisions impact people<sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup>.</p>
-<p>In watching the developements in Ferguson, MO over these last few months, culminating in tonight, I'm overwhelmed by a feeling that our broader societal system has broken down. It is naïve to say that this societal system (the one we call "society") is broken in all ways, or that it has broken recently. Even so, parts feel broken. There are a lot of ways to talk about "broken", and there are a lot of ways to ascribe blame or fault. I don't wish to do either here, but our <a href="http://www.people-press.org/2014/06/12/political-polarization-in-the-american-public/">society is as polarized as it has been in 2 decades</a>, and that's not because we all perceive everything to be fine. I would venture to say that most people would say society has broken down in some way<sup id="fnref:3"><a class="footnote-ref" href="#fn:3" rel="footnote">3</a></sup> (this could range from infrastructure, to gun laws in either direction, even to money in politics).</p>
-<p>In the context of my reasons for writing this: consider, for a moment, police forces as a "technology" (and I mean this in a very loose way, as a societal role that provides certain things), with affordances society is generally interested in. What are the design, engineering, and interaction decisions<sup id="fnref:4"><a class="footnote-ref" href="#fn:4" rel="footnote">4</a></sup> that create and cause the unwanted, unintended behavior<sup id="fnref:5"><a class="footnote-ref" href="#fn:5" rel="footnote">5</a></sup> (like militarization of our police forces, or the continued killing of young, black, men and boys)? What are these anti-patterns?</p>
-<p>As technologist, system-building, academics, what can we bring to the table? I don't believe we're the only people who can understand systems, nor do I believe the techno-utopian suggestion that technology solves all bad in the world. But, are we asking ourselves this question enough? Are we thinking enough about our role in the societal system, and the interactions that our work has with the "parent-system" (society)? Are the "child-systems" we build reflecting and amplifying the break-downs of the parent-system we inherit from? Or can we work to counteract these break-downs? How much is our own concept of "us" (that is, the people we bring into our field) affecting our capacity to ask or address these questions?</p>
-<p>As technologists, system builders, what happens when a system breaks? What happens when there is an architectural issue so deep within the system that it's causing unwanted, unintended behavior? We patch it, we fix it, in some cases, we re-build it from the ground up. If we ignore it, we're doing a disservice.</p>
+    <p><em>I’m starting to write this ~2 hours and 45 minutes after the decision not to indict Darren Wilson (the police office who killed 18-year-old Mike Brown, a black man) was handed down by the Grand Jury in this case. As such, my thoughts on this are very defined by this context, leading me to write this post. <strong>Please</strong> If you haven’t, <strong>go read stuff by people who aren’t like me</strong><a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>. If you have, do some more, then come back if you want</em>.</p>
+<p>As academics, we’re in a unique position. We have (or are developing) the skills to understand how systems-design affects people. People using the system, people interacting with people using the system, or even people living in a society where the system has influence.</p>
+<p>As technologists, system builders, we’re also in a unique position. We are very explicitly (as programming languages are wont to impose) making design, engineering, and interaction decisions that influence the effect our systems have. Our decisions impact people<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>.</p>
+<p>In watching the developements in Ferguson, MO over these last few months, culminating in tonight, I’m overwhelmed by a feeling that our broader societal system has broken down. It is naïve to say that this societal system (the one we call “society”) is broken in all ways, or that it has broken recently. Even so, parts feel broken. There are a lot of ways to talk about “broken”, and there are a lot of ways to ascribe blame or fault. I don’t wish to do either here, but our <a href="http://www.people-press.org/2014/06/12/political-polarization-in-the-american-public/">society is as polarized as it has been in 2 decades</a>, and that’s not because we all perceive everything to be fine. I would venture to say that most people would say society has broken down in some way<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> (this could range from infrastructure, to gun laws in either direction, even to money in politics).</p>
+<p>In the context of my reasons for writing this: consider, for a moment, police forces as a “technology” (and I mean this in a very loose way, as a societal role that provides certain things), with affordances society is generally interested in. What are the design, engineering, and interaction decisions<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> that create and cause the unwanted, unintended behavior<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> (like militarization of our police forces, or the continued killing of young, black, men and boys)? What are these anti-patterns?</p>
+<p>As technologist, system-building, academics, what can we bring to the table? I don’t believe we’re the only people who can understand systems, nor do I believe the techno-utopian suggestion that technology solves all bad in the world. But, are we asking ourselves this question enough? Are we thinking enough about our role in the societal system, and the interactions that our work has with the “parent-system” (society)? Are the “child-systems” we build reflecting and amplifying the break-downs of the parent-system we inherit from? Or can we work to counteract these break-downs? How much is our own concept of “us” (that is, the people we bring into our field) affecting our capacity to ask or address these questions?</p>
+<p>As technologists, system builders, what happens when a system breaks? What happens when there is an architectural issue so deep within the system that it’s causing unwanted, unintended behavior? We patch it, we fix it, in some cases, we re-build it from the ground up. If we ignore it, we’re doing a disservice.</p>
 <p>As academics, what impact does a broken system have on the people using it? What impact does a broken system have on people interacting with people using the system? What impact does a broken system have on people living in a society where the broken system has influence?</p>
-<p>I have a lot of questions, and not a lot of answers. But: this topic is why I'm a PhD student.</p>
-<div class="footnote">
+<p>I have a lot of questions, and not a lot of answers. But: this topic is why I’m a PhD student.</p>
+<section class="footnotes">
 <hr />
 <ol>
-<li id="fn:1">
-<p>I'm a white, middle-class, cisgendered man, and a PhD student. I'm implicitly privileged.&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-<li id="fn:2">
-<p>"People using the system, people interacting with people using the system, or even people living in a society where the system has influence."&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
-<li id="fn:3">
-<p>For me, in this moment, this feeling is coming from our treatment of black people in this country. At other times it derives from the societal treatment of women, people living in this country without the proper documentation, LGBTQ people, and other oppressed groups.&#160;<a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
-</li>
-<li id="fn:4">
-<p>Or "locally optimal" decisions that lead to emergent behaviors, but that's a conversation for another time.&#160;<a class="footnote-backref" href="#fnref:4" rev="footnote" title="Jump back to footnote 4 in the text">&#8617;</a></p>
-</li>
-<li id="fn:5">
-<p>Historically, perhaps not always unintended, but again, conversation for another time.&#160;<a class="footnote-backref" href="#fnref:5" rev="footnote" title="Jump back to footnote 5 in the text">&#8617;</a></p>
-</li>
+<li id="fn1"><p>I’m a white, middle-class, cisgendered man, and a PhD student. I’m implicitly privileged.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>“People using the system, people interacting with people using the system, or even people living in a society where the system has influence.”<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>For me, in this moment, this feeling is coming from our treatment of black people in this country. At other times it derives from the societal treatment of women, people living in this country without the proper documentation, LGBTQ people, and other oppressed groups.<a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p>Or “locally optimal” decisions that lead to emergent behaviors, but that’s a conversation for another time.<a href="#fnref4">↩</a></p></li>
+<li id="fn5"><p>Historically, perhaps not always unintended, but again, conversation for another time.<a href="#fnref5">↩</a></p></li>
 </ol>
-</div>
+</section>
+
   </div><!-- /.entry-content -->
 </section>
       </div>
