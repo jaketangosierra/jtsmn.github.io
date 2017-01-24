@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content_title %}{% endblock %}
+{% block content %}
+{% if articles %}
+    {% for article in articles_page.object_list %}
+
+        {# First item #}
+        {% if not articles_page.has_previous() %}
+            <article>
+                <header>
+                    <h3 class="allcaps"><a class='smallcaps' href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h3>
+                </header>
+
+                <div>
+                {% include 'article_infos.html' %}
+                {{ article.summary }}
+                <a class="readmore" href="{{ SITEURL }}/{{ article.url }}">read more</a>
+                {% include 'comments.html' %}
+                </div><!-- /.entry-content -->
+            </article>
+            <hr>
+        {% endif %}
+        {% if loop.last %}
+            {% if loop.length > 1 or articles_page.has_other_pages() %}
+                {% if articles_page.has_other_pages() %}
+                    {% include 'pagination.html' %}
+                {% endif %}
+                </section><!-- /#content -->
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+{% else %}
+<section id="content" class="body">
+<h2>Pages</h2>
+    {% for page in PAGES %}
+        <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
+    {% endfor %}
+</section>
+{% endif %}
+{% endblock content %}

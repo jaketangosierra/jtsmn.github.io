@@ -1,0 +1,19 @@
+<footer style='font-size: 12pt;'>
+  {% if article.authors %}
+    <address class="vcard author">
+      By {% for author in article.authors %}
+        <a class="url fn smallcaps" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
+      {% endfor %}
+
+      {% if article.date < article.modified %}
+        <abbr class="published" title="{{ article.date.isoformat() }}">
+          Posted: {{ article.locale_date }}
+        </abbr>
+      {% else %}
+        <abbr class="modified" title="{{ article.modified.isoformat() }}">
+          Posted: {{ article.locale_modified }}
+      {% endif %}
+    </abbr>
+    </address>
+  {% endif %}
+</footer><!-- /.post-info -->

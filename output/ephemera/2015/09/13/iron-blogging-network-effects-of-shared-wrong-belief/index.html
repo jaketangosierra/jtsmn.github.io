@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="../../../../../theme/css/stylesheet.css" />
+  <title>Jacob Thebault-Spieker</title>
+  <!-- <link href="http://jtsmn.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Jacob Thebault-Spieker Atom Feed" /> -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Leaflet / Stamen -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.7/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@0.7.7/dist/leaflet.js"></script>
+
+  <!-- JQuery -->
+  <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
+
+  <!-- Font Awesome -->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+<body>
+  <div id="map" class="map" style="z-index: -6;"></div>
+  <div class="map-overlay" style="z-index: -4;"></div>
+  <div class="container-fluid" style="padding: 0;">
+    <!-- <div class="row row-no-padding"> -->
+      <!-- <div class="col-md-offset-1 col-md-4" style="margin-right: 0px !important;"> -->
+        <div id="header" class="box-no-padding affix" style="min-width: 200px; float: left; margin-right: 0; width: 25%; margin-left: 5%; padding-right: 0;">
+          <div style="display: inline;">
+            <button type="button" class="add-padding links-toggle" data-toggle="collapse" data-target="#header .toggle">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <img class="img-responsive img-circle" style='margin-top: 20px; padding-left: 50px; padding-right: 50px;' src="../../../../../theme/images/profile_pic.jpg" alt="Photo of Jacob">
+          <h2 class='name'>Jacob</h2>
+          <h2 class='name'>Thebault-Spieker</h2>
+          <div class="toggle collapse">
+            <ul id='sidebar' class="no-bullet">
+              <li id="home"><a href="/">Home</a></li>
+              <li id="about"><a href="/about.html">About</a></li>
+              <li id="papers"><a href="/papers.html">Papers</a></li>
+              <li id="ephemera"><a href="/ephemera.html">Ephemera</a></li>
+              <li id='cv'><a href="/curriculum-vitae.html" target="blank">Curriculum Vitae&nbsp;<i class="fa fa-external-link"></i></a></li>
+              <li id='cv_pdf'>&emsp;(or as <a href='/cv.pdf' target="blank">PDF&nbsp;<i class="fa fa-file-pdf-o"></i></a>)</li>
+            </ul>
+            <div style="margin-left: auto; margin-right: auto; text-align: center;">
+              <div class="social add-padding">
+                <h3>Feeds & Inboxes</h3>
+                <a href="https://twitter.com/jts__"><i class="fa fa-twitter fa-2x"></i></a>
+                <a href="http://jacob.thebault-spieker.com/feeds/all.atom.xml"><i class="fa fa-rss fa-2x" aria-hidden="true"></i></a>
+                <!-- below is <a href="mailto:your@email.here"><i class="fa fa-envelope fa-2x"></i></a>, through http://hivelogic.com/enkoder/ Advanced form -->
+                &nbsp; <script type="text/javascript">
+                //<![CDATA[
+                <!--
+                var x="function f(x){var i,o=\"\",l=x.length;for(i=0;i<l;i+=2) {if(i+1<l)o+=" +
+                "x.charAt(i+1);try{o+=x.charAt(i);}catch(e){}}return o;}f(\"ufcnitnof x({)av" +
+                " r,i=o\\\"\\\"o,=l.xelgnhtl,o=;lhwli(e.xhcraoCedtAl(1/)3=!84{)rt{y+xx=l;=+;" +
+                "lc}tahce({)}}of(r=i-l;1>i0=i;--{)+ox=c.ahAr(t)i};erutnro s.buts(r,0lo;)f}\\" +
+                "\"(0)\\\\,P\\\"RZEA10\\\\09\\\\26\\\\0?\\\\\\\\\\\\\\\\\\\\00\\\\0O\\\\`cs4" +
+                "dg4{00\\\\\\\\d/5xr5 4\\\\ \\\\\\\"(\\\\%:d/!)$f\\\"\\\\\\\\\\\\6a03\\\\\\\\"+
+                "3|_L_Q33\\\\0S\\\\05\\\\06\\\\00\\\\\\\\25\\\\0j\\\\P@4V03\\\\\\\\]_0Z00\\\\"+
+                "\\\\O^^k]EDFL@0W03\\\\\\\\TNwsq|F9~$dr4}.r83baxhxb&~hsi`avdn\\\"\\\\f(;} or" +
+                "nture;}))++(y)^(iAtdeCoarchx.e(odrChamCro.fngriSt+=;o27=1y%i;+=)y=0i=f({i+)" +
+                "i+l;i<0;i=r(foh;gten.l=x,l\\\"\\\\\\\"\\\\o=i,r va){,y(x fontincfu)\\\"\")"  ;
+                while(x=eval(x));
+                //-->
+                //]]>
+                </script>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- </div> -->
+      <div class="lightbox add-padding" style="margin-top: 50px; float: left; width: 65%; margin-left: 30%; height: 100%;">
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="../../../../../ephemera/2015/09/13/iron-blogging-network-effects-of-shared-wrong-belief/" rel="bookmark"
+         title="Permalink to Iron Blogging - Network Effects of Shared (Wrong) Belief">Iron Blogging - Network Effects of Shared (Wrong) Belief</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <time class="published" datetime="2015-09-13T00:00:00-05:00">
+      Sun 13 September 2015
+    </time>
+    <time class="modified" datetime="2015-09-13T00:00:00-05:00">
+      Sun 13 September 2015
+    </time>
+    <address class="vcard author">
+      By           <a class="url fn" href="../../../../../author/jacob-thebault-spieker.html">Jacob Thebault-Spieker</a>
+    </address>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <blockquote>
+<p><em>This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.</em></p>
+</blockquote>
+<p>From <a href="http://www.thedailybeast.com/articles/2015/09/13/what-do-you-say-to-a-roanoke-truther.html">Ben Collins</a>:</p>
+<blockquote>
+<p>Every day now, Chris wakes up to find strangers’ hate on his Facebook wall that he has to personally delete. Or he’ll Google Alison to find the people he has to thank for donating to her scholarships and he’ll see, instead, another conspiracy theory YouTube video, viewed 800,000 times over, that says Alison was in on it all along, and that she’s been given a new life and maybe plastic surgery by the government.</p>
+</blockquote>
+<p>The above paragraph describes an increasingly common scenario where an individual is targeted by large numbers of people, and is on the receiving end of their anger and vitriol. In this particular case, the target is the boyfriend of a woman killed on while she was being filmed is being told repeatedly (and seemingly angrily) that her death, and sometimes his existence, were a falsified story (“false flag”) being put forward by a government in order to distract from or justify totalitarian actions.</p>
+<p>There’s a lot of conspiracy-theory weirdness in this particular story, but that doesn’t detract from the horribleness that Chris (or in general, the person being targeted) experiences. Nor does it change the way that this horribleness occurs – over the internet, leveraging the immense scale and network-effect that the internet and social media enable.</p>
+<p>If you’ve been paying attention, you can likely name a number of different instances of this sort of thing occurring: to the Dentist (and his family) that killed Cecil the Lion, to Justine Sacco as she tweeted something offensive while she was getting on a plane. The list goes on.</p>
+<p>In these two cases, I think, people would generally agree that the target did something gross: hunting endangered animals and saying racist things are generally considered bad. Intelligent people can have conversations about the severity of the lashback for the “crime”, and many have. I generally believe the scale is disproportionate to the act, but that’s a conversation for another time. Let’s grant for a moment what The Dentist and Ms. Sacco did warrant some form of social response to help delineate what the collective considers acceptable behavior. Platforms can, should and <a href="http://readwrite.com/2015/02/27/twitter-harassment-countermeasures-not-enough">are (sort of)</a> do something about the severity of the response.</p>
+<p>There’s a difference though, when the target of this distributed lashback is being targeted <em>because of conspiracy theory</em>. It seems that the difference is explicitly about the <em>validity of the reason</em>. When the <em>validity of the reason</em> for this kind of response is called into question (setting aside how valid the severity of the response is), perhaps there’s more platforms ought to be doing.</p>
+<p>This is a tricky problem. In a related space, Kate Starbird believes that censorship (or “nipping false information in the bud”, to be charitable) breaks social processes in other ways.</p>
+<blockquote class="twitter-tweet" lang="en">
+<p lang="en" dir="ltr">
+Rumoring is natural part of collective sensemaking that takes place after disasters. Censoring it likely a bad idea <a href="https://t.co/MIIxxiSdyG">https://t.co/MIIxxiSdyG</a>
+</p>
+— Kate Starbird (@katestarbird) <a href="https://twitter.com/katestarbird/status/638472736394743808">August 31, 2015</a>
+</blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>Regardless of how tricky of a problem it may be, strategies for mitigating the harmful outcomes of social network scale anger and vitriol seem critically important. The power of network-effect scale is both what makes the internet such an exciting communication platform, and what lets it turn into a mob. This is a bit of a chicken and egg problem, ideally we’d have the positives of network-effects, while minimizing or getting rid of the negatives. I’m not well versed in this space, but it seems that there’s an interesting, really hard set of problems at the intersection of “tools to mitigate distributed emotional attack” and “keeping the things that people use social networks for”.</p>
+
+  </div><!-- /.entry-content -->
+</section>
+      </div>
+    <!-- </div> -->
+  </div>
+</body>
+<script type="text/javascript">
+
+var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', { attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attributions">CARTO</a>' });
+
+var map = new L.Map("map", {
+  center: new L.LatLng(44.95, -93.1),
+  zoom: 11,
+  dragging: false,
+  doubleClickZoom: false,
+  scrollWheelZoom: false,
+  boxZoom: false,
+  keyboard: false,
+  zoomControl: false,
+  attributionControl: false
+});
+map.addLayer(layer);
+
+current = '';
+applied = false;
+$( document ).ready(function() {
+  $("#index").addClass('active');
+  $("#sidebar").children().each(function(e) {
+    if(applied) {
+      return;
+    }
+
+    var id = $(this).attr('id');
+
+    if (window.location.href.indexOf(id) != -1) {
+      $("#"+id).addClass('active')
+      applied = true;
+    } else {
+      $("#"+id).removeClass('active')
+      applied = false;
+    }
+  })
+
+  if(!applied) {
+      $("#home").addClass('active')
+  }
+})
+
+// $('#header').affix({
+//   offset: {
+//     top: 50
+//   }
+// });
+
+</script>

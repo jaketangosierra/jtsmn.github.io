@@ -1,0 +1,18 @@
+<script type="text/javascript">
+			window.onscroll = function() {
+				var bar = document.getElementById("header");
+				var oldStyle = bar.className;
+				if(pageYOffset > 0) {
+					bar.className = "header-fixed " + oldStyle;
+					/*bar.style = "position: fixed;";
+					bar.style = "top: 0px;";
+					bar.style = "width: 100%;;";*/
+				} else {
+					bar.className = bar.className.replace( /(?:^|\s)header-fixed(?!\S)/g , '' );
+					/*bar.style = "position: relative;";
+					bar.style = "top: 0px;";
+					bar.style = "width: 80%;";*/
+				}
+					
+			}
+		</script>

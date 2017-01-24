@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="./theme/css/stylesheet.css" />
+  <title>Jacob Thebault-Spieker</title>
+  <!-- <link href="http://jtsmn.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Jacob Thebault-Spieker Atom Feed" /> -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Leaflet / Stamen -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.7/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@0.7.7/dist/leaflet.js"></script>
+
+  <!-- JQuery -->
+  <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
+
+  <!-- Font Awesome -->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+<body>
+  <div id="map" class="map" style="z-index: -6;"></div>
+  <div class="map-overlay" style="z-index: -4;"></div>
+  <div class="container-fluid" style="padding: 0;">
+    <!-- <div class="row row-no-padding"> -->
+      <!-- <div class="col-md-offset-1 col-md-4" style="margin-right: 0px !important;"> -->
+        <div id="header" class="box-no-padding affix" style="min-width: 200px; float: left; margin-right: 0; width: 25%; margin-left: 5%; padding-right: 0;">
+          <div style="display: inline;">
+            <button type="button" class="add-padding links-toggle" data-toggle="collapse" data-target="#header .toggle">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <img class="img-responsive img-circle" style='margin-top: 20px; padding-left: 50px; padding-right: 50px;' src="./theme/images/profile_pic.jpg" alt="Photo of Jacob">
+          <h2 class='name'>Jacob</h2>
+          <h2 class='name'>Thebault-Spieker</h2>
+          <div class="toggle collapse">
+            <ul id='sidebar' class="no-bullet">
+              <li id="home"><a href="/">Home</a></li>
+              <li id="about"><a href="/about.html">About</a></li>
+              <li id="papers"><a href="/papers.html">Papers</a></li>
+              <li id="ephemera"><a href="/ephemera.html">Ephemera</a></li>
+              <li id='cv'><a href="/curriculum-vitae.html" target="blank">Curriculum Vitae&nbsp;<i class="fa fa-external-link"></i></a></li>
+              <li id='cv_pdf'>&emsp;(or as <a href='/cv.pdf' target="blank">PDF&nbsp;<i class="fa fa-file-pdf-o"></i></a>)</li>
+            </ul>
+            <div style="margin-left: auto; margin-right: auto; text-align: center;">
+              <div class="social add-padding">
+                <h3>Feeds & Inboxes</h3>
+                <a href="https://twitter.com/jts__"><i class="fa fa-twitter fa-2x"></i></a>
+                <a href="http://jacob.thebault-spieker.com/feeds/all.atom.xml"><i class="fa fa-rss fa-2x" aria-hidden="true"></i></a>
+                <!-- below is <a href="mailto:your@email.here"><i class="fa fa-envelope fa-2x"></i></a>, through http://hivelogic.com/enkoder/ Advanced form -->
+                &nbsp; <script type="text/javascript">
+                //<![CDATA[
+                <!--
+                var x="function f(x){var i,o=\"\",l=x.length;for(i=0;i<l;i+=2) {if(i+1<l)o+=" +
+                "x.charAt(i+1);try{o+=x.charAt(i);}catch(e){}}return o;}f(\"ufcnitnof x({)av" +
+                " r,i=o\\\"\\\"o,=l.xelgnhtl,o=;lhwli(e.xhcraoCedtAl(1/)3=!84{)rt{y+xx=l;=+;" +
+                "lc}tahce({)}}of(r=i-l;1>i0=i;--{)+ox=c.ahAr(t)i};erutnro s.buts(r,0lo;)f}\\" +
+                "\"(0)\\\\,P\\\"RZEA10\\\\09\\\\26\\\\0?\\\\\\\\\\\\\\\\\\\\00\\\\0O\\\\`cs4" +
+                "dg4{00\\\\\\\\d/5xr5 4\\\\ \\\\\\\"(\\\\%:d/!)$f\\\"\\\\\\\\\\\\6a03\\\\\\\\"+
+                "3|_L_Q33\\\\0S\\\\05\\\\06\\\\00\\\\\\\\25\\\\0j\\\\P@4V03\\\\\\\\]_0Z00\\\\"+
+                "\\\\O^^k]EDFL@0W03\\\\\\\\TNwsq|F9~$dr4}.r83baxhxb&~hsi`avdn\\\"\\\\f(;} or" +
+                "nture;}))++(y)^(iAtdeCoarchx.e(odrChamCro.fngriSt+=;o27=1y%i;+=)y=0i=f({i+)" +
+                "i+l;i<0;i=r(foh;gten.l=x,l\\\"\\\\\\\"\\\\o=i,r va){,y(x fontincfu)\\\"\")"  ;
+                while(x=eval(x));
+                //-->
+                //]]>
+                </script>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- </div> -->
+      <div class="lightbox add-padding" style="margin-top: 50px; float: left; width: 65%; margin-left: 30%; height: 100%;">
+
+            <article>
+                <header>
+                    <h3 class="allcaps"><a class='smallcaps' href="./ephemera/2016/05/10/iron-blogging-jello-research/" rel="bookmark" title="Permalink to Iron Blogging - Jello Research">Iron Blogging - Jello Research</a></h3>
+                </header>
+
+                <div>
+<footer style='font-size: 12pt;'>
+    <address class="vcard author">
+      By         <a class="url fn smallcaps" href="./author/jacob-thebault-spieker.html">Jacob Thebault-Spieker</a>
+
+        <abbr class="modified" title="2016-05-10T00:00:00-05:00">
+          Posted: Tue 10 May 2016
+    </abbr>
+    </address>
+</footer><!-- /.post-info -->                <blockquote>
+<p><em>This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.</em></p>
+</blockquote>
+<p>In <a href="http://www-users.cs.umn.edu/~kluver/jello-research-challenge.html">his post</a> earlier this week, <a href="https://twitter.com/OrigamiTeacher/">Daniel Kluver</a> outlined the “Jello Research Challenge”, based on a conversation we had.</p>
+<p>The rules as outlined are:</p>
+<blockquote>
+<ol type="1">
+<li>You must re-tell the basic narrative arc (the …</li></ol></blockquote>
+                <a class="readmore" href="./ephemera/2016/05/10/iron-blogging-jello-research/">read more</a>
+<!-- Intentionally left blank -->                </div><!-- /.entry-content -->
+            </article>
+            <hr>
+
+            <article>
+                <header>
+                    <h3 class="allcaps"><a class='smallcaps' href="./ephemera/2016/05/09/thoughts-on-facebook-news-curation-story/" rel="bookmark" title="Permalink to Thoughts On Facebook News Curation Story">Thoughts On Facebook News Curation Story</a></h3>
+                </header>
+
+                <div>
+<footer style='font-size: 12pt;'>
+    <address class="vcard author">
+      By         <a class="url fn smallcaps" href="./author/jacob-thebault-spieker.html">Jacob Thebault-Spieker</a>
+
+        <abbr class="modified" title="2016-05-09T00:00:00-05:00">
+          Posted: Mon 09 May 2016
+    </abbr>
+    </address>
+</footer><!-- /.post-info -->                <p>There’s an <a href="http://gizmodo.com/former-facebook-workers-we-routinely-suppressed-conser-1775461006">article going around today</a> reporting that the news curation team at Facebook (the team that chooses what shows as Trending) would either “inject” stories into the platform, or de-value/blacklist stories (in some cases with a conservative bent).</p>
+<p>The article states</p>
+<blockquote>
+<p>In other words, Facebook’s news …</p></blockquote>
+                <a class="readmore" href="./ephemera/2016/05/09/thoughts-on-facebook-news-curation-story/">read more</a>
+<!-- Intentionally left blank -->                </div><!-- /.entry-content -->
+            </article>
+            <hr>
+
+            <article>
+                <header>
+                    <h3 class="allcaps"><a class='smallcaps' href="./ephemera/2016/04/23/iron-blogging-in-defense-of-hybrid/" rel="bookmark" title="Permalink to Iron Blogging - In Defense of 'Hybrid'">Iron Blogging - In Defense of 'Hybrid'</a></h3>
+                </header>
+
+                <div>
+<footer style='font-size: 12pt;'>
+    <address class="vcard author">
+      By         <a class="url fn smallcaps" href="./author/jacob-thebault-spieker.html">Jacob Thebault-Spieker</a>
+
+        <abbr class="modified" title="2016-04-23T00:00:00-05:00">
+          Posted: Sat 23 April 2016
+    </abbr>
+    </address>
+</footer><!-- /.post-info -->                <blockquote>
+<p><em>This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.</em></p>
+</blockquote>
+<p><a href="https://twitter.com/mdekstrand">Michael Ekstrand</a> recently <a href="https://md.ekstrandom.net/blog/2016/04/using-r/">wrote up</a> his reasons for sticking to using R for data analysis, which included computational efficiency, <code>ggplot2</code>, and comfort with the workflow.</p>
+<p>I don’t have any problem with …</p>
+                <a class="readmore" href="./ephemera/2016/04/23/iron-blogging-in-defense-of-hybrid/">read more</a>
+<!-- Intentionally left blank -->                </div><!-- /.entry-content -->
+            </article>
+            <hr>
+
+            <article>
+                <header>
+                    <h3 class="allcaps"><a class='smallcaps' href="./ephemera/2016/04/15/iron-blogging-big-week-huuuuuge-week/" rel="bookmark" title="Permalink to Iron Blogging - Big Week? Huuuuuge Week">Iron Blogging - Big Week? Huuuuuge Week</a></h3>
+                </header>
+
+                <div>
+<footer style='font-size: 12pt;'>
+    <address class="vcard author">
+      By         <a class="url fn smallcaps" href="./author/jacob-thebault-spieker.html">Jacob Thebault-Spieker</a>
+
+        <abbr class="modified" title="2016-04-15T00:00:00-05:00">
+          Posted: Fri 15 April 2016
+    </abbr>
+    </address>
+</footer><!-- /.post-info -->                <blockquote>
+<p><em>This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.</em></p>
+</blockquote>
+<p><a href="http://www.theverge.com/2016/4/11/11406944/emoji-meaning-difference-ios-android">Big</a> <a href="http://nymag.com/following/2016/04/people-often-disagree-about-what-emoji-mean.html">Week</a>? <a href="http://gizmodo.com/that-emoji-does-not-mean-what-you-think-it-means-1770296372">Big</a> <a href="http://www.pcworld.com/article/3053967/consumer-electronics/whats-that-emoji-mean-it-all-depends-on-the-device-youre-using.html">Week</a>.</p>
+<p><a href="http://www.slashgear.com/inconsistent-emoji-designs-muddle-conversations-11435782/">It’s</a> <a href="http://www.dailydot.com/technology/emoji-miscommunicate/">been</a> <a href="http://boingboing.net/2016/04/11/if-you-send-a-grimace-emoji-on.html">a</a> <a href="http://www.techinsider.io/science-reveals-the-most-confusing-emoji-2016-4">pretty</a> <a href="https://www.washingtonpost.com/news/the-switch/wp/2016/04/12/why-that-emoji-grin-you-sent-might-show-up-as-a-grimace/">crazy</a>, <a href="https://www.buzzfeed.com/nicolenguyen/one-emoji-font-to-rule-them-all#.te1K14DzY">very</a> <a href="http://metro.co.uk/2016/04/12/what-does-this-emoji-actually-mean-5812057/">exciting</a> <a href="http://www.npr.org/sections/thetwo-way/2016/04/12/473965971/lost-in-translation-study-finds-interpretation-of-emojis-can-vary-widely">week</a> <a href="http://www.startribune.com/university-of-minnesota-study-finds-emojis-are-just-another-way-to-miscommunicate/375558201/">here</a> <a href="http://www.vox.com/2016/4/13/11422886/emoji-interpretation-different">at</a> <a href="https://www.youtube.com/watch?v=NUMl6S_KNj4&amp;feature=youtu.be">GroupLens</a>.</p>
+<p><a href="http://www.sciencefriday.com/segments/that-emoji-youre-sending-is-open-to-interpretation/">Best</a> <a href="http://www.cosmopolitan.com/lifestyle/news/a56705/emoji-miscommunications-emojis-look-different/">part</a>? <a href="https://twitter.com/ezraklein/status/720390755794034690">EZRA KLEIN TWEETED ABOUT IT</a>.</p>
+
+                <a class="readmore" href="./ephemera/2016/04/15/iron-blogging-big-week-huuuuuge-week/">read more</a>
+<!-- Intentionally left blank -->                </div><!-- /.entry-content -->
+            </article>
+            <hr>
+
+            <article>
+                <header>
+                    <h3 class="allcaps"><a class='smallcaps' href="./ephemera/2016/04/05/gropulens-blog-investigating-the-potential-for-miscommunication-using-emoji/" rel="bookmark" title="Permalink to GropuLens Blog - Investigating the Potential for Miscommunication Using Emoji">GropuLens Blog - Investigating the Potential for Miscommunication Using Emoji</a></h3>
+                </header>
+
+                <div>
+<footer style='font-size: 12pt;'>
+    <address class="vcard author">
+      By         <a class="url fn smallcaps" href="./author/jacob-thebault-spieker.html">Jacob Thebault-Spieker</a>
+
+        <abbr class="modified" title="2016-04-05T00:00:00-05:00">
+          Posted: Tue 05 April 2016
+    </abbr>
+    </address>
+</footer><!-- /.post-info -->                <p>There’s a <a href="http://grouplens.org/blog/investigating-the-potential-for-miscommunication-using-emoji/">new blog post</a> for an ICWSM 2016 study (that I contributed to!) on Emoji and miscommunication, over on the GroupLens blog.</p>
+<p>It’s worth a <a href="http://grouplens.org/blog/investigating-the-potential-for-miscommunication-using-emoji/">read</a>.</p>
+<p>In case you haven’t gotten it yet, you can <a href="http://grouplens.org/blog/investigating-the-potential-for-miscommunication-using-emoji/">find the blog post</a> at <a href="http://grouplens.org/blog/investigating-the-potential-for-miscommunication-using-emoji/" class="uri">http://grouplens.org/blog/investigating-the-potential-for-miscommunication-using-emoji/</a>.</p>
+
+                <a class="readmore" href="./ephemera/2016/04/05/gropulens-blog-investigating-the-potential-for-miscommunication-using-emoji/">read more</a>
+<!-- Intentionally left blank -->                </div><!-- /.entry-content -->
+            </article>
+            <hr>
+
+            <article>
+                <header>
+                    <h3 class="allcaps"><a class='smallcaps' href="./ephemera/2016/03/18/iron-blogging-ridiculously-complicated-degrees/" rel="bookmark" title="Permalink to Iron Blogging - Ridiculously Complicated Degrees">Iron Blogging - Ridiculously Complicated Degrees</a></h3>
+                </header>
+
+                <div>
+<footer style='font-size: 12pt;'>
+    <address class="vcard author">
+      By         <a class="url fn smallcaps" href="./author/jacob-thebault-spieker.html">Jacob Thebault-Spieker</a>
+
+        <abbr class="modified" title="2016-03-18T00:00:00-05:00">
+          Posted: Fri 18 March 2016
+    </abbr>
+    </address>
+</footer><!-- /.post-info -->                <blockquote>
+<p><em>This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.</em></p>
+</blockquote>
+<p><a href="https://en.wikipedia.org/wiki/Ezra_Klein">Ezra Klein</a> (formerly of Wonkblog, now Editor-in-Chief at Vox) has a relatively new podcast, The Ezra Klein Show, wherein he interviews interesting people, from across the political and policy spectrum. One of …</p>
+                <a class="readmore" href="./ephemera/2016/03/18/iron-blogging-ridiculously-complicated-degrees/">read more</a>
+<!-- Intentionally left blank -->                </div><!-- /.entry-content -->
+            </article>
+            <hr>
+
+            <article>
+                <header>
+                    <h3 class="allcaps"><a class='smallcaps' href="./ephemera/2016/03/07/cscw-recap/" rel="bookmark" title="Permalink to CSCW Recap">CSCW Recap</a></h3>
+                </header>
+
+                <div>
+<footer style='font-size: 12pt;'>
+    <address class="vcard author">
+      By         <a class="url fn smallcaps" href="./author/jacob-thebault-spieker.html">Jacob Thebault-Spieker</a>
+
+        <abbr class="modified" title="2016-03-07T00:00:00-06:00">
+          Posted: Mon 07 March 2016
+    </abbr>
+    </address>
+</footer><!-- /.post-info -->                <p>I recently attended the <a href="http://cscw.acm.org/2016/index.php">Computer-Supported Cooperative Work and Social Computing</a> conference, in San Francisco. There were a number of very interesting pieces of work, that I wanted to list and point to. I think it’s useful to think about take-aways after the incredibly dense information overload that is a …</p>
+                <a class="readmore" href="./ephemera/2016/03/07/cscw-recap/">read more</a>
+<!-- Intentionally left blank -->                </div><!-- /.entry-content -->
+            </article>
+            <hr>
+
+            <article>
+                <header>
+                    <h3 class="allcaps"><a class='smallcaps' href="./ephemera/2016/03/07/welcome-to-pelican/" rel="bookmark" title="Permalink to Welcome To Pelican">Welcome To Pelican</a></h3>
+                </header>
+
+                <div>
+<footer style='font-size: 12pt;'>
+    <address class="vcard author">
+      By         <a class="url fn smallcaps" href="./author/jacob-thebault-spieker.html">Jacob Thebault-Spieker</a>
+
+        <abbr class="modified" title="2016-03-07T00:00:00-06:00">
+          Posted: Mon 07 March 2016
+    </abbr>
+    </address>
+</footer><!-- /.post-info -->                <hr />
+<blockquote>
+<p><em>This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.</em></p>
+</blockquote>
+<p>You know, I’ve really started to come around on python.</p>
+<p>What this actually means, in this case, is that I’ve completely moved away from <a href="http://nanoc.ws">nanoc</a>, and now my site is …</p>
+                <a class="readmore" href="./ephemera/2016/03/07/welcome-to-pelican/">read more</a>
+<!-- Intentionally left blank -->                </div><!-- /.entry-content -->
+            </article>
+            <hr>
+
+            <article>
+                <header>
+                    <h3 class="allcaps"><a class='smallcaps' href="./ephemera/2016/03/06/iron-blogging-cscw-stop-gap/" rel="bookmark" title="Permalink to Iron Blogging - CSCW Stop Gap">Iron Blogging - CSCW Stop Gap</a></h3>
+                </header>
+
+                <div>
+<footer style='font-size: 12pt;'>
+    <address class="vcard author">
+      By         <a class="url fn smallcaps" href="./author/jacob-thebault-spieker.html">Jacob Thebault-Spieker</a>
+
+        <abbr class="modified" title="2016-03-06T00:00:00-06:00">
+          Posted: Sun 06 March 2016
+    </abbr>
+    </address>
+</footer><!-- /.post-info -->                <blockquote>
+<p><em>This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.</em></p>
+</blockquote>
+<p>I’m cheating a little bit, and committing to two things, but not writing either of them now.</p>
+<ol type="1">
+<li>I will write-up a summary of my favorite papers at the recent CSCSW 2016 …</li></ol>
+                <a class="readmore" href="./ephemera/2016/03/06/iron-blogging-cscw-stop-gap/">read more</a>
+<!-- Intentionally left blank -->                </div><!-- /.entry-content -->
+            </article>
+            <hr>
+
+            <article>
+                <header>
+                    <h3 class="allcaps"><a class='smallcaps' href="./ephemera/2016/02/24/iron-blogging-nerd-alert-rumored-os-x-1012-siri-and-the-role-of-introversion/" rel="bookmark" title="Permalink to Iron Blogging - Nerd Alert – Rumored OS X 10.12 Siri and the Role of Introversion">Iron Blogging - Nerd Alert – Rumored OS X 10.12 Siri and the Role of Introversion</a></h3>
+                </header>
+
+                <div>
+<footer style='font-size: 12pt;'>
+    <address class="vcard author">
+      By         <a class="url fn smallcaps" href="./author/jacob-thebault-spieker.html">Jacob Thebault-Spieker</a>
+
+        <abbr class="modified" title="2016-02-24T00:00:00-06:00">
+          Posted: Wed 24 February 2016
+    </abbr>
+    </address>
+</footer><!-- /.post-info -->                <blockquote>
+<p><em>This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.</em></p>
+</blockquote>
+<p><a href="http://9to5mac.com/2016/02/24/apple-siri-osx-10-12-2016/">OS X 10.12 is rumored to have Siri integrated in</a>. That’s exciting to me.</p>
+<p>The natural language piece of Siri is phenomenal, and it’s something I’ve been wanting …</p>
+                <a class="readmore" href="./ephemera/2016/02/24/iron-blogging-nerd-alert-rumored-os-x-1012-siri-and-the-role-of-introversion/">read more</a>
+<!-- Intentionally left blank -->                </div><!-- /.entry-content -->
+            </article>
+            <hr>
+<p class="paginator">
+    Page 1 / 3
+        <a href="./ephemera2.html">&raquo;</a>
+</p>
+                </section><!-- /#content -->
+      </div>
+    <!-- </div> -->
+  </div>
+</body>
+<script type="text/javascript">
+
+var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', { attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attributions">CARTO</a>' });
+
+var map = new L.Map("map", {
+  center: new L.LatLng(44.95, -93.1),
+  zoom: 11,
+  dragging: false,
+  doubleClickZoom: false,
+  scrollWheelZoom: false,
+  boxZoom: false,
+  keyboard: false,
+  zoomControl: false,
+  attributionControl: false
+});
+map.addLayer(layer);
+
+current = '';
+applied = false;
+$( document ).ready(function() {
+  $("#index").addClass('active');
+  $("#sidebar").children().each(function(e) {
+    if(applied) {
+      return;
+    }
+
+    var id = $(this).attr('id');
+
+    if (window.location.href.indexOf(id) != -1) {
+      $("#"+id).addClass('active')
+      applied = true;
+    } else {
+      $("#"+id).removeClass('active')
+      applied = false;
+    }
+  })
+
+  if(!applied) {
+      $("#home").addClass('active')
+  }
+})
+
+// $('#header').affix({
+//   offset: {
+//     top: 50
+//   }
+// });
+
+</script>

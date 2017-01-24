@@ -1,0 +1,190 @@
+\[t\]<span>0.495</span> Department of Computer Science\
+University of Minnesota\
+4-192 Kenneth H Keller Hall\
+200 Union Street\
+Minneapolis, MN 55455
+
+\[t\]<span>0.495</span> Phone: (320) 288-6412\
+Office: 5-240 Kenneth H Keller Hall\
+Email: <thebault@cs.umn.edu>\
+Homepage: <http://jacob.thebault-spieker.com>
+
+Education {#education .unnumbered}
+=========
+
+-   PhD Student (PhD Candidate as of April 2013). Computer Science,
+    University of Minnesota, 2011 - Present.
+
+-   B.A. Computer Science, University of Minnesota, Morris, 2011.
+
+-   B.A. Spanish, University of Minnesota, Morris, 2011.
+
+Research {#research .unnumbered}
+========
+
+Peer-Reviewed Conference & Journal Papers {#peer-reviewed-conference-journal-papers .unnumbered}
+-----------------------------------------
+
+-   **In preparation** - <span>Geographic Inequality in the Peer
+    Economy</span>
+
+<!-- -->
+
+-   Aaron Halfaker, Oliver Keyes, Daniel Kluver, Jacob Thebault-Spieker,
+    Tien T. Nguyen, Kenneth Shores, Anuradha Uduwage, Morten
+    Warncke-Wang. *WWW 2015* - <span>User Session Identification Based
+    on Strong Regularities in Inter-activity Time.</span> *Acceptance
+    Rate*: **14.1%**
+
+<!-- -->
+
+-   Thebault-Spieker, J., Terveen, L., Hecht, B. *CSCW 2015* -
+    <span>Avoiding the South Side and the Suburbs: The Geography of
+    Mobile Crowdsourcing Markets</span> *Acceptance Rate*: **28.3%**
+
+Posters {#posters .unnumbered}
+-------
+
+-   **Upcoming** *CSCW 2016* - <span>Exploring Engagement in a ’Social
+    Crowd’ on Twitter</span>
+
+Conference and Seminar Presentations {#conference-and-seminar-presentations .unnumbered}
+------------------------------------
+
+-   [*Avoiding the South Side and the Suburbs: The Geography of Mobile
+    Crowdsourcing Markets* - CSCW
+    2015](http://cscw.acm.org/2015/program/)
+
+-   [*Digitally Reflecting Our Space:Crowdsourcing Space Usage Rules* -
+    Information Technology and City Life workshop, CSCW
+    2015](http://citytech.apps-1and1.com/schedule/)
+
+-   [Symposium on Urban Informatics Exploring Smarter
+    Cities](http://ischool.drexel.edu/urbaninformatics/)
+
+Fields of Research Interest {#fields-of-research-interest .unnumbered}
+---------------------------
+
+sharing economies, geographic computing, sociotechnical systems,
+crowdsourcing, mobile computing, collaborative open content communities.
+
+Relevant Experience {#relevant-experience .unnumbered}
+===================
+
+IBM Watson, Almaden, Research Intern, *Summer 2014*.\
+*Defined and implemented a research project in the space of grassroots
+engagement efforts on Twitter. Successfully completed this project*
+**Skills:** defining a research plan, experimental design, working
+collaboratively with a team
+
+University of Minnesota, Department of Computer Science, Research
+Assistant, *2011-Present*.\
+*I’ve been the lead developer for over 3 years building a mobile,
+geographic crowdsourcing application (FolkSource) that is nearing
+launch. I conducted semi-structured interviews with users in a
+case-study to understand motivations for using the system.*\
+**Skills:** Java (Struts), javascript (enyojs), CSS, Phonegap,
+Semi-structured interviewing
+
+Carnegie Mellon University, Department of Computer Science, REU Student,
+*Summer 2010*.\
+*Researched the feasibility of prefetching in Internet Suspend/Resume.
+Demonstrated that the simple (boot) case does not provide performance
+improvements.*\
+**Skills:** C, collaborative research with Dr. Mahadev Satyanarayanan.
+
+University of Minnesota – Morris, Department of Computer Science &
+OpenAFS, Undergraduate Research Project, *Jan. 2010 - June 2010*.\
+*Extension of 2009 Google Summer of Code project, researched the use of
+network and server statistics to optimize server rankings and explored
+the distribution these statistics within the system.*\
+**Skills:** C, independently motivated project, collaborative remotely.
+
+Professional Activities {#professional-activities .unnumbered}
+=======================
+
+Venues of Peer Review Service {#venues-of-peer-review-service .unnumbered}
+-----------------------------
+
+-   CSCW
+
+-   CHI
+
+-   Interaction Design and Architecture
+
+-   TOCHI
+
+Teaching {#teaching .unnumbered}
+========
+
+University of Minnesota {#university-of-minnesota .unnumbered}
+-----------------------
+
+-   Structure of Computer Programming II (Undergraduate): Fall 2011,
+    Spring 2012.
+
+University of Minnesota, Morris {#university-of-minnesota-morris .unnumbered}
+-------------------------------
+
+-   Models of Computing Systems (Undergraduate): Fall 2010, Spring 2011.
+
+Relevant Coursework {#relevant-coursework .unnumbered}
+-------------------
+
+**CSci 5115: User Interface Design, Evaluation, and Implementation**\
+*Project-driven course, where each group was tasked with designing,
+developing, and iterating on a group-defined UI project.*\
+**Skills:** Persona Developement, User testing, Usability lab practice,
+Cognitive Walkthroughs, Paper prototyping.
+
+**CSci 8115: Human-Computer Interaction & User Interface Technology**\
+*Research driven course, with a partnered research project goal. We
+developed and iterated on a Kinect-based system to support the
+transition process for transgendered individuals.*\
+**Skills:** Coding transgendered forum data for definition of system
+goals (in place of user interviews for anonymity). Iterative
+development, UI techniques.
+
+**PSY 5108H: Mathematical Models of Human Behavior**\
+*I conducted a literature review focused on the importance of intrinsic
+motivation in the success of an online open-production community.*\
+**Skills:** Bayes nets, game theory (including Nash Equilibria), time
+series, Collective Effort Model, role of intrinsic & extrinsic
+motivation in effort processes.
+
+**Other Courses Taken:** *Advanced Algorithms, Principles of Database
+Systems, Foundations of Advanced Networking, and Introduction to
+Research I & II, Directed Research*
+
+Other Experience {#other-experience .unnumbered}
+================
+
+University of Minnesota, Department of Computer Science, Teaching
+Assistant, 2011.\
+*I TA’d **CS 1902: Structures of Computer Programming II** for 2
+semesters. This included managing 3 lab sessions per week, and grading
+homework and exams.*\
+**Skills:** Lead 3 lab sessions, collaborative course management with a
+graduate student and the Professor.
+
+Google Summer of Code, OpenAFS, Participant, *Summer 2009*.\
+*Began using network statistics (latency, bandwidth, etc.) in order to
+improve client server choices. Implemented this in both Linux and
+Windows.*\
+**Skills:** C, Independently proposed and driven project, collaborative
+remotely.
+
+Google Summer of Code, OpenAFS, Participant, *Summer 2008*.\
+*Implemented GPL-licensed Linux kernel interfaces to handle AFS Remote
+Procedure Calls (RPCs). Intended to support native Linux interaction
+with AFS, so AFS wouldn’t need to maintain a kernel module.*\
+**Skills:** C, Independently proposed and driven project, collaborative
+remotely.
+
+Honors, Awards, & Fellowships {#honors-awards-fellowships .unnumbered}
+=============================
+
+-   Undergraduate Research Opportunity Program grant, University of
+    Minnesota, Morris, Fall 2009.
+
+Last updated:

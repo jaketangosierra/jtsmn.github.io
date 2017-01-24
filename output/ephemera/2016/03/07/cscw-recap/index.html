@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="../../../../../theme/css/stylesheet.css" />
+  <title>Jacob Thebault-Spieker</title>
+  <!-- <link href="http://jtsmn.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Jacob Thebault-Spieker Atom Feed" /> -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Leaflet / Stamen -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.7/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@0.7.7/dist/leaflet.js"></script>
+
+  <!-- JQuery -->
+  <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
+
+  <!-- Font Awesome -->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+<body>
+  <div id="map" class="map" style="z-index: -6;"></div>
+  <div class="map-overlay" style="z-index: -4;"></div>
+  <div class="container-fluid" style="padding: 0;">
+    <!-- <div class="row row-no-padding"> -->
+      <!-- <div class="col-md-offset-1 col-md-4" style="margin-right: 0px !important;"> -->
+        <div id="header" class="box-no-padding affix" style="min-width: 200px; float: left; margin-right: 0; width: 25%; margin-left: 5%; padding-right: 0;">
+          <div style="display: inline;">
+            <button type="button" class="add-padding links-toggle" data-toggle="collapse" data-target="#header .toggle">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <img class="img-responsive img-circle" style='margin-top: 20px; padding-left: 50px; padding-right: 50px;' src="../../../../../theme/images/profile_pic.jpg" alt="Photo of Jacob">
+          <h2 class='name'>Jacob</h2>
+          <h2 class='name'>Thebault-Spieker</h2>
+          <div class="toggle collapse">
+            <ul id='sidebar' class="no-bullet">
+              <li id="home"><a href="/">Home</a></li>
+              <li id="about"><a href="/about.html">About</a></li>
+              <li id="papers"><a href="/papers.html">Papers</a></li>
+              <li id="ephemera"><a href="/ephemera.html">Ephemera</a></li>
+              <li id='cv'><a href="/curriculum-vitae.html" target="blank">Curriculum Vitae&nbsp;<i class="fa fa-external-link"></i></a></li>
+              <li id='cv_pdf'>&emsp;(or as <a href='/cv.pdf' target="blank">PDF&nbsp;<i class="fa fa-file-pdf-o"></i></a>)</li>
+            </ul>
+            <div style="margin-left: auto; margin-right: auto; text-align: center;">
+              <div class="social add-padding">
+                <h3>Feeds & Inboxes</h3>
+                <a href="https://twitter.com/jts__"><i class="fa fa-twitter fa-2x"></i></a>
+                <a href="http://jacob.thebault-spieker.com/feeds/all.atom.xml"><i class="fa fa-rss fa-2x" aria-hidden="true"></i></a>
+                <!-- below is <a href="mailto:your@email.here"><i class="fa fa-envelope fa-2x"></i></a>, through http://hivelogic.com/enkoder/ Advanced form -->
+                &nbsp; <script type="text/javascript">
+                //<![CDATA[
+                <!--
+                var x="function f(x){var i,o=\"\",l=x.length;for(i=0;i<l;i+=2) {if(i+1<l)o+=" +
+                "x.charAt(i+1);try{o+=x.charAt(i);}catch(e){}}return o;}f(\"ufcnitnof x({)av" +
+                " r,i=o\\\"\\\"o,=l.xelgnhtl,o=;lhwli(e.xhcraoCedtAl(1/)3=!84{)rt{y+xx=l;=+;" +
+                "lc}tahce({)}}of(r=i-l;1>i0=i;--{)+ox=c.ahAr(t)i};erutnro s.buts(r,0lo;)f}\\" +
+                "\"(0)\\\\,P\\\"RZEA10\\\\09\\\\26\\\\0?\\\\\\\\\\\\\\\\\\\\00\\\\0O\\\\`cs4" +
+                "dg4{00\\\\\\\\d/5xr5 4\\\\ \\\\\\\"(\\\\%:d/!)$f\\\"\\\\\\\\\\\\6a03\\\\\\\\"+
+                "3|_L_Q33\\\\0S\\\\05\\\\06\\\\00\\\\\\\\25\\\\0j\\\\P@4V03\\\\\\\\]_0Z00\\\\"+
+                "\\\\O^^k]EDFL@0W03\\\\\\\\TNwsq|F9~$dr4}.r83baxhxb&~hsi`avdn\\\"\\\\f(;} or" +
+                "nture;}))++(y)^(iAtdeCoarchx.e(odrChamCro.fngriSt+=;o27=1y%i;+=)y=0i=f({i+)" +
+                "i+l;i<0;i=r(foh;gten.l=x,l\\\"\\\\\\\"\\\\o=i,r va){,y(x fontincfu)\\\"\")"  ;
+                while(x=eval(x));
+                //-->
+                //]]>
+                </script>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- </div> -->
+      <div class="lightbox add-padding" style="margin-top: 50px; float: left; width: 65%; margin-left: 30%; height: 100%;">
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="../../../../../ephemera/2016/03/07/cscw-recap/" rel="bookmark"
+         title="Permalink to CSCW Recap">CSCW Recap</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <time class="published" datetime="2016-03-07T00:00:00-06:00">
+      Mon 07 March 2016
+    </time>
+    <time class="modified" datetime="2016-03-07T00:00:00-06:00">
+      Mon 07 March 2016
+    </time>
+    <address class="vcard author">
+      By           <a class="url fn" href="../../../../../author/jacob-thebault-spieker.html">Jacob Thebault-Spieker</a>
+    </address>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <p>I recently attended the <a href="http://cscw.acm.org/2016/index.php">Computer-Supported Cooperative Work and Social Computing</a> conference, in San Francisco. There were a number of very interesting pieces of work, that I wanted to list and point to. I think it’s useful to think about take-aways after the incredibly dense information overload that is a conference, so I figured I would do that here.</p>
+<h3 id="standing-out-from-the-crowd-emotional-labor-body-labor-and-temporal-labor-in-ridesharing-by-noopur-raval"><strong>1. Standing Out from the Crowd: Emotional Labor, Body Labor, and Temporal Labor in Ridesharing</strong> by <em>Noopur Raval</em></h3>
+<p>This work was incredibly ethnographic, and explored the different <em>kinds</em> of labor conducted by Uber drivers. They talk about, and argue for, the idea that Uber drivers (and presumably other gig-workers as well) conduct many forms of labor, beyond those they’re being paid for. This could include anything from seeking to portray themselves in a particular light, to the specific kinds of labor conducted in crisis times. For instance, one person they talk to went above and beyond the actual job of Uber to provide transportation, and check in on safety of their riders, during the Baltimore protests.</p>
+<h3 id="the-crowd-is-a-collaborative-network-by-mary-gray"><strong>2. The Crowd is a Collaborative Network</strong> by <em>Mary Gray</em>:</h3>
+<p>I found this work really compelling. It describes and provides strong evidence for the idea that humans find a way to be social, even when the technology doesn’t support it. This is similar to something I’ve heard <a href="http://twitter.com/halfak">Aaron</a> talk about in the context of Wikipedia in the past, but it really resonated. Mary Gray and her coauthor have longitudinal data, across 4 different online gig platforms (including Mechanical Turk), and argue that workers are communicating, period. The overall conclusion of their argument is simple: <em>facilitate communication among workers, but don’t seek to engineer particular mechanisms because workers route around them anyway</em>.</p>
+<h3 id="does-the-sharing-economy-do-any-good-panel-with-tawanna-dillahunt-airi-lampinen-jacki-oneil-and-loren-terveen"><strong>3. Does the Sharing Economy Do Any Good?</strong> panel with <em>Tawanna Dillahunt</em>, <em>Airi Lampinen</em>, <em>Jacki O’Neil</em>, and <em>Loren Terveen</em>:</h3>
+<p>This particular panel hits pretty close to home for me, since a non-trivial component of it consisted of the work I did with <a href="http://www-users.cs.umn.edu/~terveen/">Loren</a> and <a href="http://brenthecht.com">Brent</a>. The high-level question is right in the title: is the sharing economy able to do good? Jacki O’Neil contributed a lot to this panel, because her she is working with auto-rickshaws in India, and has a natural observational structure that allows her to <em>compare</em> auto-rickshaws using an Uber-esque app, and ones that are not. A big takeaweay from her work is that, at least in the context of her study, gig economy platforms (or peer-to-peer platforms) do not actually provide the certainty of work that one might hope for. She argues that we need to <em>acknowledge that we’re re-designing work</em> as we build these platforms, and that has a lot of power (and potential for failure). Finally, <a href="http://airilampinen.fi">Airi</a> poses an interesting way to think about the impact of gig economy platforms: <em>how common is it for workers to also be consumers of the peer economy they work in?</em></p>
+<h3 id="parting-crowds-characterizing-divergent-interpretations-in-crowdsourced-annotation-tasks-by-sanjay-kairam"><strong>4. Parting Crowds: Characterizing Divergent Interpretations in Crowdsourced Annotation Tasks</strong> by <em>Sanjay Kairam</em>:</h3>
+<p>This was an interesting technical contribution, that I think has a lot of potential when thinking about crowd work. The framing for this work comes from crowdsourcing text annotations, for the purposes of labeling a linguistic dataset. What Kairam argues is that one can cluster the individual responses given by crowd workers, and that these clusters represent <em>systematic areas of disagreement</em> between crowd workers, and may mean there are <em>multiple, equally valid</em> responses to the question being asked (e.g. some crowd workers labelled the <em>type of organization</em> represented by a Twitter account, whereas others did not label the Twitter account name at all). I think there are a lot of interesting implications for geographic crowd tasks, particularly for data collection and spatial annotation.</p>
+
+  </div><!-- /.entry-content -->
+</section>
+      </div>
+    <!-- </div> -->
+  </div>
+</body>
+<script type="text/javascript">
+
+var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', { attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attributions">CARTO</a>' });
+
+var map = new L.Map("map", {
+  center: new L.LatLng(44.95, -93.1),
+  zoom: 11,
+  dragging: false,
+  doubleClickZoom: false,
+  scrollWheelZoom: false,
+  boxZoom: false,
+  keyboard: false,
+  zoomControl: false,
+  attributionControl: false
+});
+map.addLayer(layer);
+
+current = '';
+applied = false;
+$( document ).ready(function() {
+  $("#index").addClass('active');
+  $("#sidebar").children().each(function(e) {
+    if(applied) {
+      return;
+    }
+
+    var id = $(this).attr('id');
+
+    if (window.location.href.indexOf(id) != -1) {
+      $("#"+id).addClass('active')
+      applied = true;
+    } else {
+      $("#"+id).removeClass('active')
+      applied = false;
+    }
+  })
+
+  if(!applied) {
+      $("#home").addClass('active')
+  }
+})
+
+// $('#header').affix({
+//   offset: {
+//     top: 50
+//   }
+// });
+
+</script>

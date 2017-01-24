@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+  <title>{% block title %}{{ SITENAME }}{%endblock%}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ THEME_STATIC_DIR }}/css/mine.css" />
+
+</head>
+<body>
+	<div class="cont">
+		{% block content %}
+			{{ page.content | replace('Jacob Thebault-Spieker', '<strong>Jacob Thebault-Spieker</strong>') }}
+			{% endblock%}
+	</div>
+</body>

@@ -1,0 +1,25 @@
+{% for group in publications|groupby('entry') %}
+   <h2>{{ group.grouper[1] }}</h2>
+   {% for g in group.list | groupby('year') | sort(reverse=True) %}
+    <h3>{{ g.grouper }}</h3>
+      {% for publication in g.list %}
+        {{ publication.title|replace('{', '')|replace('}', '')|title}}
+        {{ publication.booktitle|title}}
+        <ul class="debullet">
+          <li id="{{ publication.key }}">
+            {% if publication.note %}
+             {{ publication.text|title|replace('Jacob Thebault-Spieker', '<strong>Jacob Thebault-Spieker</strong>')|replace(publication.note, '<br><br><em>'+publication.note+'</em>>')}}
+            {% else %}
+             {{ publication.text|title|replace('Jacob Thebault-Spieker', '<strong>Jacob Thebault-Spieker</strong>')}}
+            {% endif %}
+
+          {% if publication.acceptance %}
+            <br><strong>Acceptance Rate: <em>{{ publication.acceptance }}</em></strong><br>
+          <br>
+          {% endif %}
+       </li>
+     </ul>
+   {% endfor %}
+  {% endfor %}
+  <hr>
+{% endfor %}

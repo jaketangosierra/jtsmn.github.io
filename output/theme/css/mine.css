@@ -1,0 +1,57 @@
+body {
+	font-family: 'Garamond', serif !important;
+	font-weight: 400;
+	font-size: 12pt !important;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Gill Sans', sans-serif !important;
+}
+
+ol, ul {
+	list-style-type: none;
+}
+
+ol {
+  padding-left: 0;
+	font-family: 'Gill Sans', sans-serif !important;
+  font-size: 16;
+  font-weight: bold;
+}
+
+ol li {
+  margin-bottom: 20px;
+}
+
+ul {
+  font-family: 'Garamond', serif !important;
+  font-weight: normal;
+}
+
+hr {
+  border: 3 black;
+  text-align: center;
+}
+
+table {
+	width: 100%;
+}
+
+.heading {
+  text-align: center;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.heading strong {
+  font-weight: normal;
+}
+
+.cont {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.references {
+  display: none;
+}
