@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="../../../../../theme/css/stylesheet.css" />
+  <link rel="stylesheet" href="theme/css/stylesheet.css" />
   <title>Jacob Thebault-Spieker</title>
   <!-- <link href="http://jtsmn.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Jacob Thebault-Spieker Atom Feed" /> -->
 
@@ -24,8 +24,8 @@
 
 </head>
 <body>
-  <div id="map" class="map" style="z-index: -6;"></div>
-  <div class="map-overlay" style="z-index: -4;"></div>
+  <!-- <div id="map" class="map" style="z-index: -6;"></div>
+  <div class="map-overlay" style="z-index: -4;"></div> -->
   <div class="container-fluid" style="padding: 0;">
     <!-- <div class="row row-no-padding"> -->
       <!-- <div class="col-md-offset-1 col-md-4" style="margin-right: 0px !important;"> -->
@@ -111,52 +111,3 @@
     <!-- </div> -->
   </div>
 </body>
-<script type="text/javascript">
-
-var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', { attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attributions">CARTO</a>' });
-
-var map = new L.Map("map", {
-  center: new L.LatLng(44.95, -93.1),
-  zoom: 11,
-  dragging: false,
-  doubleClickZoom: false,
-  scrollWheelZoom: false,
-  boxZoom: false,
-  keyboard: false,
-  zoomControl: false,
-  attributionControl: false
-});
-map.addLayer(layer);
-
-current = '';
-applied = false;
-$( document ).ready(function() {
-  $("#index").addClass('active');
-  $("#sidebar").children().each(function(e) {
-    if(applied) {
-      return;
-    }
-
-    var id = $(this).attr('id');
-
-    if (window.location.href.indexOf(id) != -1) {
-      $("#"+id).addClass('active')
-      applied = true;
-    } else {
-      $("#"+id).removeClass('active')
-      applied = false;
-    }
-  })
-
-  if(!applied) {
-      $("#home").addClass('active')
-  }
-})
-
-// $('#header').affix({
-//   offset: {
-//     top: 50
-//   }
-// });
-
-</script>

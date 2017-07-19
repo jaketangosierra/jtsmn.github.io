@@ -1,16 +1,20 @@
 body {
 	font-family: 'Garamond', serif !important
-	font-weight: 400;
+	font-weight: 800;
 	font-size: 14pt !important;
+	color: #7800f0  !important;
+	background-color: #FFF !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Gill Sans', sans-serif !important;
+  font-weight: bold;
+	color: #7800f0  !important;
 }
 
 a {
-	color: #000 !important;
-	text-decoration: underline !important;
+	color: #7800f0  !important;
+	text-decoration: none !important;
 }
 hr {
 	border: 0 !important;
@@ -19,9 +23,9 @@ hr {
 	background-image: linear-gradient(to right, rgba(128, 128, 128, 0), rgba(128, 128, 128, 0.75), rgba(128, 128, 128, 0.75), rgba(128, 128, 128, 0)) !important;
 }
 a:hover {
-	color: #000 !important;
+	color: #FFF !important;
 	background-color: #FFF !important;
-	/*text-decoration: none;*/
+	text-decoration: none !important;
 }
 .name {
 	text-transform: uppercase;
@@ -39,11 +43,16 @@ blockquote {
   /*}*/
 /*}*/
 .box, .box-no-padding, .quote {
-	background-color: rgba(255,255,255,0.60);
+	background-color: #f07800;
+	color: #FFF !important
 }
 .lightbox {
-	background-color: rgba(255,255,255,0.80);
+	background-color: #FFF;
+	color: #000;
 	top: 20px;
+}
+.lightbox a {
+	color: #7800f0 !important;
 }
 .box, .box-no-padding, .lightbox {
 		z-index: 10;
@@ -59,8 +68,8 @@ blockquote {
 .papers ul {
   list-style: none;
 }
-.add-padding a {
-	text-decoration: none;
+.add-padding a, a:hover {
+	text-decoration: none !important;
 	background-color: transparent;
 }
 .no-bullet, .debullet {
@@ -75,8 +84,9 @@ blockquote {
 .no-bullet li {
 	font-size: 16pt;
 	font-variant: small-caps;
+	font-weight: 500;
 	width: 100%;
-	color: #000 !important;
+	color: #7800f0  !important;
 	padding-left: 15px;
 }
 .allcaps, .smallcaps {
@@ -89,7 +99,7 @@ blockquote {
 	font-variant: small-caps;
 }
 .active {
-	text-decoration: none;
+	text-decoration: none !important;
 }
 .circular {
 	margin-left: auto;
@@ -110,9 +120,9 @@ blockquote {
 .active, .no-bullet li:hover {
 	display: block;
 	min-width: 100%;
-	text-decoration: none;
-	background-color: rgba(255,255,255,0.55) !important;
-	color: #000 !important;
+	text-decoration: none !important;
+	background-color: #f07800!important;
+	color: #7800f0  !important;
 	/*padding-left: 5px;*/
 	-webkit-border-top-left-radius: 5px;
 	-webkit-border-bottom-left-radius: 5px;
@@ -126,8 +136,8 @@ blockquote {
 	list-style-position: outside;
 	list-style-type: none;
 }
-.social a {
-	text-decoration: none;
+.social a, a:hover {
+	text-decoration: none !important;
 }
 .spacing {
 	/*display: block;*/
