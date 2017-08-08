@@ -25,8 +25,8 @@
 </head>
 <body>
   <!-- https://www.sessions.edu/color-calculator-results/?colors=f07800,7800f0,00f0f0 -->
-  <div id='map' style='position: fixed; width: 100vw; height: 100vh; z-index: -1000;'>
-  </div>
+  <div id='map' style='position: fixed; width: 100vw; height: 100vh; z-index: -1000;'> </div>
+  <div style='position: fixed; width: 100vw; height: 100vh; background-color: rgba(0,240,240, 0.55); z-index: -500;'></div>
 
   <script>
     var map = L.map('map', {zoomControl: false, attributionControl: false}).setView([44.96, -93.20], 11);
@@ -52,7 +52,7 @@
       </ul>
     </div>
   </nav>
-  <div id='sidebar' style='min-height: 100% !important; position: fixed; background-color: rgba(0,240,240, 0.55); color: #FFF;' class='col-md-3 sidebar'>
+  <div id='sidebar' style='min-height: 100% !important; position: fixed; color: #FFF;' class='col-md-3 sidebar'>
     <ul id='sidebar' class="no-bullet">
       <li id="home"><a href="/">Home</a></li>
       <li id="papers"><a href="/papers.html">Papers</a></li>
@@ -76,7 +76,7 @@
   </div>
   <div class='container-fluid' style='margin-top: 65px; padding-left: 0 !important; padding-right: 0 !important'>
      <div class='col-md-3' style='visibility: hidden;'></div>
-      <div id='body' class='col-md-9 add-padding' style='min-height: 100vh !important; background-color: rgba(0,240,240, 0.55); color: #000;'>
+      <div id='body' class='col-md-9 add-padding' style='min-height: 100vh !important; color: #000;'>
         <div class='col-md-10' style='background-color: rgba(255, 255, 255, 0.7);'>
         </div>
       </div>
