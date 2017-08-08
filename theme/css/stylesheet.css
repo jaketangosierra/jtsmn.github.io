@@ -20,9 +20,9 @@ a {
 }
 hr {
 	border: 0 !important;
-	height: 2px !important;
+	height: 1px !important;
 	padding: 0;
-	background-image: linear-gradient(to right, rgba(128, 128, 128, 0), rgba(128, 128, 128, 0.75), rgba(128, 128, 128, 0.75), rgba(128, 128, 128, 0)) !important;
+	background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255,255, 0.75), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0)) !important;
 }
 a:hover {
 	color: #FFF !important;
@@ -47,6 +47,18 @@ blockquote {
     /*// or any other property to achieve the desired*/
   /*}*/
 /*}*/
+.navbar-color {
+	background-color: #f07800 !important;
+	color: #FFF !important
+}
+
+.news {
+	font-size: 9pt;
+}
+.sidebar {
+	padding-right: 0 !important;
+	min-height: 100%;
+}
 .box, .quote {
 	background-color: #f07800;
 	color: #FFF !important
@@ -134,12 +146,12 @@ blockquote {
 	background-color: #7800f0 !important;
 	color: #FFF  !important;
 	/*padding-left: 5px;*/
-	-webkit-border-top-left-radius: 5px;
-	-webkit-border-bottom-left-radius: 5px;
-	-moz-border-radius-topleft: 5px;
-	-moz-border-radius-bottomleft: 5px;
-	border-top-left-radius: 5px;
-	border-bottom-left-radius: 5px;
+	-webkit-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border-radius: 5px;
 }
 
 .no-bullet li:hover > * {
