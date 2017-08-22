@@ -18,11 +18,16 @@ a {
 	color: #7800f0  !important;
 	text-decoration: none !important;
 }
-hr {
+.body hr {
 	border: 0 !important;
 	height: 1px !important;
 	padding: 0;
 	background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255,255, 0.75), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0)) !important;
+}
+
+hr {
+	height: 1px !important;
+	color: #FFF;
 }
 a:hover {
 	color: #FFF !important;
