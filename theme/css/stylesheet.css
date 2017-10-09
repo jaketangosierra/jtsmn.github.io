@@ -279,3 +279,7 @@ ul {
 	list-style-type: none !important;
   padding-left: 0 !important;
 }
+
+.acmdlstat {
+	font-size: 10pt !important;
+}
