@@ -15,7 +15,7 @@ ol, ul {
 ol {
   padding-left: 0;
 	font-family: 'Gill Sans', sans-serif !important;
-  font-size: 16;
+  font-size: 16pt;
   font-weight: bold;
 }
 
@@ -29,7 +29,7 @@ ul {
 }
 
 hr {
-  border: 3 black;
+  border: 3px black;
   text-align: center;
 }
 
