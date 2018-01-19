@@ -13,11 +13,12 @@
 <script src="https://unpkg.com/leaflet@0.7.7/dist/leaflet.js"></script>
 
   <!-- JQuery -->
-  <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <!-- Font Awesome -->
   <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
@@ -26,15 +27,15 @@
 </head>
 <body>
   <!-- https://www.sessions.edu/color-calculator-results/?colors=f07800,7800f0,00f0f0 -->
-  <div id='map' style='position: fixed; width: 100vw; height: 100vh; z-index: -1000;'> </div>
-  <div style='position: fixed; width: 100vw; height: 100vh; background-color: rgba(255,255,255, 0.6); z-index: -500;'></div>
+  <div id='map' style='position: fixed; width: 100vw; height: 100%; z-index: -1000;'> </div>
+  <div style='position: fixed; width: 100vw; height: 100%; background-color: rgba(255,255,255, 0.6); z-index: -500;'></div>
 
   <script>
     var map = L.map('map', {zoomControl: false, attributionControl: false}).setView([37.13, -80.25], 11);
     L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png').addTo(map);
   </script>
 
-  <nav class='navbar fixed-top navbar-color navbar-toggleable-md'>
+  <nav class='navbar fixed-top navbar-color navbar-toggleable-md' style='height: 115px;'>
       <div class='navbar-brand name'>
         Jacob Thebault-Spieker
         <a class='icon' href="https://twitter.com/jts__"><i class="fab fa-twitter fa-lg"></i></a>
@@ -45,15 +46,15 @@
         </script>
       </div>
       <div class='navbar-text'>
-        <a style='line-height: 0.75em' id='home' href="/">Home</a>&nbsp;|&nbsp;
-        <a style='line-height: 0.75em' id='papers' href="/papers.html">Papers</a>&nbsp;|&nbsp;
-        <a style='line-height: 0.75em' id='ephemera' href="/ephemera.html">Ephemera</a>&nbsp;|&nbsp;
+        <a id='home' href="/">Home</a>&nbsp;|&nbsp;
+        <a id='papers' href="/papers.html">Papers</a>&nbsp;|&nbsp;
+        <a id='ephemera' href="/ephemera.html">Ephemera</a>&nbsp;|&nbsp;
         <a id='cv' href="/curriculum-vitae.html" target="blank">Curriculum Vitae&nbsp;<i class="fas fa-external-link-alt"></i></a></li>
-        <a href='/cv.pdf' target="blank">&nbsp;<i class="fas fa-file-pdf"></i></a>
+        <a href='/cv.pdf' target="blank">&nbsp;<i class="fas fa-file-pdf fa-fw"></i></a>
       </div>
 
   </nav>
-  <div id='sidebar' style='min-height: 100% !important; position: fixed; color: #000;' class='col-md-3 sidebar'>
+  <div id='sidebar' style='min-height: 100% !important; position: fixed; color: #000;' class='d-none d-md-block col-md-3 sidebar'>
     <br><h3> News & Updates </h3>
     <div class='add-padding'>
       <ul>
@@ -64,9 +65,8 @@
       </ul>
     </div>
   </div>
-  <div class='container-fluid' style='margin-top: 65px; padding-left: 0 !important; padding-right: 0 !important'>
-     <div class='col-md-3' style='visibility: hidden;'></div>
-      <div id='body' class='col-md-9 add-padding' style='min-height: 100vh !important; color: #000;'>
+  <div class='container-fluid' style='margin-top: 115px; padding-left: 0 !important; padding-right: 0 !important'>
+      <div id='body' class='offset-md-3 col-md-9 col-sm-12 add-padding' style='min-height: 100vh !important; color: #000;'>
         <div class='col-md-10'>
 <ul>
     <li><a href="./category/ephemera.html">ephemera</a></li>

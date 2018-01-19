@@ -16,10 +16,10 @@ h1, h2, h3, h4, h5, h6 {
 nav a {
 	color: #FFF !important;
 	text-decoration: none !important;
+	padding: 5px;
 }
 
 nav a:hover, nav a:focus {
-	text-decoration: underline !important;
 	color: #f07800 !important;
 	background-color: #FFF !important;
 }
@@ -73,25 +73,9 @@ blockquote {
 	padding-right: 0 !important;
 	min-height: 100%;
 }
-.box, .quote {
+.quote {
 	background-color: #f07800;
 	color: #FFF !important
-}
-.lightbox {
-	background-color: #FFF;
-	color: #000;
-	top: 20px;
-}
-.lightbox a {
-	color: #FFF !important;
-}
-.box, .lightbox {
-		z-index: 10;
-	margin-top: 50px;
-}
-.lightbox h3 {
-	font-variant: small-caps;
-	display: run-in;
 }
 .add-padding {
 	padding: 15px;
@@ -103,23 +87,9 @@ blockquote {
 	text-decoration: none !important;
 	background-color: transparent !important;
 }
-.no-bullet, .debullet {
+.debullet {
 	width: 100%;
 	list-style-type: none;
-}
-.no-bullet a {
-	text-decoration: none !important;
-	background-color: transparent !important;
-	color: #FFF  !important;
-	/* padding-left: 10px; */
-}
-.no-bullet li {
-	font-size: 16pt;
-	font-variant: small-caps;
-	font-weight: 500;
-	width: 100%;
-	color: #FFF  !important;
-	padding-left: 25px;
 }
 .allcaps, .smallcaps {
 	text-decoration: none;
@@ -149,63 +119,11 @@ blockquote {
 	filter: alpha(opacity=0);
 	}
 
-.no-bullet a:hover {
-	text-decoration: none !important;
-	background-color: #FFF !important;
-	color: #FFF  !important;
-}
-.active, .no-bullet li:hover {
-	min-width: 100%;
-	text-decoration: none !important;
-	background-color: #FFF !important;
-	color: #FFF  !important;
-	/*padding-left: 5px;*/
-	-webkit-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	border-radius: 5px;
-}
-
-.no-bullet li:hover > * {
-	color: #FFF !important;
-}
-.no-bullet-social {
-	text-indent: -1.5em;
-	list-style-position: outside;
-	list-style-type: none;
-}
-.spacing {
-	/*display: block;*/
-	text-align: center;
-}
-.spacing * {
-  background-color: rgba(0, 0, 0, 0.5);
-	font-size: 16pt;
-	padding-left: 1em;
-	letter-spacing: 1em;
-	color: white;
-}
 .author-date {
 	font-size: 12pt;
 	left-margin: 2%;
 }
 
-.map {
-	position: fixed;
-	z-index: -500;
-	width: 100%;
-	height: 100%;
-}
-.map-overlay {
-	background-color: #000;
-	opacity: 0.75;
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	z-index: -250;
-}
 
 @media (min-width: 992px) {
     .links-toggle {
