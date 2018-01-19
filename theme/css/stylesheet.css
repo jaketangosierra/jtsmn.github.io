@@ -42,6 +42,10 @@ a:hover {
 hr {
 	height: 1px !important;
 }
+.justify {
+	text-align: justify;
+	text-justify: inter-word;
+}
 
 .name {
 	font-family: 'Gill Sans', sans-serif !important;
