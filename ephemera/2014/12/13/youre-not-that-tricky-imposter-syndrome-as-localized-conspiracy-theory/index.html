@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="../../../../../theme/js/js.js"> </script>
-  <link rel="stylesheet" href="../../../../../theme/css/stylesheet.css" />
+  <script src="http://localhost:5000/theme/js/js.js"> </script>
+  <link rel="stylesheet" href="http://localhost:5000/theme/css/stylesheet.css" />
   <title>Jacob Thebault-Spieker</title>
-  <!-- <link href="http://jtsmn.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Jacob Thebault-Spieker Atom Feed" /> -->
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,46 +25,39 @@
 <body>
   <!-- https://www.sessions.edu/color-calculator-results/?colors=f07800,7800f0,00f0f0 -->
   <div id='map' style='position: fixed; width: 100vw; height: 100vh; z-index: -1000;'> </div>
-  <div style='position: fixed; width: 100vw; height: 100vh; background-color: rgba(0,240,240, 0.55); z-index: -500;'></div>
+  <div style='position: fixed; width: 100vw; height: 100vh; background-color: rgba(255,255,255, 0.6); z-index: -500;'></div>
 
   <script>
     var map = L.map('map', {zoomControl: false, attributionControl: false}).setView([37.13, -80.25], 11);
-    L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}.png').addTo(map);
-</script>
+    L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png').addTo(map);
+  </script>
 
-  <nav class='navbar navbar-fixed-top navbar-color'>
-    <div class='container-fluid'>
-      <div class='navbar-header'>
-        <h1 class='name'>Jacob Thebault-Spieker</h1>
+  <nav class='navbar fixed-top navbar-color navbar-toggleable-md'>
+      <div class='navbar-brand name'>
+        Jacob Thebault-Spieker
+        <a href="https://twitter.com/jts__"><i class="fa fa-twitter fa-lg"></i></a>
+        <a href="http://jacob.thebault-spieker.com/feeds/all.atom.xml"><i class="fa fa-rss fa-lg" aria-hidden="true"></i></a>
+        <!-- below is <a href="mailto:your@email.here"><i class="fa fa-envelope fa-2x"></i></a>, through http://hivelogic.com/enkoder/ Advanced form -->
+        <script type="text/javascript">
+          while(xe=eval(xe)); 
+        </script>
       </div>
-      <span class='navbar-right navbar-text'>
-          <a href="https://twitter.com/jts__"><i class="fa fa-twitter fa-2x"></i></a>
-          <a href="http://jacob.thebault-spieker.com/feeds/all.atom.xml"><i class="fa fa-rss fa-2x" aria-hidden="true"></i></a>
-          <!-- below is <a href="mailto:your@email.here"><i class="fa fa-envelope fa-2x"></i></a>, through http://hivelogic.com/enkoder/ Advanced form -->
-          <script type="text/javascript">
-            while(xn=eval(xn)); 
-          </script>
-        </span>
-    </div>
+      <div class='navbar-text'>
+        <a style='line-height: 0.75em' id='home' href="/">Home</a>&nbsp;|&nbsp;
+        <a style='line-height: 0.75em' id='papers' href="/papers.html">Papers</a>&nbsp;|&nbsp;
+        <a style='line-height: 0.75em' id='ephemera' href="/ephemera.html">Ephemera</a>&nbsp;|&nbsp;
+        <a id='cv' href="/curriculum-vitae.html" target="blank">Curriculum Vitae&nbsp;<i class="fa fa-external-link"></i></a></li>
+        <a href='/cv.pdf' target="blank">&nbsp;<i class="fa fa-file-pdf-o"></i></a>
+      </div>
+
   </nav>
-  <div id='sidebar' style='min-height: 100% !important; position: fixed; color: #FFF;' class='col-md-3 sidebar'>
-    <ul id='sidebar' class="no-bullet">
-      <li id="home"><a href="/">Home</a></li>
-      <li id="papers"><a href="/papers.html">Papers</a></li>
-      <li id="ephemera"><a href="/ephemera.html">Ephemera</a></li>
-      <li id='cv'><a href="/curriculum-vitae.html" target="blank">Curriculum Vitae&nbsp;<i class="fa fa-external-link"></i></a></li>
-      <li id='cv_pdf'>&emsp;(or as <a href='/cv.pdf' target="blank">PDF&nbsp;<i class="fa fa-file-pdf-o"></i></a>)</li>
-    </ul>
+  <div id='sidebar' style='min-height: 100% !important; position: fixed; color: #000;' class='col-md-3 sidebar'>
     <br><h3> News & Updates </h3>
     <div class='add-padding'>
       <ul>
-        <hr>
         <li class='news'> <strong>Jan. 2018</strong>&nbsp;Moved to Blacksburg, VA to start a postdoc position in the Crowd Intelligence Lab at VT with Kurt Luther! </li>
-        <hr>
         <li class='news'> <strong>Dec. 2017</strong>&nbsp;I successfully defended my dissertation! </li>
-        <hr>
         <li class='news'> <strong>Oct. 2017</strong>&nbsp;My first author paper <em>Geographic Biases are ‘Born, not Made’: Exploring Contributors’ Spatiotemporal Behavior in OpenStreetMap</em> was accepted to GROUP 2018! </li>
-        <hr>
         <li class='news'> <strong>Sept. 2017</strong>&nbsp;Sucessfully passed my Thesis Proposal! </li>
       </ul>
     </div>
@@ -73,11 +65,11 @@
   <div class='container-fluid' style='margin-top: 65px; padding-left: 0 !important; padding-right: 0 !important'>
      <div class='col-md-3' style='visibility: hidden;'></div>
       <div id='body' class='col-md-9 add-padding' style='min-height: 100vh !important; color: #000;'>
-        <div class='col-md-10' style='background-color: rgba(255, 255, 255, 0.7);'>
+        <div class='col-md-10'>
 <section id="content" class="body">
   <header>
     <h2 class="entry-title">
-      <a href="../../../../../ephemera/2014/12/13/youre-not-that-tricky-imposter-syndrome-as-localized-conspiracy-theory/" rel="bookmark"
+      <a href="http://localhost:5000/ephemera/2014/12/13/youre-not-that-tricky-imposter-syndrome-as-localized-conspiracy-theory/" rel="bookmark"
          title="Permalink to You're not that tricky: Imposter Syndrome as localized conspiracy theory">You're not that tricky: Imposter Syndrome as localized conspiracy theory</a></h2>
  
   </header>
@@ -89,7 +81,7 @@
       Mon 15 December 2014
     </time>
     <address class="vcard author">
-      By           <a class="url fn" href="../../../../../author/jacob-thebault-spieker.html">Jacob Thebault-Spieker</a>
+      By           <a class="url fn" href="http://localhost:5000/author/jacob-thebault-spieker.html">Jacob Thebault-Spieker</a>
     </address>
   </footer><!-- /.post-info -->
   <div class="entry-content">

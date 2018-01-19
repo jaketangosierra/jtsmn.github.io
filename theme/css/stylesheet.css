@@ -1,8 +1,8 @@
 body {
-	font-family: 'Garamond', serif !important
-	font-weight: 800;
+	font-family: 'Garamond', serif !important;
+	font-weight: 400;
 	font-size: 13pt !important;
-	color: #7800f0  !important;
+	color: #FFF  !important;
 	background-color: #FFF !important;
 }
 
@@ -10,37 +10,43 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: 'Gill Sans', sans-serif !important;
 	font-variant: small-caps;
   font-weight: 700;
-	color: #7800f0  !important;
 	margin-top: 10px !important;
 }
 
-a {
-	color: #7800f0  !important;
+.navbar a {
+	color: #FFF !important;
 	text-decoration: none !important;
 }
+
+.navbar a:hover {
+	text-decoration: underline !important;
+}
+
+a {
+	color: #f07800 !important;
+}
+
+a:hover {
+	text-decoration: underline !important;
+}
+
 .body hr {
 	border: 0 !important;
 	height: 1px !important;
 	padding: 0;
-	background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255,255, 0.75), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0)) !important;
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0,0, 0.75), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)) !important;
 }
 
 hr {
 	height: 1px !important;
-	color: #FFF;
 }
-a:hover {
-	color: #FFF !important;
-	background-color: #FFF !important;
-	text-decoration: none !important;
-}
+
 .name {
-	display: inline-block;
+	font-family: 'Gill Sans', sans-serif !important;
+	font-variant: small-caps;
+  font-weight: 700;
 	white-space: nowrap;
 	font-variant: small-caps;
-	font-weight: 600;
-	margin-left: auto;
-	margin-right: auto;
 	text-align: center;
 }
 blockquote {
@@ -54,11 +60,12 @@ blockquote {
 /*}*/
 .navbar-color {
 	background-color: #f07800 !important;
-	color: #FFF !important
+	color: #FFF !important;
 }
 
 .news {
-	font-size: 9pt;
+	font-size: 12pt;
+	padding-bottom: 4px;
 }
 .sidebar {
 	padding-right: 0 !important;
@@ -74,7 +81,7 @@ blockquote {
 	top: 20px;
 }
 .lightbox a {
-	color: #7800f0 !important;
+	color: #FFF !important;
 }
 .box, .lightbox {
 		z-index: 10;
@@ -142,13 +149,13 @@ blockquote {
 
 .no-bullet a:hover {
 	text-decoration: none !important;
-	background-color: #7800f0 !important;
+	background-color: #FFF !important;
 	color: #FFF  !important;
 }
 .active, .no-bullet li:hover {
 	min-width: 100%;
 	text-decoration: none !important;
-	background-color: #7800f0 !important;
+	background-color: #FFF !important;
 	color: #FFF  !important;
 	/*padding-left: 5px;*/
 	-webkit-border-radius: 5px;
