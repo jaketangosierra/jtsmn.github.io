@@ -9,9 +9,13 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Gill Sans', sans-serif !important;
 	font-variant: small-caps;
-  font-weight: 700;
 	margin-top: 10px !important;
 }
+
+h1, h2 {
+	font-variant: uppercase !important;
+}
+
 
 nav a {
 	color: #FFF !important;
