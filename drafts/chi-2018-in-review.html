@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="../theme/js/js.js"> </script>
+  <link rel="stylesheet" href="../theme/css/stylesheet.css" />
+  <title>Jacob Thebault-Spieker</title>
+  <!-- <link href="http://jtsmn.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Jacob Thebault-Spieker Atom Feed" /> -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Leaflet / Stamen -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.7/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@0.7.7/dist/leaflet.js"></script>
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
+  <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
+
+</head>
+<body>
+  <!-- https://www.sessions.edu/color-calculator-results/?colors=f07800,7800f0,00f0f0 -->
+  <div id='map' style='position: fixed; width: 100vw; height: 100%; z-index: -1000;'> </div>
+  <div style='position: fixed; width: 100vw; height: 100%; background-color: rgba(255,255,255, 0.6); z-index: -500;'></div>
+
+  <script>
+    var map = L.map('map', {zoomControl: false, attributionControl: false}).setView([37.13, -80.25], 11);
+    L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png').addTo(map);
+  </script>
+
+  <nav class='navbar fixed-top navbar-color navbar-toggleable-md' style='height: 115px;'>
+      <div class='navbar-brand name'>
+        Jacob Thebault-Spieker
+        <a class='icon' href="https://twitter.com/jts__"><i class="fab fa-twitter fa-lg"></i></a>
+        <a href="http://jacob.thebault-spieker.com/feeds/all.atom.xml"><i class="fas fa-rss fa-lg"></i></a>
+        <!-- below is <a href="mailto:your@email.here"><i class="fa fa-envelope fa-2x"></i></a>, through http://hivelogic.com/enkoder/ Advanced form -->
+        <script type="text/javascript">
+          while(xh=eval(xh)); 
+        </script>
+      </div>
+      <div class='navbar-text'>
+        <a id='home' href="/">Home</a>&nbsp;|&nbsp;
+        <a id='papers' href="/papers.html">Papers</a>&nbsp;|&nbsp;
+        <a id='ephemera' href="/ephemera.html">Ephemera</a>&nbsp;|&nbsp;
+        <a id='cv' href="/curriculum-vitae.html" target="blank">Curriculum Vitae&nbsp;<i class="fas fa-external-link-alt"></i></a></li>
+        <a href='/thebaultspieker_cv.pdf' target="blank">&nbsp;<i class="fas fa-file-pdf fa-fw"></i></a>
+      </div>
+
+  </nav>
+  <div id='sidebar' style='min-height: 100% !important; position: fixed; color: #000;' class='d-none d-md-block col-md-3 sidebar justify'>
+    <br><h3> News & Updates </h3>
+    <div class='add-padding'>
+      <ul>
+        <li class='news'> <strong>Jan. 2018</strong>&nbsp;Moved to Blacksburg, VA to start a postdoc position in the Crowd Intelligence Lab at VT with Kurt Luther! </li>
+        <li class='news'> <strong>Dec. 2017</strong>&nbsp;I successfully defended my dissertation! </li>
+        <li class='news'> <strong>Oct. 2017</strong>&nbsp;My first author paper <em>Geographic Biases are ‘Born, not Made’: Exploring Contributors’ Spatiotemporal Behavior in OpenStreetMap</em> was accepted to GROUP 2018! </li>
+        <li class='news'> <strong>Sept. 2017</strong>&nbsp;Sucessfully passed my Thesis Proposal! </li>
+      </ul>
+    </div>
+  </div>
+  <div class='container-fluid' style='margin-top: 115px; padding-left: 0 !important; padding-right: 0 !important'>
+      <div id='body' class='offset-md-3 col-md-9 col-sm-12 add-padding justify' style='min-height: 100vh !important; color: #000;'>
+        <div class='col-md-10'>
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="../drafts/chi-2018-in-review.html" rel="bookmark"
+         title="Permalink to CHI 2018 in Review">CHI 2018 in Review</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <time class="published" datetime="2018-04-30T00:00:00-04:00">
+      Mon 30 April 2018
+    </time>
+    <time class="modified" datetime="2018-04-30T00:00:00-04:00">
+      Mon 30 April 2018
+    </time>
+    <address class="vcard author">
+      By           <a class="url fn" href="../author/jacob-thebault-spieker.html">Jacob Thebault-Spieker</a>
+    </address>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <p>There are a number of different ways people write up summaries of conferences they go to. Dan Cosley writes up <a href="http://blogs.cornell.edu/danco/">trip reports</a>, I have seen others write up their <a href="https://medium.com/@johnrooksby/picks-from-the-lost-cscw-conference-1af3a3226628">favorite papers</a><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, and others just <a href="https://twitter.com/search?f=tweets&amp;vertical=default&amp;q=%23CHI2018&amp;src=typd">tweet</a>.</p>
+<p>CHI is huge, so I think a structured “favorites” list is not actually representative of the conference. It would be impossible for someone attending every session to see everything<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>, and it is not uncommon for interesting things to be happening simultaneously. Unfortunately, I was unable to attend every session for work reasons, so there were some sessions I needed to skip even though I was excited about some of the talks. I was, however, careful to protect the meal and coffee breaks at the conference, some of the talk sessions I wanted to see, the sessions I presented in, and the session I was chairing.</p>
+<p>So in this “<em>Jake’s</em> CHI 2018 in Review” post, I am going to try to emphasize: (1) good questions I heard, (2) the cool talks I saw, (3) the papers that looked cool that I didn’t get to see, (4) a summary of the session I chaired (which I picked because I thought it looked interesting), (5) the sessions I presented in, and (6) fun conversations I had. Hopefully this highly-subjective amalgamation of CHI 2018 will be interesting and helpful to others.</p>
+<h2 id="good-questions-i-heard">Good Questions I Heard</h2>
+<p>Dan Cosley, as one part of what I see as his proactive ‘care and maintenance’ of our community likes to say <a href="https://blogs.cornell.edu/danco/2013/02/18/on-asking-questions-and-academic-love/">“questions are academic love”</a>. He has raised this point at every conference I’ve ever seen him attend, and always as an exhortation to be thoughtful and considerate about the community we’re a part of. In that spirit, I wanted to note a few of the questions I heard that made me think, and I’m glad were asked.</p>
+<p>The first question that I was particularly intrigued by was raised (twice) during the Sharing/New Economy session. Paraphrased, the question was “Our internal data shows that when drivers have more autonomy, they make decisions that are economically worse for them, and they make decisions that lead to increased bias. What do you think we should do?” This tension is particularly interesting to me, given my own work on geographic biases in the sharing economy that I presented later in the session. I noted this question the first time it was raised, and the questioner asked the question again after my talk as well. We think our work speaks to this issue, in part because we our work suggests that the biases are a result of drivers’ “mental maps” (or geographic mental models of the world), and that presents an opportunity to design interventions that don’t need to be as coarse as minimizing driver autonomy about which rides they give or don’t.</p>
+<h2 id="cool-talks-i-saw">Cool Talks I Saw</h2>
+<h2 id="cool-looking-papers-i-didnt-get-to-see">Cool-looking Papers I Didn’t Get to See</h2>
+<h2 id="a-summary-of-the-crowdsourcing-session">A Summary of the Crowd(sourcing) Session</h2>
+<p>This was the first time I took on the role of chairing a session at CHI, and its a somewhat daunting task. I felt like it was important to make sure I had prepared questions for each of the talks (because ‘questions are academic love’), which meant engaging with each of the papers being presented beforehand.</p>
+<p>The first talk in this session was presented by Virginia Tech’s own <a href="http://people.cs.vt.edu/kluther/">Kurt Luther</a> on behalf of his former student Divit Singh. In this project, they discussed a system to help experts in cellular biology using crowd workers. In particular, there is a complex graph-layout problem in biology related to how cells work. Based on deeply understanding expert process, they showed that the task could be broken down into 4 goals, which crowd workers can perform pretty well at. Crowds perform better than automated graph-layout methods, and in some cases on par with domain experts.</p>
+<p>The second talk in this session was presented by <a href="http://users.eecs.northwestern.edu/~ykt413/">Yongsung Kim</a>, a student at Northwestern University. This study</p>
+<p>THe third talk in this session was presented by <a href="http://w-x.ch">Alexandre Kaspar</a> at MIT.</p>
+<p>The fourth talk in this session was presented by <a href="http://www.iamxuwang.com">Xu Wang</a>, a student at CMU, reporting on work she did as an intern at Autodesk.</p>
+<h2 id="the-sessions-i-presented-in">The Sessions I Presented In</h2>
+<p>I presented in two sessions, but I went a little crazy with the self-promotion while at the conference, so I want to also point to the other cool talks in these sessions.</p>
+<h3 id="sharingnew-economy">Sharing/New Economy</h3>
+<p><strong>Session Chair</strong>: <a href="https://www.microsoft.com/en-us/research/people/sianl/?from=http%3A%2F%2Fresearch.microsoft.com%2Fen-us%2Fpeople%2Fsianl%2F">Siân Lindley</a> (<span class="citation" data-cites="SianLindley"><span class="citeproc-not-found" data-reference-id="SianLindley"><strong>???</strong></span></span>(https://twitter.com/sianlindley))</p>
+<p>The first talk<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> in this session was presented by <a href="http://personal.psu.edu/nzm37/">Ning Ma</a>, a student at Penn State University. Their work focused on understanding Uber drivers and their relationships to Uber the platform through the lens of Stakeholder Theory. The talk itself focused on drivers as stakeholders within an organization, and they suggested increasing driver autonomy as one of the major design implications of their work. This implication led to what I found to be one of the most interesting questions I heard, raised by an Uber employee (as I discussed above).</p>
+<p>The second talk<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> in this session was presented by <a href="https://www.cc.gatech.edu/~sjhaver3/">Shagun Jhaver</a>, a student at Georgia Tech, reporting on work he did as an intern at Airbnb. This work focused on what they called “double negotiation” that hosts experience: needing to attend to attracting guests to stay with them, and their perceptions of the expectations imposed by the algorithms they are subject to. Their findings suggest that Airbnb hosts experience algorithmic anxiety, and one of the ways they found that hosts deal with this anxiety is to try to reverse engineer the platform’s algorithms.</p>
+<p>The third talk<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> in this session was presented by <a href="http://mingyin.org">Ming Yin</a>, a postdoc with Microsoft Research in the Computational Social Science group. This work sought to understand the economic value that workers in Mechanical Turk place on increasing the flexibility (operationalized as amount of time allotted) they are given about when to complete the HIT they accept. I thought this was really interesting work, and I was really curious about how Ming thinks about the tension between giving workers flexibility, and the kinds of work on Turk that necessitate speedy participation (e.g. to power a live system). The economic metric is an interesting one, and suggests the need to pay a premium for workers who will respond quickly. A clear next step is understanding if paying the premium actually does adjust behavior, or whether the economic metric is a side-effect of some other underlying motivational process.</p>
+<p>The fourth talk in this session was presented by me, about a TOCHI article<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> from when I was a student.</p>
+<h3 id="geography-and-location">Geography and Location</h3>
+<p><strong>Session Chair</strong>: <a href="https://jean.lgbt">Jean Hardy</a> (<span class="citation" data-cites="gaycyborg"><span class="citeproc-not-found" data-reference-id="gaycyborg"><strong>???</strong></span></span>(https://twitter.com/gaycyborg))</p>
+<p>The first talk in this session was presented by <a href="https://research.ncl.ac.uk/healthpsychology/people/students/thomasmaskell.html">Thomas Maskell</a>, a student at Newcastle University.</p>
+<p>The second talk in this session was presented by me, about our work on understanding geographic contribution behavior based on gravity models, from the field of geography<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>.</p>
+<p>The third talk in this session was presented by <a href="http://bscc.spatial-cognition.de/kariryaa">Ankit Kariryaa</a>, a student at the University of Bremen.</p>
+<p>The fourth talk in this session was presented by <a href="http://homepages.uc.edu/~freemago/">Guo Freeman</a>, a professor at the University of Cincinnati.</p>
+<h2 id="fun-conversations-i-had">Fun Conversations I Had</h2>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Sort of a bad example, since it’s about a body of papers that have not yet been at a conference<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>There are something like 16 total tracks happening simultaneously<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p>Ning F. Ma, Chien Wen Yuan, Moojan Ghafurian, and Benjamin V. Hanrahan. 2018. Using Stakeholder Theory to Examine Drivers’ Stake in Uber. In Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems (CHI ’18). ACM, New York, NY, USA, Paper 83, 12 pages. DOI: https://doi.org/10.1145/3173574.3173657<a href="#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p>Shagun Jhaver, Yoni Karpfen, and Judd Antin. 2018. Algorithmic Anxiety and Coping Strategies of Airbnb Hosts. In Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems (CHI ’18). ACM, New York, NY, USA, Paper 421, 12 pages. DOI: https://doi.org/10.1145/3173574.3173995<a href="#fnref4" class="footnote-back">↩</a></p></li>
+<li id="fn5"><p>Ming Yin, Siddharth Suri, and Mary L. Gray. 2018. Running Out of Time: The Impact and Value of Flexibility in On-Demand Crowdwork. In Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems (CHI ’18). ACM, New York, NY, USA, Paper 430, 11 pages. DOI: https://doi.org/10.1145/3173574.3174004<a href="#fnref5" class="footnote-back">↩</a></p></li>
+<li id="fn6"><p>Jacob Thebault-Spieker, Brent Hecht, and Loren Terveen. 2018. Geographic Biases are ‘Born, not Made’: Exploring Contributors’ Spatiotemporal Behavior in OpenStreetMap. In Proceedings of the 2018 ACM Conference on Supporting Groupwork (GROUP ’18). ACM, New York, NY, USA, 71-82. DOI: https://doi.org/10.1145/3148330.3148350<a href="#fnref6" class="footnote-back">↩</a></p></li>
+<li id="fn7"><p>Thomas Maskell, Clara Crivellaro, Robert Anderson, Tom Nappey, Vera Araújo-Soares, and Kyle Montague. 2018. Spokespeople: Exploring Routes to Action through Citizen-Generated Data. In Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems (CHI ’18). ACM, New York, NY, USA, Paper 405, 12 pages. DOI: https://doi.org/10.1145/3173574.3173979<a href="#fnref7" class="footnote-back">↩</a></p></li>
+</ol>
+</section>
+
+  </div><!-- /.entry-content -->
+</section>
+        </div>
+      </div>
+  </div>
+</body>
