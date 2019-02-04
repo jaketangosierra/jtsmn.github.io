@@ -23,13 +23,14 @@ ol {
 ul {
   font-family: 'Garamond', serif !important;
   font-weight: normal;
-  list-style-position: inside !important;
   padding-left: 12px;
   display: inline-block;
 }
 
 ul li:before {
-  content: "-";
+  content: "–";
+  list-style-position: outside;
+  margin-left: 1em;
 }
 
 ul li {
