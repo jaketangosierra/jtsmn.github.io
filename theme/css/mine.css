@@ -21,6 +21,7 @@ ol {
 
 li {
   margin-bottom: 10px;
+  list-style-position: outside;
 }
 
 li:before {
