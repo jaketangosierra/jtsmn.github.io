@@ -24,15 +24,16 @@ ul {
   font-family: 'Garamond', serif !important;
   font-weight: normal;
   list-style-position: inside !important;
-  padding-left: 10px;
+  padding-left: 12px;
+  display: inline-block;
 }
 
 ul li:before {
-  content: "—";
+  content: "-";
 }
 
 ul li {
-  display: inline-block;
+  
 }
 
 li {
