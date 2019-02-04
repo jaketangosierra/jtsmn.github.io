@@ -25,7 +25,6 @@ li {
 
 li:before {
   content: "\2014\a0";
-  padding-right: 5px;
 }
 
 ul {
