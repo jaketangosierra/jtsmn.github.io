@@ -1,6 +1,5 @@
 body {
 	font-family: 'Garamond', serif !important;
-	font-weight: 400;
 	font-size: 12pt !important;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -20,7 +19,7 @@ ol {
 ul {
   font-family: 'Garamond', serif !important;
   font-weight: normal;
-  list-style-position: outside;
+  list-style-position: outside !important;
 }
 
 ul li:before {
