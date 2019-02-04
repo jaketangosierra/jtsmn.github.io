@@ -12,14 +12,12 @@ ol, ul {
 }
 
 ol {
-  padding-left: 0;
 	font-family: 'Gill Sans', sans-serif !important;
   font-size: 16pt;
   font-weight: bold;
 }
 
 ul {
-  padding-left: 0;
   font-family: 'Garamond', serif !important;
   font-weight: normal;
   list-style-position: outside;
