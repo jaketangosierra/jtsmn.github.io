@@ -26,13 +26,13 @@ ul {
   padding-left: 12px;
 }
 
-ul li:before {
-  content: "–";
-}
-
 ul li {
   margin-left: 1em;
   list-style-position: outside;
+}
+
+ul li:before {
+  content: "–";
 }
 
 li {
