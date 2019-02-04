@@ -23,8 +23,8 @@ ol {
 ul {
   font-family: 'Garamond', serif !important;
   font-weight: normal;
-  list-style-position: outside !important;
-  padding-left: 0;
+  list-style-position: inside !important;
+  padding-left: 10px;
 }
 
 ul li:before {
