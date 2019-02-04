@@ -19,8 +19,13 @@ ol {
   font-weight: bold;
 }
 
-ol li {
-  margin-bottom: 20px;
+li {
+  margin-bottom: 10px;
+}
+
+li:before {
+  content: "\2014\a0";
+  padding-right: 5px;
 }
 
 ul {
