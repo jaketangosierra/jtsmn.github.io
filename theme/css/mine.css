@@ -29,6 +29,7 @@ li:before {
 }
 
 ul {
+  padding-left: 0;
   font-family: 'Garamond', serif !important;
   font-weight: normal;
 }
