@@ -10,7 +10,7 @@ h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
-ol, ul {
+ol {
 	list-style-type: none;
 }
 
@@ -29,10 +29,6 @@ ul {
 ul li {
   margin-left: 1em;
   list-style-position: outside;
-}
-
-ul li:before {
-  content: "–";
 }
 
 li {
