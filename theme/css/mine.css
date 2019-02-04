@@ -24,10 +24,11 @@ ul {
   font-family: 'Garamond', serif !important;
   font-weight: normal;
   list-style-position: outside !important;
+  margin-left: 30px;
 }
 
 ul li:before {
-  content: "\2014\a0";
+  content: "—";
 }
 
 li {
