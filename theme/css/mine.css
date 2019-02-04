@@ -23,6 +23,7 @@ ul {
   padding-left: 0;
   font-family: 'Garamond', serif !important;
   font-weight: normal;
+  list-style-position: outside;
 }
 
 ul li:before {
@@ -31,7 +32,6 @@ ul li:before {
 
 li {
   margin-bottom: 10px;
-  list-style-position: outside;
 }
 
 hr {
