@@ -1,18 +1,24 @@
 body {
-	font-family: 'Gill Sans', sans-serif !important;
-  font-size: 12pt !important;
+  font-family: 'Garamond', serif !important;
+  font-size: 11pt !important;
   padding: 0 5%;
 }
+
 h1, h2, h3, h4, h5, h6 {
+  font-family: 'Gill Sans', sans-serif !important;
   margin-top: 0.5em;
 }
 
 h1, h2, h3 {
   font-weight: 400;
+}
+
+h1, h2 {
   text-transform: uppercase;
 }
 
 h3 {
+  font-weight: 300;
   font-style: italic;
 }
 
@@ -33,6 +39,7 @@ table {
 
 dt {
   float: left;
+  font-family: 'Gill Sans', sans-serif !important;
 }
 
 dd {
@@ -41,6 +48,10 @@ dd {
 
 dd > p {
   margin: 0px;
+}
+
+hr, p, dd > p {
+  margin-bottom: 7px;
 }
 
 table, .heading {
