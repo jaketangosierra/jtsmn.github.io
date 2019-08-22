@@ -1,56 +1,49 @@
 body {
-	font-family: 'Garamond', serif !important;
-  font-size: 10pt !important;
+	font-family: 'Gill Sans', sans-serif !important;
+  font-size: 12pt !important;
+  padding: 0 5%;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Gill Sans', sans-serif !important;
-  font-weight: 400;
-  margin-top: 0.1em;
-  margin-bottom: 0.1em;
-}
-h3 {
-  font-weight: 300;
+  margin-top: 0.5em;
 }
 
-h4, h5, h6 {
-  font-weight: 200;
+h1, h2, h3 {
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+h3 {
   font-style: italic;
 }
 
-ol {
-	list-style-type: none;
+h2, h3, h4, h5, h6, p, hr, ol, ul, table {
+  margin: 0px 40px;
 }
 
-ol {
-	font-family: 'Gill Sans', sans-serif !important;
-  font-weight: bold;
-}
-
-ul {
-  font-family: 'Garamond', serif !important;
-  font-weight: normal;
-  padding-left: 12px;
-}
-
-ul li {
-  margin-left: 1em;
-  list-style-position: outside;
-}
-
-li {
-  margin-bottom: 0.25em;
-}
-
-hr {
-  border: 3px black;
-  text-align: center;
+h4, h5, h6, dd, li {
+  font-weight: 300;
+  
 }
 
 table {
-	width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
 }
 
-.heading {
+dt {
+  float: left;
+}
+
+dd {
+  display: block;
+}
+
+dd > p {
+  margin: 0px;
+}
+
+table, .heading {
   text-align: center;
   margin-left: auto !important;
   margin-right: auto !important;
