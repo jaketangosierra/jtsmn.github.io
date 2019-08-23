@@ -6,27 +6,35 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Gill Sans', sans-serif !important;
-  margin-top: 0.5em;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5, h6, hr, p, dd > p, .line-block {
+  padding-bottom: 0.5em;
+}
+
+h1, h2, h3, h4 {
   font-weight: 400;
 }
 
-h1, h2 {
+h1, h2, h3 {
   text-transform: uppercase;
 }
 
-h3 {
+h4 {
   font-weight: 300;
+  font-size: 11pt !important;
   font-style: italic;
 }
 
-h2, h3, h4, h5, h6, p, hr, ol, ul, table {
+h2, h3, h4, h5, h6, p, hr, ol, ul, table, .line-block {
   margin: 0px 40px;
 }
 
-h4, h5, h6, dd, li {
+dd > .line-block, table > p {
+  margin: 0px;
+}
+
+h5, h6, dd, li {
   font-weight: 300;
   
 }
@@ -34,7 +42,7 @@ h4, h5, h6, dd, li {
 table {
   margin-left: auto;
   margin-right: auto;
-  width: 60%;
+  width: 90%;
 }
 
 dt {
@@ -48,10 +56,6 @@ dd {
 
 dd > p {
   margin: 0px;
-}
-
-hr, p, dd > p {
-  margin-bottom: 7px;
 }
 
 table, .heading {
