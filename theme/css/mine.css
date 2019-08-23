@@ -1,3 +1,7 @@
+@page {
+  margin: 1cm; /* Set margin on each page */
+}
+
 body {
   font-family: 'Garamond', serif !important;
   font-size: 11pt !important;
@@ -6,37 +10,60 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Gill Sans', sans-serif !important;
-}
-
-h1, h2, h3, h4, h5, h6, hr, p, dd > p, .line-block {
-  padding-bottom: 0.5em;
+  margin-block-end: 0em;
+  margin-bottom: 0em;
 }
 
 h1, h2, h3, h4 {
   font-weight: 400;
-}
-
-h1, h2, h3 {
   text-transform: uppercase;
 }
 
-h4 {
+h3.tail {
+  display: inline-block;
+  margin-right: 0px;
+}
+
+h4.smaller {
+  margin-left: 0px;
   font-weight: 300;
-  font-size: 11pt !important;
+  text-transform: none;
+  font-style: normal;
+  display: inline-block;
+}
+
+h4 {
+  margin-block-start: 0.5em;
+  margin-bottom: 0em;
+}
+
+h5, h6 {
+  margin-block-start: 0em;
+  margin-top: 0em;
+}
+
+h4, h5 {
+  font-weight: 300;
   font-style: italic;
+  font-size: 11pt !important;
+}
+
+hr, p, .line-block {
+  padding-bottom: 0.2em;
 }
 
 h2, h3, h4, h5, h6, p, hr, ol, ul, table, .line-block {
-  margin: 0px 40px;
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
-dd > .line-block, table > p {
+dt, dl, dd > .line-block, table > p, dd > p {
   margin: 0px;
+  page-break-inside: avoid !important;
 }
 
 h5, h6, dd, li {
   font-weight: 300;
-  
 }
 
 table {
@@ -52,10 +79,6 @@ dt {
 
 dd {
   display: block;
-}
-
-dd > p {
-  margin: 0px;
 }
 
 table, .heading {
