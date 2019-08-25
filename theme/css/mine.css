@@ -57,7 +57,7 @@ h2, h3, h4, h5, h6, p, hr, ol, ul, table, .line-block {
   margin-right: 40px;
 }
 
-dt, dl, dd > .line-block, table > p, dd > p {
+dt, dl, dd > .line-block, table > p, dd > p, dd > ul, dd > ol, li > p {
   margin: 0px;
   page-break-inside: avoid !important;
 }
