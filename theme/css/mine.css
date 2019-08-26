@@ -64,6 +64,7 @@ dt, dl, dd > .line-block, table > p, dd > p, dd > ul, dd > ol, li > p {
 
 h5, h6, dd, li {
   font-weight: 300;
+  margin-bottom: 0.2em;
 }
 
 table {
