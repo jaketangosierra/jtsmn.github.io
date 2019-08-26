@@ -61,10 +61,11 @@ dt, dl, dd > .line-block, table > p, dd > p, dd > ul, dd > ol, li > p {
   margin: 0px;
   page-break-inside: avoid !important;
 }
-
+dd {
+  margin-bottom: 0.25em;
+}
 h5, h6, dd, li {
   font-weight: 300;
-  margin-bottom: 0.2em;
 }
 
 table {
