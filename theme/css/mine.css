@@ -1,5 +1,7 @@
 @page {
-  margin: 1cm; /* Set margin on each page */
+  padding-top: 1cm;
+  margin-top: 1cm;
+  /* margin: 1cm; Set margin on each page */
 }
 
 body {
@@ -14,9 +16,12 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0em;
 }
 
+h1, h2, h3 {
+  text-transform: uppercase;
+}
+
 h1, h2, h3, h4 {
   font-weight: 400;
-  text-transform: uppercase;
 }
 
 h3.tail {
@@ -42,7 +47,7 @@ h5, h6 {
   margin-top: 0em;
 }
 
-h4, h5 {
+h5 {
   font-weight: 300;
   font-style: italic;
   font-size: 11pt !important;
@@ -101,4 +106,8 @@ table, .heading {
 
 .references {
   display: none;
+}
+
+strong {
+  font-weight: bold;
 }
