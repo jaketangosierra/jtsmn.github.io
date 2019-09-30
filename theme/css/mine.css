@@ -74,10 +74,9 @@ h5, h6, dd, li {
 }
 
 table {
-  margin-left: auto;
   margin-right: auto;
-  padding-left: 40px;
-  width: 90%;
+  margin-left: 40px;
+  width: 95%;
 }
 
 dt {
@@ -89,7 +88,7 @@ dd {
   display: block;
 }
 
-table, .heading {
+.heading {
   text-align: center;
   margin-left: auto !important;
   margin-right: auto !important;
