@@ -57,7 +57,7 @@ hr, p, .line-block {
   padding-bottom: 0.2em;
 }
 
-h2, h3, h4, h5, h6, p, hr, ol, ul, table, .line-block {
+h2, h3, h4, h5, h6, p, hr, ol, ul, .line-block {
   margin-left: 40px;
   margin-right: 40px;
 }
@@ -74,9 +74,10 @@ h5, h6, dd, li {
 }
 
 table {
-  margin-right: auto;
-  margin-left: 40px;
-  width: 95%;
+  width: 100% !important;
+  padding-left: 5%;
+  padding-right: 4%;
+  /* margin-left: 40px; */
 }
 
 dt {
