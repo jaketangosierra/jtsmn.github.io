@@ -74,10 +74,12 @@ h5, h6, dd, li {
 }
 
 table {
-  width: 100% !important;
-  padding-left: 5%;
-  padding-right: 4%;
-  /* margin-left: 40px; */
+  width: 95% !important;
+  /* padding: 0 40px; */
+  /* padding-left: 5%; */
+  padding-right: 40px;
+  /* padding-right: 2.5%; */
+  padding-left: 40px;
 }
 
 dt {
