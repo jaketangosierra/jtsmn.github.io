@@ -55,7 +55,9 @@ hr {
 }
 
 .name {
-	
+	font-family: 'Gill Sans', sans-serif !important;
+	font-variant: small-caps;
+  	font-weight: 700;
 	white-space: nowrap;
 	font-variant: small-caps;
 	text-align: center;
