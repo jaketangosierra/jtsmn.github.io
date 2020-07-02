@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="../../../../../theme/js/js.js"> </script>
+  <link rel="stylesheet" href="../../../../../theme/css/stylesheet.css" />
+  <title>Jacob Thebault-Spieker</title>
+  <!-- <link href="http://jtsmn.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Jacob Thebault-Spieker Atom Feed" /> -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Leaflet / Stamen -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.7/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@0.7.7/dist/leaflet.js"></script>
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
+  <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
+
+</head>
+<body>
+  <!-- https://www.sessions.edu/color-calculator-results/?colors=f07800,7800f0,00f0f0 -->
+  <div id='map' style='position: fixed; width: 100vw; height: 100%; z-index: -1000;'> </div>
+  <div style='position: fixed; width: 100vw; height: 100%; background-color: rgba(255,255,255, 0.5); z-index: -500;'></div>
+
+  <script>
+    var map = L.map('map', {zoomControl: false, attributionControl: false}).setView([43.07, -89.41], 13);
+    L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png').addTo(map);
+  </script>
+
+  <nav class='navbar fixed-top navbar-color navbar-toggleable-md' style='height: 115px;'>
+      <div class='navbar-brand name'>
+        Jacob Thebault-Spieker
+        <a class='icon' href="https://twitter.com/jts__"><i class="fab fa-twitter fa-lg"></i></a>
+        <a href="http://jacob.thebault-spieker.com/feeds/all.atom.xml"><i class="fas fa-rss fa-lg"></i></a>
+        <!-- below is <a href="mailto:your@email.here"><i class="fa fa-envelope fa-2x"></i></a>, through http://hivelogic.com/enkoder/ Advanced form -->
+        <script type="text/javascript">
+          while(xh=eval(xh)); 
+        </script>
+      </div>
+      <div class='navbar-text'>
+        <a id='home' href="/">Home</a>&nbsp;|&nbsp;
+        <a id='papers' href="/papers.html">Papers</a>&nbsp;|&nbsp;
+        <a id='blog' href="https://medium.com/@jts__" target="blank">Ephemera&nbsp;<i class="fas fa-external-link-alt"></i></a>
+        <a id='blog_old' href="/ephemera.html'">(old)</a>&nbsp;|&nbsp;
+        <a id='cv' href="/curriculum-vitae.html" target="blank">Curriculum Vitae&nbsp;<i class="fas fa-external-link-alt"></i></a>
+        <a href='/thebaultspieker_cv.pdf' target="blank">&nbsp;<i class="fas fa-file-pdf fa-fw"></i></a>
+      </div>
+
+  </nav>
+  <div id='sidebar' style='min-height: 100% !important; position: fixed; color: #000;' class='d-none d-md-block col-md-3 sidebar justify'>
+    <br><h3> News & Updates </h3>
+    <div class='add-padding'>
+      <ul>
+        <li class='news'> <strong>Jul. 2020</strong>&nbsp;Starting a new job as an Assistant Professor in the <a href="https://ischool.wisc.edu">University of Wisconsin - Madison iSchool</a> </li>
+        <li class='news'> <strong>May. 2020</strong>&nbsp;I will be joining the University of Wisconsin - Madison iSchool as an Assistant Professor! </li>
+        <li class='news'> <strong>Oct. 2019</strong>&nbsp;Our demo of PairWise won Best Poster/Demo at HCOMP 2019! This on-going work that I am leading was presented by an REU student I mentored over the summer, David Mitchell. Congratualations to him and the team! </li>
+        <li class='news'> <strong>Sep. 2019</strong>&nbsp;I'll be attending CSCW 2019 in November! </li>
+        <li class='news'> <strong>Sep. 2019</strong>&nbsp;Our HCOMP Work-In-Progress/Demo submissions entitled <em>PairWise: Mitigating Political Bias in Crowdsourced Content Moderation</em> and <em>It’s QuizTime: A Study of Online Verification Practices on Twitter</em> were accepted! </li>
+        <li class='news'> <strong>Aug. 2019</strong>&nbsp;Our CSCW paper, entitled <em>GroundTruth: Augmenting Expert Image Geolocation with Crowdsourcing and Shared Representations</em> was accepted! </li>
+      </ul>
+    </div>
+  </div>
+  <div class='container-fluid' style='margin-top: 115px; padding-left: 0 !important; padding-right: 0 !important'>
+      <div id='body' class='offset-md-3 col-md-9 col-sm-12 add-padding justify' style='min-height: 100vh !important; color: #000;'>
+        <div class='col-md-10'>
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="../../../../../ephemera/2016/05/09/thoughts-on-facebook-news-curation-story/" rel="bookmark"
+         title="Permalink to Thoughts On Facebook News Curation Story">Thoughts On Facebook News Curation Story</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <time class="published" datetime="2016-05-09T00:00:00-04:00">
+      Mon 09 May 2016
+    </time>
+    <time class="modified" datetime="2016-05-09T00:00:00-04:00">
+      Mon 09 May 2016
+    </time>
+    <address class="vcard author">
+      By           <a class="url fn" href="../../../../../author/jacob-thebault-spieker.html">Jacob Thebault-Spieker</a>
+    </address>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <p>There’s an <a href="http://gizmodo.com/former-facebook-workers-we-routinely-suppressed-conser-1775461006">article going around today</a> reporting that the news curation team at Facebook (the team that chooses what shows as Trending) would either “inject” stories into the platform, or de-value/blacklist stories (in some cases with a conservative bent).</p>
+<p>The article states</p>
+<blockquote>
+<p>In other words, Facebook’s news section operates like a traditional newsroom, reflecting the biases of its workers and the institutional imperatives of the corporation.</p>
+</blockquote>
+<p>which seems likely true. This case reads, to me, as another example of tech companies, and the people they hire, not having a wide-enough view of the world they act in (with large amounts of platform-based power). I’m uncomfortable about that, as I expect many are. This story doesn’t strike me as surprising in that context, but it does serve as another reminder.</p>
+<p>The interesting part to me, as someone in the field, comes from two directions.</p>
+<h3 id="algorithmsoftware-as-fact">Algorithm/Software as Fact</h3>
+<p>It seems like the underlying tone of the article is summed up by the quote above: this system still acts like previous systems, with people making decisions. The tone of the article is surprise and injustice, and I’m sympathetic to that view, but the core point is this: <em>we expected the trending news to be computationally driven, and when people stick things into it, it breaks what I came to understand about trending news</em>.</p>
+<p>Software, and the stories we tell around software (or fail to tell) shape how people think about interacting with the software. I expected the trending news to be, you know, <em>trending</em> (which most of it sounds like it is, though the article doesn’t say how much injection or silencing was occurring). I didn’t expect the trending news section to be curated or under editorial control (as a newspaper would be).</p>
+<p>This expectation comes with a set of assumptions that were broken, and, at least for me, is why the “Facebook is being insidious” conclusion jumps to the forefront.</p>
+<h3 id="transparency">Transparency</h3>
+<p><a href="http://www-users.cs.umn.edu/~halfak/">Aaron Halfaker</a> has talked about the role of transparency in “algorithms in social spaces” (he’s thinking specifically about <a href="https://meta.m.wikimedia.org/wiki/Research:Revision_scoring_as_a_service">ORES</a>, and I believe informed by <a href="https://twitter.com/zeynep">Zeynep Tufekci</a>), and how for us to be able to understand the role of this technology, it’s almost an obligation that the providers of the technology provide mechanisms for understanding how they work.</p>
+<p>In a world where so much of what humans understand is mediated through technology, Aaron’s point seems to extend further: understanding which parts are explicitly human (and thus given the benefit of the doubt, or granted to be operating in good-faith, e.g. newspapers), and which parts are highly automated (though today, this automation is still informed by human judgement) feels important. In the ORES case (automated revision scoring), algorithms are deciding if an edit to Wikipedia is harmful, and above a certain threshold, automatically reverting this edit. These algorithms are informed by human judgements, but have learned to statistically model how humans make those judgements, and can act on that model. Below that threshold though, humans get brought into the loop explicitly, and make a decision about harm of the edit prior to reverting (or not).</p>
+<p>I can tell you, broadly, how the revision-revert process works in Wikipedia, because it is documented, and because the ORES work is being done in public. Aaron is putting this information in public, and talking about the models he’s using. Facebook’s “now trending” section of the site (and the people behind it), are not. So here’s my question: <strong>would the Gizmodo article be as shocked, surprised, and concerned about insidiousness if we fully understood that there were/are humans making curatorial and editorial decisions about what gets called ‘trending’</strong>?</p>
+
+  </div><!-- /.entry-content -->
+</section>
+        </div>
+      </div>
+  </div>
+</body>
