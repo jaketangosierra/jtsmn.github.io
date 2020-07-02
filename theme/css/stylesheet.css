@@ -2,8 +2,8 @@ body {
 	font-family: 'Garamond', serif !important;
 	font-weight: 400;
 	font-size: 13pt !important;
-	color: #FFF  !important;
-	background-color: #FFF !important;
+	color: #9BE1B9  !important;
+	background-color: #9BE1B9 !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -18,18 +18,18 @@ h1, h2 {
 
 
 nav a {
-	color: #FFF !important;
+	color: #9BE1B9 !important;
 	text-decoration: none !important;
 	padding: 5px;
 }
 
 nav a:hover, nav a:focus {
-	color: #f07800 !important;
-	background-color: #FFF !important;
+	color: #931F00 !important;
+	background-color: #9BE1B9 !important;
 }
 
 a {
-	color: #f07800 !important;
+	color: #931F00 !important;
 }
 
 a:hover {
@@ -69,8 +69,8 @@ blockquote {
   /*}*/
 /*}*/
 .navbar-color {
-	background-color: #f07800 !important;
-	color: #FFF !important;
+	background-color: #931F00 !important;
+	color: #9BE1B9 !important;
 }
 
 .news {
@@ -82,8 +82,8 @@ blockquote {
 	min-height: 100%;
 }
 .quote {
-	background-color: #f07800;
-	color: #FFF !important
+	background-color: #931F00;
+	color: #9BE1B9 !important
 }
 .add-padding {
 	padding: 15px;
@@ -146,17 +146,17 @@ blockquote {
     float: right;
     padding: 9px 10px;
     background-color: #000;
-    border: 1px solid #FFF;
+    border: 1px solid #9BE1B9;
     /*border-radius: 4px;*/
     box-shadow: 0 1px 0 rgba(0,0,0,0.25);
 }
 .links-toggle:hover, .links-toggle:active {
 	background-color: rgba(0, 0, 0, 0.5);
 	text-decoration: none !important;
-  /*background-color: #FFF;*/
+  /*background-color: #9BE1B9;*/
 }
 .links-toggle .icon-bar {
-    background-color: #ffffff;
+    background-color: #9BE1B9;
 		display: block;
 		text-decoration: none !important;
     margin: 3px 0;
