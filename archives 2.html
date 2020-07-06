@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="./theme/js/js.js"> </script>
+  <link rel="stylesheet" href="./theme/css/stylesheet.css" />
+  <title>Jacob Thebault-Spieker</title>
+  <!-- <link href="http://jtsmn.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Jacob Thebault-Spieker Atom Feed" /> -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Leaflet / Stamen -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.7/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@0.7.7/dist/leaflet.js"></script>
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
+  <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
+
+</head>
+<body>
+  <!-- https://www.sessions.edu/color-calculator-results/?colors=f07800,7800f0,00f0f0 -->
+  <div id='map' style='position: fixed; width: 100vw; height: 100%; z-index: -1000;'> </div>
+  <div style='position: fixed; width: 100vw; height: 100%; background-color: rgba(255,255,255, 0.5); z-index: -500;'></div>
+
+  <script>
+    var map = L.map('map', {zoomControl: false, attributionControl: false}).setView([43.07, -89.41], 13);
+    L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png').addTo(map);
+  </script>
+
+  <nav class='navbar fixed-top navbar-color navbar-toggleable-md' style='height: 115px;'>
+      <div class='navbar-brand name'>
+        Jacob Thebault-Spieker
+        <a class='icon' href="https://twitter.com/jts__"><i class="fab fa-twitter fa-lg"></i></a>
+        <a href="http://jacob.thebault-spieker.com/feeds/all.atom.xml"><i class="fas fa-rss fa-lg"></i></a>
+        <!-- below is <a href="mailto:your@email.here"><i class="fa fa-envelope fa-2x"></i></a>, through http://hivelogic.com/enkoder/ Advanced form -->
+        <script type="text/javascript">
+          while(xh=eval(xh)); 
+        </script>
+      </div>
+      <div class='navbar-text'>
+        <a id='home' href="/">Home</a>&nbsp;|&nbsp;
+        <a id='papers' href="/papers.html">Papers</a>&nbsp;|&nbsp;
+        <a id='blog' href="https://medium.com/@jts__" target="blank">Ephemera&nbsp;<i class="fas fa-external-link-alt"></i></a>
+        <a id='blog_old' href="/ephemera.html'">(old)</a>&nbsp;|&nbsp;
+        <a id='cv' href="/curriculum-vitae.html" target="blank">Curriculum Vitae&nbsp;<i class="fas fa-external-link-alt"></i></a>
+        <a href='/thebaultspieker_cv.pdf' target="blank">&nbsp;<i class="fas fa-file-pdf fa-fw"></i></a>
+      </div>
+
+  </nav>
+  <div id='sidebar' style='min-height: 100% !important; position: fixed; color: #000;' class='d-none d-md-block col-md-3 sidebar justify'>
+    <br><h3> News & Updates </h3>
+    <div class='add-padding'>
+      <ul>
+        <li class='news'> <strong>Jul. 2020</strong>&nbsp;Starting a new job as an Assistant Professor in the <a href="https://ischool.wisc.edu">University of Wisconsin - Madison iSchool</a> </li>
+        <li class='news'> <strong>May. 2020</strong>&nbsp;I will be joining the University of Wisconsin - Madison iSchool as an Assistant Professor! </li>
+        <li class='news'> <strong>Oct. 2019</strong>&nbsp;Our demo of PairWise won Best Poster/Demo at HCOMP 2019! This on-going work that I am leading was presented by an REU student I mentored over the summer, David Mitchell. Congratualations to him and the team! </li>
+        <li class='news'> <strong>Sep. 2019</strong>&nbsp;I'll be attending CSCW 2019 in November! </li>
+        <li class='news'> <strong>Sep. 2019</strong>&nbsp;Our HCOMP Work-In-Progress/Demo submissions entitled <em>PairWise: Mitigating Political Bias in Crowdsourced Content Moderation</em> and <em>It’s QuizTime: A Study of Online Verification Practices on Twitter</em> were accepted! </li>
+        <li class='news'> <strong>Aug. 2019</strong>&nbsp;Our CSCW paper, entitled <em>GroundTruth: Augmenting Expert Image Geolocation with Crowdsourcing and Shared Representations</em> was accepted! </li>
+      </ul>
+    </div>
+  </div>
+  <div class='container-fluid' style='margin-top: 115px; padding-left: 0 !important; padding-right: 0 !important'>
+      <div id='body' class='offset-md-3 col-md-9 col-sm-12 add-padding justify' style='min-height: 100vh !important; color: #000;'>
+        <div class='col-md-10'>
+<h1>Archives for Jacob Thebault-Spieker</h1>
+
+<dl>
+    <dt>Tue 10 May 2016</dt>
+    <dd><a href="./ephemera/2016/05/10/iron-blogging-jello-research/">Iron Blogging - Jello Research</a></dd>
+    <dt>Mon 09 May 2016</dt>
+    <dd><a href="./ephemera/2016/05/09/thoughts-on-facebook-news-curation-story/">Thoughts On Facebook News Curation Story</a></dd>
+    <dt>Sat 23 April 2016</dt>
+    <dd><a href="./ephemera/2016/04/23/iron-blogging-in-defense-of-hybrid/">Iron Blogging - In Defense of 'Hybrid'</a></dd>
+    <dt>Fri 15 April 2016</dt>
+    <dd><a href="./ephemera/2016/04/15/iron-blogging-big-week-huuuuuge-week/">Iron Blogging - Big Week? Huuuuuge Week</a></dd>
+    <dt>Tue 05 April 2016</dt>
+    <dd><a href="./ephemera/2016/04/05/gropulens-blog-investigating-the-potential-for-miscommunication-using-emoji/">GropuLens Blog - Investigating the Potential for Miscommunication Using Emoji</a></dd>
+    <dt>Fri 18 March 2016</dt>
+    <dd><a href="./ephemera/2016/03/18/iron-blogging-ridiculously-complicated-degrees/">Iron Blogging - Ridiculously Complicated Degrees</a></dd>
+    <dt>Mon 07 March 2016</dt>
+    <dd><a href="./ephemera/2016/03/07/cscw-recap/">CSCW Recap</a></dd>
+    <dt>Mon 07 March 2016</dt>
+    <dd><a href="./ephemera/2016/03/07/welcome-to-pelican/">Welcome To Pelican</a></dd>
+    <dt>Sun 06 March 2016</dt>
+    <dd><a href="./ephemera/2016/03/06/iron-blogging-cscw-stop-gap/">Iron Blogging - CSCW Stop Gap</a></dd>
+    <dt>Wed 24 February 2016</dt>
+    <dd><a href="./ephemera/2016/02/24/iron-blogging-nerd-alert-rumored-os-x-1012-siri-and-the-role-of-introversion/">Iron Blogging - Nerd Alert – Rumored OS X 10.12 Siri and the Role of Introversion</a></dd>
+    <dt>Tue 26 January 2016</dt>
+    <dd><a href="./ephemera/2016/01/26/iron-blogging-simplifying-workflows/">Iron Blogging - Simplifying Workflows</a></dd>
+    <dt>Sun 17 January 2016</dt>
+    <dd><a href="./ephemera/2016/01/17/iron-blogging-non-writing-recidivism/">Iron Blogging - Non-Writing Recidivism</a></dd>
+    <dt>Sun 06 December 2015</dt>
+    <dd><a href="./ephemera/2015/12/06/iron-blogging-protected-classes-in-online-systems/">Iron Blogging - 'Protected Classes' in Online Systems</a></dd>
+    <dt>Wed 02 December 2015</dt>
+    <dd><a href="./ephemera/2015/12/02/iron-blogging-consistent-clarity-of-thought/">Iron Blogging - Consistent Clarity of Thought</a></dd>
+    <dt>Fri 13 November 2015</dt>
+    <dd><a href="./ephemera/2015/11/13/iron-blogging-inequality-indices-for-platform-accountability/">Iron Blogging - Inequality Indices For Platform Accountability</a></dd>
+    <dt>Sun 13 September 2015</dt>
+    <dd><a href="./ephemera/2015/09/13/iron-blogging-network-effects-of-shared-wrong-belief/">Iron Blogging - Network Effects of Shared (Wrong) Belief</a></dd>
+    <dt>Thu 27 August 2015</dt>
+    <dd><a href="./ephemera/2015/08/27/iron-blogging-iterations-on-iterations-on-iterations/">Iron Blogging - Iterations on Iterations on Iterations</a></dd>
+    <dt>Thu 06 August 2015</dt>
+    <dd><a href="./ephemera/2015/08/06/iron-blogging-protest-and-community-organizing-in-an-on-demand-world/">Iron Blogging - Protest and Community Organizing in an On-Demand World</a></dd>
+    <dt>Mon 03 August 2015</dt>
+    <dd><a href="./ephemera/2015/08/03/iron-blogging-introduction/">Iron Blogging - Introduction</a></dd>
+    <dt>Sat 13 December 2014</dt>
+    <dd><a href="./ephemera/2014/12/13/youre-not-that-tricky-imposter-syndrome-as-localized-conspiracy-theory/">You're not that tricky: Imposter Syndrome as localized conspiracy theory</a></dd>
+    <dt>Mon 24 November 2014</dt>
+    <dd><a href="./ephemera/2014/11/24/builders-systems-society/">builders. systems. society.</a></dd>
+    <dt>Sat 23 August 2014</dt>
+    <dd><a href="./ephemera/2014/08/23/sociotechnical-systems-as-agents-of-change/">Sociotechnical Systems as Agents of Change</a></dd>
+    <dt>Wed 11 September 2013</dt>
+    <dd><a href="./ephemera/2013/09/11/welcome/">Welcome</a></dd>
+</dl>
+        </div>
+      </div>
+  </div>
+</body>
