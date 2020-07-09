@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="../theme/js/js.js"> </script>
+  <link rel="stylesheet" href="../theme/css/stylesheet.css" />
+  <title>Jacob Thebault-Spieker</title>
+  <!-- <link href="http://jtsmn.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Jacob Thebault-Spieker Atom Feed" /> -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Leaflet / Stamen -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.7/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@0.7.7/dist/leaflet.js"></script>
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
+  <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
+
+</head>
+<body>
+  <!-- https://www.sessions.edu/color-calculator-results/?colors=f07800,7800f0,00f0f0 -->
+  <div id='map' style='position: fixed; width: 100vw; height: 100%; z-index: -1000;'> </div>
+  <div style='position: fixed; width: 100vw; height: 100%; background-color: rgba(255,255,255, 0.5); z-index: -500;'></div>
+
+  <script>
+    var map = L.map('map', {zoomControl: false, attributionControl: false}).setView([43.07, -89.41], 13);
+    L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png').addTo(map);
+  </script>
+
+  <nav class='navbar fixed-top navbar-color navbar-toggleable-md' style='height: 115px;'>
+      <div class='navbar-brand name'>
+        Jacob Thebault-Spieker
+        <a class='icon' href="https://twitter.com/jts__"><i class="fab fa-twitter fa-lg"></i></a>
+        <a href="http://jacob.thebault-spieker.com/feeds/all.atom.xml"><i class="fas fa-rss fa-lg"></i></a>
+        <!-- below is <a href="mailto:your@email.here"><i class="fa fa-envelope fa-2x"></i></a>, through http://hivelogic.com/enkoder/ Advanced form -->
+        <script type="text/javascript">
+          while(xh=eval(xh)); 
+        </script>
+      </div>
+      <div class='navbar-text'>
+        <a id='home' href="/">Home</a>&nbsp;|&nbsp;
+        <a id='papers' href="/papers.html">Papers</a>&nbsp;|&nbsp;
+        <a id='blog' href="https://medium.com/@jts__" target="blank">Ephemera&nbsp;<i class="fas fa-external-link-alt"></i></a>
+        <a id='blog_old' href="/ephemera.html'">(old)</a>&nbsp;|&nbsp;
+        <a id='cv' href="/curriculum-vitae.html" target="blank">Curriculum Vitae&nbsp;<i class="fas fa-external-link-alt"></i></a>
+        <a href='/thebaultspieker_cv.pdf' target="blank">&nbsp;<i class="fas fa-file-pdf fa-fw"></i></a>
+      </div>
+
+  </nav>
+  <div id='sidebar' style='min-height: 100% !important; position: fixed; color: #000;' class='d-none d-md-block col-md-3 sidebar justify'>
+    <br><h3> News & Updates </h3>
+    <div class='add-padding'>
+      <ul>
+        <li class='news'> <strong>Jul. 2020</strong>&nbsp;Starting a new job as an Assistant Professor in the <a href="https://ischool.wisc.edu">University of Wisconsin - Madison iSchool</a> </li>
+        <li class='news'> <strong>May. 2020</strong>&nbsp;I will be joining the University of Wisconsin - Madison iSchool as an Assistant Professor! </li>
+        <li class='news'> <strong>Oct. 2019</strong>&nbsp;Our demo of PairWise won Best Poster/Demo at HCOMP 2019! This on-going work that I am leading was presented by an REU student I mentored over the summer, David Mitchell. Congratualations to him and the team! </li>
+        <li class='news'> <strong>Sep. 2019</strong>&nbsp;I'll be attending CSCW 2019 in November! </li>
+        <li class='news'> <strong>Sep. 2019</strong>&nbsp;Our HCOMP Work-In-Progress/Demo submissions entitled <em>PairWise: Mitigating Political Bias in Crowdsourced Content Moderation</em> and <em>It’s QuizTime: A Study of Online Verification Practices on Twitter</em> were accepted! </li>
+        <li class='news'> <strong>Aug. 2019</strong>&nbsp;Our CSCW paper, entitled <em>GroundTruth: Augmenting Expert Image Geolocation with Crowdsourcing and Shared Representations</em> was accepted! </li>
+      </ul>
+    </div>
+  </div>
+  <div class='container-fluid' style='margin-top: 115px; padding-left: 0 !important; padding-right: 0 !important'>
+      <div id='body' class='offset-md-3 col-md-9 col-sm-12 add-padding justify' style='min-height: 100vh !important; color: #000;'>
+        <div class='col-md-10'>
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="../drafts/how-i-generate-my-cv-from-bibtex-and-markdown.html" rel="bookmark"
+         title="Permalink to How I Generate my CV from BibTeX and Markdown">How I Generate my CV from BibTeX and Markdown</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <time class="published" datetime="2020-07-09T00:00:00-04:00">
+      Thu 09 July 2020
+    </time>
+    <time class="modified" datetime="2020-07-09T00:00:00-04:00">
+      Thu 09 July 2020
+    </time>
+    <address class="vcard author">
+      By           <a class="url fn" href="../author/jacob-thebault-spieker.html">Jacob Thebault-Spieker</a>
+    </address>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <p>Recently, <a href="https://twitter.com/natematias/status/1281035493317267456?s=20">Nate Matias mentioned looking to automate the creation of his CV</a>, which I already do. Since he asked, I figured I’d pull together a simple guide for how I manage this, and go from there.</p>
+<h2 id="why-do-this">Why Do This?</h2>
+<p>Before jumping into how, I thought it maybe made sense to talk about why. For me, it’s about reduction of effort. My website already has a Publications Page, and at one point I was hosting my blog on my own and had aspirations to cite papers within blog posts too. So I spent the time to figure out how to hook <code>BibTeX</code> into the static-site generator (<a href="http://blog.getpelican.com">Pelican</a>) I use to build the rest of my website, so that I’m able to put <code>BibTeX</code> entries in one <code>.bib</code> file, and then reference the citation key as needed elsewhere on my website.</p>
+<h2 id="tldr-the-general-process-and-reference-files">TL;DR: The General Process, and Reference Files</h2>
+<p>Here I’ll just provide the steps I use to do this. Links here are to the various specific files/etc. that you could use as templates to replicate my setup. I provide more details below. 1. Use <code>Pelican</code> as a static-site generator 2. Use <code>Pandoc</code> as the markdown-to-HTML renderer (via the <code>pandoc-reader</code> <a href="https://github.com/liob/pandoc_reader">plugin</a>), and to read my <code>BibTeX</code> file with my various papers and publications 3. Write my CV in <a href="https://jacob.thebault-spieker.com/files/cv.md">markdown</a>, which gets generated to HTML (with <a href="https://jacob.thebault-spieker.com/theme/css/mine.css">specific CSS</a>), and ‘printed’ (using <code>WeasyPrint</code> hooked into <code>Pelican</code> <a href="https://jacob.thebault-spieker.com/files/pelican_weasyprint.zip">like this</a>) to take that and make a PDF.</p>
+<h2 id="how-did-i-make-this-happen">How did I make this happen</h2>
+<p>There are a number of steps and hacky configurations I’m using to currently do this, but I’m gonna try to enumerate it here.</p>
+<h3 id="pelican">Pelican</h3>
+<p>I use Pelican as my static-site generator. I’m not sure it’s the best tool, but it’s the one I have right now. Partially this is because Pelican supports a number of plugins that I use for this purpose.</p>
+<h3 id="pandoc-reader"><code>pandoc-reader</code></h3>
+<p>Pelican has a concept of ‘readers’, which is what it uses to translate between the input format (markdown in my case), and the output format (often HTML, but can be others, I believe). I’m using the <code>pandoc-reader</code> <a href="https://github.com/liob/pandoc_reader">plugin</a>, which passes the input markdown to the <code>pandoc</code> tool.</p>
+<p>In order to ensur that <code>pandoc</code> behaves the way that I want, I pass a number of arguments to the tool. These arguments would normally just be command-line flags, but Pelican will pass them using the following code in my <code>pelicanconf.py</code> file:</p>
+<pre><code>PANDOC_ARGS = [
+  &#39;--csl=/path/to/acm-sigchi-proceedings.csl&#39;,
+  &#39;--bibliography=/path/to/publications.bib&#39;
+]
+
+PANDOC_EXTENSIONS = [
+  &#39;+mmd_link_attributes&#39;,
+  &#39;+definition_lists&#39;,
+  &#39;+smart&#39;,
+  &#39;+citations&#39;
+]</code></pre>
+<p>In essence, the above arguments are telling pandoc which <code>csl</code> file to use in formatting a citation, and where to find the <code>.bib</code> file I use. Further, I use a number of extension flags for <code>pandoc</code> (which are often available by default when you install <code>pandoc</code>). However, the salient part for this purpose is <code>+citations</code>, which enables the <code>pandoc</code> <a href="https://pandoc.org/MANUAL.html#citations"><code>citations</code> extension</a>, which means I can cite papers inline (<code>\[\@TOCHI_SharingEconomy]</code>) like this <span class="citation" data-cites="TOCHI_SharingEconomy">Jacob Thebault-Spieker, Loren Terveen, and Brent Hecht. 2017. Toward a Geographic Understanding of the Sharing Economy: Systemic Biases in Uberx and Taskrabbit. <em>ACM Trans. Comput.-Hum. Interact.</em> 24, 3: 21:1–21:40. <a href="https://doi.org/10.1145/3058499" role="doc-biblioref">https://doi.org/10.1145/3058499</a></span>, or provide the full citation (<code>\@TOCHI_SharingEconomy</code>) on it’s own line:</p>
+<p><span class="citation" data-cites="TOCHI_SharingEconomy">Jacob Thebault-Spieker, Loren Terveen, and Brent Hecht 2017. Toward a Geographic Understanding of the Sharing Economy: Systemic Biases in Uberx and Taskrabbit. <em>ACM Trans. Comput.-Hum. Interact.</em> 24, 3: 21:1–21:40. <a href="https://doi.org/10.1145/3058499" role="doc-biblioref">https://doi.org/10.1145/3058499</a></span></p>
+<p>like that.</p>
+<h3 id="generating-a-pdf-cv">Generating a PDF CV</h3>
+<p>The functionality that <code>pandoc-reader</code> provides enables my <a href="https://jacob.thebault-spieker.com/papers.html">Publications page</a> as well as my <a href="https://jacob.thebault-spieker.com/curriculum-vitae.html">HTML CV</a>, both of which have very similar input markdown, but get rendered differently. For my HTML CV, I use <a href="https://jacob.thebault-spieker.com/theme/css/mine.css">this CSS</a>, for the HTML that gets rendered from markdown like <a href="https://jacob.thebault-spieker.com/files/cv.md">this</a> (current as of 07/09/2020).</p>
+<p>The next step, then is to transition my HTML CV page to a PDF. For this, I use a modified version of the Pelican PDF generator. <code>Generators</code> in Pelican are similar to <code>readers</code>, and can generate different outputs. For now, I’m going to zip up my version of this and share it <a href="https://jacob.thebault-spieker.com/files/pelican_weasyprint.zip">here</a>, but eventually I need to get this on github. Basically, I’ve set up <a href="https://weasyprint.org">WeasyPrint</a> to generate a <a href="https://jacob.thebault-spieker.com/thebaultspieker_cv.pdf">PDF version of my CV</a> from my <a href="https://jacob.thebault-spieker.com/curriculum-vitae.html">HTML CV</a>.</p>
+
+  </div><!-- /.entry-content -->
+</section>
+        </div>
+      </div>
+  </div>
+</body>
