@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="../../../../../theme/js/js.js"> </script>
+  <link rel="stylesheet" href="../../../../../theme/css/stylesheet.css" />
+  <title>Jacob Thebault-Spieker</title>
+  <!-- <link href="http://jtsmn.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Jacob Thebault-Spieker Atom Feed" /> -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Leaflet / Stamen -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.7/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@0.7.7/dist/leaflet.js"></script>
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
+  <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
+
+</head>
+<body>
+  <!-- https://www.sessions.edu/color-calculator-results/?colors=f07800,7800f0,00f0f0 -->
+  <div id='map' style='position: fixed; width: 100vw; height: 100%; z-index: -1000;'> </div>
+  <div style='position: fixed; width: 100vw; height: 100%; background-color: rgba(255,255,255, 0.5); z-index: -500;'></div>
+
+  <script>
+    var map = L.map('map', {zoomControl: false, attributionControl: false}).setView([43.07, -89.41], 13);
+    L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png').addTo(map);
+  </script>
+
+  <nav class='navbar fixed-top navbar-color navbar-toggleable-md' style='height: 115px;'>
+      <div class='navbar-brand name'>
+        Jacob Thebault-Spieker
+        <a class='icon' href="https://twitter.com/jts__"><i class="fab fa-twitter fa-lg"></i></a>
+        <a href="http://jacob.thebault-spieker.com/feeds/all.atom.xml"><i class="fas fa-rss fa-lg"></i></a>
+        <!-- below is <a href="mailto:your@email.here"><i class="fa fa-envelope fa-2x"></i></a>, through http://hivelogic.com/enkoder/ Advanced form -->
+        <script type="text/javascript">
+          while(xh=eval(xh)); 
+        </script>
+      </div>
+      <div class='navbar-text'>
+        <a id='home' href="/">Home</a>&nbsp;|&nbsp;
+        <a id='papers' href="/papers.html">Papers</a>&nbsp;|&nbsp;
+        <a id='blog' href="/ephemera.html">Ephemera&nbsp;</a>&nbsp;|&nbsp;
+        <a id='cv' href="/curriculum-vitae.html" target="blank">Curriculum Vitae&nbsp;<i class="fas fa-external-link-alt"></i></a>
+        <a href='/thebaultspieker_cv.pdf' target="blank">&nbsp;<i class="fas fa-file-pdf fa-fw"></i></a>
+      </div>
+
+  </nav>
+  <div id='sidebar' style='min-height: 100% !important; position: fixed; color: #000;' class='d-none d-md-block col-md-3 sidebar justify'>
+    <br><h3> News & Updates </h3>
+    <div class='add-padding'>
+      <ul>
+        <li class='news'> <strong>Jul. 2020</strong>&nbsp;Starting a new job as an Assistant Professor in the <a href="https://ischool.wisc.edu">University of Wisconsin - Madison iSchool</a> </li>
+        <li class='news'> <strong>May. 2020</strong>&nbsp;I will be joining the University of Wisconsin - Madison iSchool as an Assistant Professor! </li>
+        <li class='news'> <strong>Oct. 2019</strong>&nbsp;Our demo of PairWise won Best Poster/Demo at HCOMP 2019! This on-going work that I am leading was presented by an REU student I mentored over the summer, David Mitchell. Congratualations to him and the team! </li>
+        <li class='news'> <strong>Sep. 2019</strong>&nbsp;I'll be attending CSCW 2019 in November! </li>
+        <li class='news'> <strong>Sep. 2019</strong>&nbsp;Our HCOMP Work-In-Progress/Demo submissions entitled <em>PairWise: Mitigating Political Bias in Crowdsourced Content Moderation</em> and <em>It’s QuizTime: A Study of Online Verification Practices on Twitter</em> were accepted! </li>
+        <li class='news'> <strong>Aug. 2019</strong>&nbsp;Our CSCW paper, entitled <em>GroundTruth: Augmenting Expert Image Geolocation with Crowdsourcing and Shared Representations</em> was accepted! </li>
+      </ul>
+    </div>
+  </div>
+  <div class='container-fluid' style='margin-top: 115px; padding-left: 0 !important; padding-right: 0 !important'>
+      <div id='body' class='offset-md-3 col-md-9 col-sm-12 add-padding justify' style='min-height: 100vh !important; color: #000;'>
+        <div class='col-md-10'>
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="../../../../../ephemera/2015/12/06/iron-blogging-protected-classes-in-online-systems/" rel="bookmark"
+         title="Permalink to Iron Blogging - 'Protected Classes' in Online Systems">Iron Blogging - 'Protected Classes' in Online Systems</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <time class="published" datetime="2015-12-06T00:00:00-05:00">
+      Sun 06 December 2015
+    </time>
+    <time class="modified" datetime="2015-12-06T00:00:00-05:00">
+      Sun 06 December 2015
+    </time>
+    <address class="vcard author">
+      By           <a class="url fn" href="../../../../../author/jacob-thebault-spieker.html">Jacob Thebault-Spieker</a>
+    </address>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <blockquote>
+<p><em>This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.</em></p>
+</blockquote>
+<p><a href="http://socio-technologist.blogspot.com/2015/12/disparate-impact-of-damage-detection-on.html">Aaron Halfaker</a> just (like, you know, <em>today</em>) posted some of his thoughts and early work based on a conversation we had about disparate impact in Wikipedia, both in terms of actual effect on individuals, and as a metaphor or framing for how to think about issues of bias and systemic disparity. Go read his thing, he does a good job of introducing the topic, and that’s not my point here.</p>
+<p>He says:</p>
+<blockquote>
+<p><strong>Protected Class</strong>. In US law, it seems that this term is generally reserved for race, gender, and ability. In the case of Wikipedia, we don’t know these demographics. They could be involved and I think they likely are, but I think that anonymous editors and newcomers should also be considered a protected class in Wikipedia.</p>
+</blockquote>
+<p>There’s some interesting stuff here that I want to try to unpack.</p>
+<p>Aaron is right, <strong>protected class</strong> has a legal definition.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Laws are the societally defined set of ways we delineate what is acceptable. Societally, we have decided that there are (and ought to be) legal ramifications if there is discrimination (or disparately impactful discriminatory processes), in the United States.</p>
+<p>He also argues for <em>expanding</em> the definition of <strong>protected class</strong>, because the sociotechnical systems that Wikipedia has built (like ORES) put barriers in place for newcomers and anonymous editors to be successful. Wikipedia (or really, people who work on Wikipedia) has a community-defined set of ways to delineate what is acceptable.</p>
+<p>In general society, the groups of people we consider members of a protected class are defined in law, based on history and value judgements made at the time (Voting Rights Act, etc.). If, at some point in time, society sought to change these categories, there would be an expectation of accountability to this process, and one would be expected to show strong evidence that any groups being removed wouldn’t be harmed, and that groups being added have received a certain degree of societal harm (i.e. it would be difficult to argue that white men who make $1,000,000 or more ought to be a protected class).</p>
+<p>In Wikipedia, the algorithms and statistics that back them decides who gets treated as a protected class, this is the point Aaron is seeking to address. But what does accountability of this process look like? What is the <em>computationally actionable</em> threshold for adding or removing groups from the models being used? <em>Who</em> decides which groups hit this threshold? <em>How</em> do groups who do feel they’re being disparately impacted voice this concern and build their case? Can this be dynamically, sociotechnically available?</p>
+<p>I don’t raise these questions to suggest mistrust towards Aaron nor Wikimedia (the shepherds of ORES right now), quite the opposite. I’m very excited by the work he and they are doing, I think ORES has a strong ability to even out some of the disparities that likely exist. However, I also believe this is <em>only true</em> when ORES is able to dynamically mitigate disparate impact for groups that are being disadvantaged.</p>
+<p>I’m super interested in these ideas, and Aaron and I will keep talking about them, but I’d be interested in other’s thoughts as well.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>via <a href="https://en.wikipedia.org/wiki/Protected_class#cite_note-Finduslaw-1">Wikipedia</a>, which cites law<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+  </div><!-- /.entry-content -->
+</section>
+        </div>
+      </div>
+  </div>
+</body>

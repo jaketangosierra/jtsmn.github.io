@@ -1,0 +1,209 @@
+Title: Curriculum Vitae
+Template: raw
+
+[cv]: ./cv.pdf "PDF Version of my CV" target=\_blank
+
+## __Curriculum Vitae: Jacob Thebault-Spieker__ {.heading}
+<!-- -->
+--------------------------- -----------------------------------------------------------------------
+Helen C. White Hall            [http://jacob.thebault-spieker.com](http://jacob.thebault-spieker.com)
+600 N. Park St.                          [jacob.thebaultspieker@wisc.edu](mailto:jacob.thebaultspieker@wisc.edu)
+Madison, Wisconsin 53705
+---------------------------	-----------------------------------------------------------------------
+\
+
+### Research Interests
+bias, social computing, crowd work, spatial computing, sharing economy, peer production
+
+### Education
+2017
+:   | PhD in Computer Science -- University of Minnesota
+    | Dissertation: _Understanding Geographic Bias in Crowd Systems_
+    | Co-Advisors: Loren Terveen, Brent Hecht (Northwestern University)
+    | Committee: Dan Keefe, Kate Starbird (University of Washington)
+
+<!-- -->
+2011
+:   | Bachelor of Arts, Computer Science -- University of Minnesota – Morris
+    | Bachelor of Arts, Spanish -- University of Minnesota – Morris
+
+### Employment
+Curr.
+:   | _University of Wisconsin_
+    | Assistant Professor, Information School (beginning July 1, 2020)
+
+
+2020
+:   | _Virginia Tech_
+    | Postdoctoral Associate, Department of Computer Science (began Jan. 2018)
+
+<!-- -->
+2014
+:   | _IBM Research – Almaden_
+    | Research Intern (Mentors: Jeff Nichols, Jalal Mahmud)
+
+<!-- -->
+2010
+:   | _Carnegie Mellon_
+    | Summer REU Intern (Mentor: Mahadev Satyanarayanan)
+
+### Honors and Awards
+2020
+:   Special Recognition for Outstanding Reviews, CHI Papers
+
+2019
+:   Best Demo/Poster, HCOMP 2019
+
+2018
+:   Special Recognition for Outstanding Reviews, CHI Papers
+
+2017
+:   Special Recognition for Outstanding Reviews, CHI Papers and Notes
+
+2016
+:   Special Recognition for Outstanding Reviews, Ubicomp Papers and Notes
+
+2015
+:   Social Media and Business Analytics Collaborative (SOBACO) Travel Grant. Total: $1500
+
+2014
+:   Social Media and Business Analytics Collaborative (SOBACO) Travel Grant. Total: $1000
+
+2009
+:   Undergraduate Research Opportunity Program Grant. Total: $1400
+
+### Publications {.tail}
+#### (Google Scholar Citations: 722, h-index: 8) {.smaller}
+
+#### Refereed Papers in Journals
+
+\[J4]
+:   @CSCW19_groundtruth
+
+<!-- -->
+\[J3]
+:   @CSCW18_RepBias
+
+\[J2]
+:    @CSCW18_cocorahs
+
+<!-- -->
+\[J1]
+:    @TOCHI_SharingEconomy
+
+#### Refereed Papers in Conferences
+
+\[C8]
+:   @CHI18_distance_attraction
+
+\[C7]
+:    @GROUP18_bias_born_not_made
+
+<!-- -->
+\[C6]
+:   @ICWSM17_emoji
+
+\[C5]
+:    @CHI17_PokemonGo (_* indicates co-first-author, ** - indicates co-Principal Investigators_)
+
+\[C4]
+:    @CHI17_OSMQual
+
+<!-- -->
+\[C3]
+:   @ICWSM16_emoji
+
+<!-- -->
+\[C2]
+:   @CSCW15_TaskRabbit
+
+\[C1]
+:    @WWW15_SessionID
+
+#### Refereed Nonarchival Workshop Papers
+\[w4]
+:   @CSCW18_EA_localurb
+
+<!-- -->
+\[w3]
+:   @CSCW15_ITCL_workshop
+
+<!-- -->
+\[w2]
+:   @UI13_symposium
+
+<!-- -->
+\[w1]
+:   @MICS10_server
+
+#### Refereed Nonarchival Conference Papers (demos, posters, extended abstracts)
+
+\[p4]
+:   @HCOMP19_WIP_pairwise (**Best Demo/Poster Award**, *out of 25*)
+
+\[p3]
+:   @HCOMP19_WIP_quiztime
+
+\[p2]
+:   @HCIC18_gt
+
+\[p1]
+:   @CSCW16_EA_socialcrowd
+
+#### Refereed Doctoral Consortia
+\[dc1]
+:   @HCOMP16_DC
+
+
+### Other Research Activities
+#### Research Camps
+| _CSST: Summer Research Institute for the Science of Socio-Technical Systems_
+| CSST 2019, New Brunswick, NJ, USA, June 18-22, 2019
+
+### Teaching
+#### Graduate Teaching Assistant at University of Minnesota
+| _CS5115: User Interface Design_. 
+| Fall 2017.
+
+| _CS1902: Structure of Computer Programming II_. 
+| Fall 2011, Spring 2012.
+
+#### Undergraduate Teaching Assistant at University of Minnesota - Morris
+| _CS3401: Models of Computing Systems_.
+| Fall 2010, Spring 2011.
+
+### Professional Service
+#### Organizing Committees
+2020
+:   CSCW Publications Co-Chair
+
+2019
+:   CSCW Publications Co-Chair
+
+    Co-Editor of 'Negotiating Trust and Truth in Socio-Technical Systems' special issue of Transactions on Social Computing
+
+#### Program Committees
+2021 
+:   CHI AC - Interaction Beyond the Individual subcommittee
+
+2018
+:   CHI Late-Breaking Work
+
+    Emoji2018: 1​st​ International Workshop on Emoji Understanding and Applications in Social Media
+
+#### Reviewing
+##### Journals
+| New Media & Society
+| ACM Transactions on Intelligent Systems and Technology (TIST)
+| ACM Transactions on Computer-Human Interaction (TOCHI)
+| ACM Transactions on Social Computing (TSC)
+| Interaction Design and Architecture (IxD&A)
+
+
+##### Conference Proceedings
+| CSCW
+| CHI
+| GROUP
+| ICWSM
+| UbiComp
+| MobileHCI
