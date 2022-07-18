@@ -91,51 +91,100 @@
   </footer><!-- /.post-info -->
   <div class="entry-content">
     <blockquote>
-<p><em>This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.</em></p>
+<p><em>This post is a part of the GroupLens Iron Blogging effort, so
+take that for what you will.</em></p>
 </blockquote>
-<p>I do a fair amount of spatial data analysis, particularly in the space of trying to understand geographic disparity, and its effects on systems.</p>
+<p>I do a fair amount of spatial data analysis, particularly in the
+space of trying to understand geographic disparity, and its effects on
+systems.</p>
 <p>This workflow used to go something like:</p>
 <ol type="1">
-<li>Setup a <a href="http://www.postgresql.org">Postgresql</a>/<a href="http://postgis.net">PostGIS</a> database</li>
-<li>import all the data (including points or polygons that reflect geographic regions)
+<li>Setup a <a href="http://www.postgresql.org">Postgresql</a>/<a
+href="http://postgis.net">PostGIS</a> database</li>
+<li>import all the data (including points or polygons that reflect
+geographic regions)
 <ul>
-<li>this often involves replicating geometries because there are individual data points that apply to the same geometry</li>
+<li>this often involves replicating geometries because there are
+individual data points that apply to the same geometry</li>
 </ul></li>
-<li>do any aggregation or summary statistics <em>per geometry</em> that I needed to do, and apply these values to each Postgres record</li>
-<li>use <code>pgsql2shp</code> command, to dump a database table (or a subset of the table, by query) to get a <a href="https://en.wikipedia.org/wiki/Shapefile">shapefile</a>
+<li>do any aggregation or summary statistics <em>per geometry</em> that
+I needed to do, and apply these values to each Postgres record</li>
+<li>use <code>pgsql2shp</code> command, to dump a database table (or a
+subset of the table, by query) to get a <a
+href="https://en.wikipedia.org/wiki/Shapefile">shapefile</a>
 <ul>
 <li>this often involves at least one <code>GROUP BY</code> clause</li>
 </ul></li>
-<li>Open this shapefile in <a href="http://qgis.org/en/site/">QGIS</a>, to do some exploratory mapping, and save the data as a CSV file for later</li>
-<li>Open this shapefile in <a href="https://geodacenter.asu.edu/software/downloads">GeoDa</a>, to do some simple exploratory analysis</li>
-<li>Import the aforementiond CSV file into R, and then write R code to do any data transformation needed</li>
-<li>Use R for any analysis (normally spatial regressions, with <code>spdep</code>)</li>
+<li>Open this shapefile in <a href="http://qgis.org/en/site/">QGIS</a>,
+to do some exploratory mapping, and save the data as a CSV file for
+later</li>
+<li>Open this shapefile in <a
+href="https://geodacenter.asu.edu/software/downloads">GeoDa</a>, to do
+some simple exploratory analysis</li>
+<li>Import the aforementiond CSV file into R, and then write R code to
+do any data transformation needed</li>
+<li>Use R for any analysis (normally spatial regressions, with
+<code>spdep</code>)</li>
 </ol>
-<p>You’ll notice here, that around step 7, we lose any concept of the geometry of this geographic data. Unfortunately, this means that if I any of the things below, that I need to start again at Step 3:</p>
+<p>You’ll notice here, that around step 7, we lose any concept of the
+geometry of this geographic data. Unfortunately, this means that if I
+any of the things below, that I need to start again at Step 3:</p>
 <ul>
 <li>a different geographic subset of the data for analysis, or</li>
 <li>a different geographic function (say, population density), or</li>
 <li>anything at the R stage that isn’t already there</li>
 </ul>
 <p>There is a better world.</p>
-<p>For a different project, I recently started using <a href="http://Jupyter.org">Jupyter</a>, for easier collaboration.</p>
-<p>At first, it was nice, because I could just import CSVs into Jupyter, and use <em>Python</em> (specifically pandas, which is incredibly nice) for the data transformation. This is better for me than R. However, I quickly started wondering if there is a way insert Jupyter and python earlier into my workflow.</p>
-<p>As it turns out, a lot of the geographic analysis software (QGIS, GeoDa, steps 5 and 6 respectively) is built on top of existing python libraries. That’s a good sign, but it made me worry I’d have to drop down a level and code more, which would be a time sink. Enter: <a href="http://geopandas.org">GeoPandas</a>.</p>
-<p>GeoPandas, or geographic extension to <a href="http://pandas.pydata.org">Pandas</a>, is a whole new game. GeoPandas lets me load a GeoDataFrame (you know, a DataFrame, with <em>geography</em>) either from a shapefile (we’re now at step 4), or even better <em>directly from PostGIS</em>.</p>
-<p>Because Pandas (and subsequently GeoPandas) has such nice <code>groupby()</code> and <code>agg()</code> functionality, I don’t need to write these things in SQL. Because GeoPandas also has a concept of geometric operations (point in polygon, intersection, etc.) and <em>spatial joins</em> (merging datasets based on geographic overlap) I can insert the Python/Jupyter workflow <em>after Step 2</em>.</p>
-<p>I mentioned before that a lot of the geographic analysis software was built on python libraries. As it turns out, GeoDa is built on top of a library called <a href="https://geodacenter.asu.edu/pysal">pysal</a>. This means that I can do any analysis supported by GeoDa (including spatial regressions) directly from python.</p>
+<p>For a different project, I recently started using <a
+href="http://Jupyter.org">Jupyter</a>, for easier collaboration.</p>
+<p>At first, it was nice, because I could just import CSVs into Jupyter,
+and use <em>Python</em> (specifically pandas, which is incredibly nice)
+for the data transformation. This is better for me than R. However, I
+quickly started wondering if there is a way insert Jupyter and python
+earlier into my workflow.</p>
+<p>As it turns out, a lot of the geographic analysis software (QGIS,
+GeoDa, steps 5 and 6 respectively) is built on top of existing python
+libraries. That’s a good sign, but it made me worry I’d have to drop
+down a level and code more, which would be a time sink. Enter: <a
+href="http://geopandas.org">GeoPandas</a>.</p>
+<p>GeoPandas, or geographic extension to <a
+href="http://pandas.pydata.org">Pandas</a>, is a whole new game.
+GeoPandas lets me load a GeoDataFrame (you know, a DataFrame, with
+<em>geography</em>) either from a shapefile (we’re now at step 4), or
+even better <em>directly from PostGIS</em>.</p>
+<p>Because Pandas (and subsequently GeoPandas) has such nice
+<code>groupby()</code> and <code>agg()</code> functionality, I don’t
+need to write these things in SQL. Because GeoPandas also has a concept
+of geometric operations (point in polygon, intersection, etc.) and
+<em>spatial joins</em> (merging datasets based on geographic overlap) I
+can insert the Python/Jupyter workflow <em>after Step 2</em>.</p>
+<p>I mentioned before that a lot of the geographic analysis software was
+built on python libraries. As it turns out, GeoDa is built on top of a
+library called <a href="https://geodacenter.asu.edu/pysal">pysal</a>.
+This means that I can do any analysis supported by GeoDa (including
+spatial regressions) directly from python.</p>
 <p>My workflow now looks like:</p>
 <ol type="1">
 <li>Setup a Postgresql/PostGIS database</li>
-<li>import all the data (including points or polygons that reflect geographic regions)
+<li>import all the data (including points or polygons that reflect
+geographic regions)
 <ul>
-<li>this often involves replicating geometries because there are individual data points that apply to the same geometry</li>
+<li>this often involves replicating geometries because there are
+individual data points that apply to the same geometry</li>
 </ul></li>
-<li>Load this table into Jupyter (with GeoPandas), and perform any aggregation, summary statistics, or data transformation I need, which either become a new column, or perhaps a transformed GeoDataFrame (remember <code>groupby()</code>?)</li>
-<li>Do any exploratory mapping, exploratory analysis, or more involved spatial analysis <em>directly within Jupyter</em>.</li>
+<li>Load this table into Jupyter (with GeoPandas), and perform any
+aggregation, summary statistics, or data transformation I need, which
+either become a new column, or perhaps a transformed GeoDataFrame
+(remember <code>groupby()</code>?)</li>
+<li>Do any exploratory mapping, exploratory analysis, or more involved
+spatial analysis <em>directly within Jupyter</em>.</li>
 </ol>
-<p>So, I’ve now cut the number of different steps in half, and dropped the number of different ways I work with this data (including different languages used) from 5 to 1 (or maybe 2, if you count the single line of SQL I’m writing to dump data out of my database).</p>
-<p>I’ve long resisted Python, because I know Java or Javascript, and it wasn’t clear what Python got me.</p>
+<p>So, I’ve now cut the number of different steps in half, and dropped
+the number of different ways I work with this data (including different
+languages used) from 5 to 1 (or maybe 2, if you count the single line of
+SQL I’m writing to dump data out of my database).</p>
+<p>I’ve long resisted Python, because I know Java or Javascript, and it
+wasn’t clear what Python got me.</p>
 <p>I was so wrong.</p>
 
   </div><!-- /.entry-content -->

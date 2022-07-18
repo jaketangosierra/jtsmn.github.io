@@ -90,18 +90,57 @@
     </div>
   </footer><!-- /.post-info -->
   <div class="entry-content">
-    <p>Recently, <a href="https://twitter.com/natematias/status/1281035493317267456?s=20">Nate Matias mentioned looking to automate the creation of his CV</a>, which I already do. Since he asked, I figured I’d pull together a simple guide for how I manage this, and go from there.</p>
+    <p>Recently, <a
+href="https://twitter.com/natematias/status/1281035493317267456?s=20">Nate
+Matias mentioned looking to automate the creation of his CV</a>, which I
+already do. Since he asked, I figured I’d pull together a simple guide
+for how I manage this, and go from there.</p>
 <h2 id="why-do-this">Why Do This?</h2>
-<p>Before jumping into how, I thought it maybe made sense to talk about why. For me, it’s about reduction of effort. My website already has a Publications Page, and at one point I was hosting my blog on my own and had aspirations to cite papers within blog posts too. So I spent the time to figure out how to hook <code>BibTeX</code> into the static-site generator (<a href="http://blog.getpelican.com">Pelican</a>) I use to build the rest of my website, so that I’m able to put <code>BibTeX</code> entries in one <code>.bib</code> file, and then reference the citation key as needed elsewhere on my website.</p>
-<h2 id="tldr-the-general-process-and-reference-files">TL;DR: The General Process, and Reference Files</h2>
-<p>Here I’ll just provide the steps I use to do this. Links here are to the various specific files/etc. that you could use as templates to replicate my setup. I provide more details below. 1. Use <code>Pelican</code> as a static-site generator 2. Use <code>Pandoc</code> as the markdown-to-HTML renderer (via the <code>pandoc-reader</code> <a href="https://github.com/liob/pandoc_reader">plugin</a>), and to read my <code>BibTeX</code> file with my various papers and publications 3. Write my CV in <a href="https://jacob.thebault-spieker.com/files/cv.txt">markdown</a>, which gets generated to HTML (with <a href="https://jacob.thebault-spieker.com/theme/css/mine.css">specific CSS</a>), and ‘printed’ (using <code>WeasyPrint</code> hooked into <code>Pelican</code> <a href="https://jacob.thebault-spieker.com/files/pelican_weasyprint.zip">like this</a>) to take that and make a PDF.</p>
+<p>Before jumping into how, I thought it maybe made sense to talk about
+why. For me, it’s about reduction of effort. My website already has a
+Publications Page, and at one point I was hosting my blog on my own and
+had aspirations to cite papers within blog posts too. So I spent the
+time to figure out how to hook <code>BibTeX</code> into the static-site
+generator (<a href="http://blog.getpelican.com">Pelican</a>) I use to
+build the rest of my website, so that I’m able to put
+<code>BibTeX</code> entries in one <code>.bib</code> file, and then
+reference the citation key as needed elsewhere on my website.</p>
+<h2 id="tldr-the-general-process-and-reference-files">TL;DR: The General
+Process, and Reference Files</h2>
+<p>Here I’ll just provide the steps I use to do this. Links here are to
+the various specific files/etc. that you could use as templates to
+replicate my setup. I provide more details below. 1. Use
+<code>Pelican</code> as a static-site generator 2. Use
+<code>Pandoc</code> as the markdown-to-HTML renderer (via the
+<code>pandoc-reader</code> <a
+href="https://github.com/liob/pandoc_reader">plugin</a>), and to read my
+<code>BibTeX</code> file with my various papers and publications 3.
+Write my CV in <a
+href="https://jacob.thebault-spieker.com/files/cv.txt">markdown</a>,
+which gets generated to HTML (with <a
+href="https://jacob.thebault-spieker.com/theme/css/mine.css">specific
+CSS</a>), and ‘printed’ (using <code>WeasyPrint</code> hooked into
+<code>Pelican</code> <a
+href="https://jacob.thebault-spieker.com/files/pelican_weasyprint.zip">like
+this</a>) to take that and make a PDF.</p>
 <h2 id="how-did-i-make-this-happen">How did I make this happen</h2>
-<p>There are a number of steps and hacky configurations I’m using to currently do this, but I’m gonna try to enumerate it here.</p>
+<p>There are a number of steps and hacky configurations I’m using to
+currently do this, but I’m gonna try to enumerate it here.</p>
 <h3 id="pelican">Pelican</h3>
-<p>I use Pelican as my static-site generator. I’m not sure it’s the best tool, but it’s the one I have right now. Partially this is because Pelican supports a number of plugins that I use for this purpose.</p>
+<p>I use Pelican as my static-site generator. I’m not sure it’s the best
+tool, but it’s the one I have right now. Partially this is because
+Pelican supports a number of plugins that I use for this purpose.</p>
 <h3 id="pandoc-reader"><code>pandoc-reader</code></h3>
-<p>Pelican has a concept of ‘readers’, which is what it uses to translate between the input format (markdown in my case), and the output format (often HTML, but can be others, I believe). I’m using the <code>pandoc-reader</code> <a href="https://github.com/liob/pandoc_reader">plugin</a>, which passes the input markdown to the <code>pandoc</code> tool.</p>
-<p>In order to ensur that <code>pandoc</code> behaves the way that I want, I pass a number of arguments to the tool. These arguments would normally just be command-line flags, but Pelican will pass them using the following code in my <code>pelicanconf.py</code> file:</p>
+<p>Pelican has a concept of ‘readers’, which is what it uses to
+translate between the input format (markdown in my case), and the output
+format (often HTML, but can be others, I believe). I’m using the
+<code>pandoc-reader</code> <a
+href="https://github.com/liob/pandoc_reader">plugin</a>, which passes
+the input markdown to the <code>pandoc</code> tool.</p>
+<p>In order to ensur that <code>pandoc</code> behaves the way that I
+want, I pass a number of arguments to the tool. These arguments would
+normally just be command-line flags, but Pelican will pass them using
+the following code in my <code>pelicanconf.py</code> file:</p>
 <pre><code>PANDOC_ARGS = [
   &#39;--csl=/path/to/acm-sigchi-proceedings.csl&#39;,
   &#39;--bibliography=/path/to/publications.bib&#39;
@@ -113,13 +152,48 @@ PANDOC_EXTENSIONS = [
   &#39;+smart&#39;,
   &#39;+citations&#39;
 ]</code></pre>
-<p>In essence, the above arguments are telling pandoc which <code>csl</code> file to use in formatting a citation, and where to find the <code>.bib</code> file I use. Further, I use a number of extension flags for <code>pandoc</code> (which are often available by default when you install <code>pandoc</code>). I use a <a href="https://jacob.thebault-spieker.com/files/acm-sigchi-proceedings.csl">slightly modified</a> <code>csl file</code>, to generate the full citation. The salient part for this purpose is <code>+citations</code>, which enables the <code>pandoc</code> <a href="https://pandoc.org/MANUAL.html#citations"><code>citations</code> extension</a>. Because of my modified CSL file, I think this breaks the inline citation functionality, and I should fix that at some point. However, when I refer to the <code>BibTeX</code> key in my markdown (e.g. <code>@TOCHI_SharingEconomy</code>), it will expand to the full citation, like so (though this is block-quoted for emphasis):</p>
+<p>In essence, the above arguments are telling pandoc which
+<code>csl</code> file to use in formatting a citation, and where to find
+the <code>.bib</code> file I use. Further, I use a number of extension
+flags for <code>pandoc</code> (which are often available by default when
+you install <code>pandoc</code>). I use a <a
+href="https://jacob.thebault-spieker.com/files/acm-sigchi-proceedings.csl">slightly
+modified</a> <code>csl file</code>, to generate the full citation. The
+salient part for this purpose is <code>+citations</code>, which enables
+the <code>pandoc</code> <a
+href="https://pandoc.org/MANUAL.html#citations"><code>citations</code>
+extension</a>. Because of my modified CSL file, I think this breaks the
+inline citation functionality, and I should fix that at some point.
+However, when I refer to the <code>BibTeX</code> key in my markdown
+(e.g. <code>@TOCHI_SharingEconomy</code>), it will expand to the full
+citation, like so (though this is block-quoted for emphasis):</p>
 <blockquote>
-<p><span class="citation" data-cites="TOCHI_SharingEconomy">Jacob Thebault-Spieker, Loren Terveen, and Brent Hecht 2017. Toward a Geographic Understanding of the Sharing Economy: Systemic Biases in Uberx and Taskrabbit. <em>ACM Trans. Comput.-Hum. Interact.</em> 24, 3: 21:1–21:40. <a href="https://doi.org/10.1145/3058499" role="doc-biblioref">https://doi.org/10.1145/3058499</a></span></p>
+<p><span class="citation"
+data-cites="TOCHI_SharingEconomy">@TOCHI_SharingEconomy</span></p>
 </blockquote>
 <h3 id="generating-a-pdf-cv">Generating a PDF CV</h3>
-<p>The functionality that <code>pandoc-reader</code> provides enables my <a href="https://jacob.thebault-spieker.com/papers.html">Publications page</a> as well as my <a href="https://jacob.thebault-spieker.com/curriculum-vitae.html">HTML CV</a>, both of which have very similar input markdown, but get rendered differently. For my HTML CV, I use <a href="https://jacob.thebault-spieker.com/theme/css/mine.css">this CSS</a>, for the HTML that gets rendered from markdown like <a href="https://jacob.thebault-spieker.com/files/cv.txt">this</a> (current as of 07/09/2020).</p>
-<p>The next step, then is to transition my HTML CV page to a PDF. For this, I use a modified version of the Pelican PDF generator. <code>Generators</code> in Pelican are similar to <code>readers</code>, and can generate different outputs. For now, I’m going to zip up my version of this and share it <a href="https://jacob.thebault-spieker.com/files/pelican_weasyprint.zip">here</a>, but eventually I need to get this on github. Basically, I’ve set up <a href="https://weasyprint.org">WeasyPrint</a> to generate a <a href="https://jacob.thebault-spieker.com/thebaultspieker_cv.pdf">PDF version of my CV</a> from my <a href="https://jacob.thebault-spieker.com/curriculum-vitae.html">HTML CV</a>.</p>
+<p>The functionality that <code>pandoc-reader</code> provides enables my
+<a href="https://jacob.thebault-spieker.com/papers.html">Publications
+page</a> as well as my <a
+href="https://jacob.thebault-spieker.com/curriculum-vitae.html">HTML
+CV</a>, both of which have very similar input markdown, but get rendered
+differently. For my HTML CV, I use <a
+href="https://jacob.thebault-spieker.com/theme/css/mine.css">this
+CSS</a>, for the HTML that gets rendered from markdown like <a
+href="https://jacob.thebault-spieker.com/files/cv.txt">this</a> (current
+as of 07/09/2020).</p>
+<p>The next step, then is to transition my HTML CV page to a PDF. For
+this, I use a modified version of the Pelican PDF generator.
+<code>Generators</code> in Pelican are similar to <code>readers</code>,
+and can generate different outputs. For now, I’m going to zip up my
+version of this and share it <a
+href="https://jacob.thebault-spieker.com/files/pelican_weasyprint.zip">here</a>,
+but eventually I need to get this on github. Basically, I’ve set up <a
+href="https://weasyprint.org">WeasyPrint</a> to generate a <a
+href="https://jacob.thebault-spieker.com/thebaultspieker_cv.pdf">PDF
+version of my CV</a> from my <a
+href="https://jacob.thebault-spieker.com/curriculum-vitae.html">HTML
+CV</a>.</p>
 
   </div><!-- /.entry-content -->
 </section>

@@ -1,18 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Jacob Thebault-Spieker</title><link href="http://jtsmn.github.io/" rel="alternate"></link><link href="http://jtsmn.github.io/feeds/all.atom.xml" rel="self"></link><id>http://jtsmn.github.io/</id><updated>2020-07-09T00:00:00-04:00</updated><entry><title>How I Generate my CV from BibTeX and Markdown</title><link href="http://jtsmn.github.io/ephemera/2020/07/09/how-i-generate-my-cv-from-bibtex-and-markdown/" rel="alternate"></link><published>2020-07-09T00:00:00-04:00</published><updated>2020-07-09T00:00:00-04:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2020-07-09:/ephemera/2020/07/09/how-i-generate-my-cv-from-bibtex-and-markdown/</id><summary type="html">&lt;p&gt;Recently, &lt;a href="https://twitter.com/natematias/status/1281035493317267456?s=20"&gt;Nate Matias mentioned looking to automate the creation of his CV&lt;/a&gt;, which I already do. Since he asked, I figured I’d pull together a simple guide for how I manage this, and go from there.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Jacob Thebault-Spieker</title><link href="http://jtsmn.github.io/" rel="alternate"></link><link href="http://jtsmn.github.io/feeds/all.atom.xml" rel="self"></link><id>http://jtsmn.github.io/</id><updated>2020-07-09T00:00:00-04:00</updated><entry><title>How I Generate my CV from BibTeX and Markdown</title><link href="http://jtsmn.github.io/ephemera/2020/07/09/how-i-generate-my-cv-from-bibtex-and-markdown/" rel="alternate"></link><published>2020-07-09T00:00:00-04:00</published><updated>2020-07-09T00:00:00-04:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2020-07-09:/ephemera/2020/07/09/how-i-generate-my-cv-from-bibtex-and-markdown/</id><summary type="html">&lt;p&gt;Recently, &lt;a
+href="https://twitter.com/natematias/status/1281035493317267456?s=20"&gt;Nate
+Matias mentioned looking to automate the creation of his CV&lt;/a&gt;, which I
+already do. Since he asked, I figured I’d pull together a simple guide
+for how I manage this, and go from there.&lt;/p&gt;
 &lt;h2 id="why-do-this"&gt;Why Do This?&lt;/h2&gt;
-&lt;p&gt;Before jumping into how, I thought it maybe made sense …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently, &lt;a href="https://twitter.com/natematias/status/1281035493317267456?s=20"&gt;Nate Matias mentioned looking to automate the creation of his CV&lt;/a&gt;, which I already do. Since he asked, I figured I’d pull together a simple guide for how I manage this, and go from there.&lt;/p&gt;
+&lt;p&gt;Before jumping into how, I thought it maybe made sense …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently, &lt;a
+href="https://twitter.com/natematias/status/1281035493317267456?s=20"&gt;Nate
+Matias mentioned looking to automate the creation of his CV&lt;/a&gt;, which I
+already do. Since he asked, I figured I’d pull together a simple guide
+for how I manage this, and go from there.&lt;/p&gt;
 &lt;h2 id="why-do-this"&gt;Why Do This?&lt;/h2&gt;
-&lt;p&gt;Before jumping into how, I thought it maybe made sense to talk about why. For me, it’s about reduction of effort. My website already has a Publications Page, and at one point I was hosting my blog on my own and had aspirations to cite papers within blog posts too. So I spent the time to figure out how to hook &lt;code&gt;BibTeX&lt;/code&gt; into the static-site generator (&lt;a href="http://blog.getpelican.com"&gt;Pelican&lt;/a&gt;) I use to build the rest of my website, so that I’m able to put &lt;code&gt;BibTeX&lt;/code&gt; entries in one &lt;code&gt;.bib&lt;/code&gt; file, and then reference the citation key as needed elsewhere on my website.&lt;/p&gt;
-&lt;h2 id="tldr-the-general-process-and-reference-files"&gt;TL;DR: The General Process, and Reference Files&lt;/h2&gt;
-&lt;p&gt;Here I’ll just provide the steps I use to do this. Links here are to the various specific files/etc. that you could use as templates to replicate my setup. I provide more details below. 1. Use &lt;code&gt;Pelican&lt;/code&gt; as a static-site generator 2. Use &lt;code&gt;Pandoc&lt;/code&gt; as the markdown-to-HTML renderer (via the &lt;code&gt;pandoc-reader&lt;/code&gt; &lt;a href="https://github.com/liob/pandoc_reader"&gt;plugin&lt;/a&gt;), and to read my &lt;code&gt;BibTeX&lt;/code&gt; file with my various papers and publications 3. Write my CV in &lt;a href="https://jacob.thebault-spieker.com/files/cv.txt"&gt;markdown&lt;/a&gt;, which gets generated to HTML (with &lt;a href="https://jacob.thebault-spieker.com/theme/css/mine.css"&gt;specific CSS&lt;/a&gt;), and ‘printed’ (using &lt;code&gt;WeasyPrint&lt;/code&gt; hooked into &lt;code&gt;Pelican&lt;/code&gt; &lt;a href="https://jacob.thebault-spieker.com/files/pelican_weasyprint.zip"&gt;like this&lt;/a&gt;) to take that and make a PDF.&lt;/p&gt;
+&lt;p&gt;Before jumping into how, I thought it maybe made sense to talk about
+why. For me, it’s about reduction of effort. My website already has a
+Publications Page, and at one point I was hosting my blog on my own and
+had aspirations to cite papers within blog posts too. So I spent the
+time to figure out how to hook &lt;code&gt;BibTeX&lt;/code&gt; into the static-site
+generator (&lt;a href="http://blog.getpelican.com"&gt;Pelican&lt;/a&gt;) I use to
+build the rest of my website, so that I’m able to put
+&lt;code&gt;BibTeX&lt;/code&gt; entries in one &lt;code&gt;.bib&lt;/code&gt; file, and then
+reference the citation key as needed elsewhere on my website.&lt;/p&gt;
+&lt;h2 id="tldr-the-general-process-and-reference-files"&gt;TL;DR: The General
+Process, and Reference Files&lt;/h2&gt;
+&lt;p&gt;Here I’ll just provide the steps I use to do this. Links here are to
+the various specific files/etc. that you could use as templates to
+replicate my setup. I provide more details below. 1. Use
+&lt;code&gt;Pelican&lt;/code&gt; as a static-site generator 2. Use
+&lt;code&gt;Pandoc&lt;/code&gt; as the markdown-to-HTML renderer (via the
+&lt;code&gt;pandoc-reader&lt;/code&gt; &lt;a
+href="https://github.com/liob/pandoc_reader"&gt;plugin&lt;/a&gt;), and to read my
+&lt;code&gt;BibTeX&lt;/code&gt; file with my various papers and publications 3.
+Write my CV in &lt;a
+href="https://jacob.thebault-spieker.com/files/cv.txt"&gt;markdown&lt;/a&gt;,
+which gets generated to HTML (with &lt;a
+href="https://jacob.thebault-spieker.com/theme/css/mine.css"&gt;specific
+CSS&lt;/a&gt;), and ‘printed’ (using &lt;code&gt;WeasyPrint&lt;/code&gt; hooked into
+&lt;code&gt;Pelican&lt;/code&gt; &lt;a
+href="https://jacob.thebault-spieker.com/files/pelican_weasyprint.zip"&gt;like
+this&lt;/a&gt;) to take that and make a PDF.&lt;/p&gt;
 &lt;h2 id="how-did-i-make-this-happen"&gt;How did I make this happen&lt;/h2&gt;
-&lt;p&gt;There are a number of steps and hacky configurations I’m using to currently do this, but I’m gonna try to enumerate it here.&lt;/p&gt;
+&lt;p&gt;There are a number of steps and hacky configurations I’m using to
+currently do this, but I’m gonna try to enumerate it here.&lt;/p&gt;
 &lt;h3 id="pelican"&gt;Pelican&lt;/h3&gt;
-&lt;p&gt;I use Pelican as my static-site generator. I’m not sure it’s the best tool, but it’s the one I have right now. Partially this is because Pelican supports a number of plugins that I use for this purpose.&lt;/p&gt;
+&lt;p&gt;I use Pelican as my static-site generator. I’m not sure it’s the best
+tool, but it’s the one I have right now. Partially this is because
+Pelican supports a number of plugins that I use for this purpose.&lt;/p&gt;
 &lt;h3 id="pandoc-reader"&gt;&lt;code&gt;pandoc-reader&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;Pelican has a concept of ‘readers’, which is what it uses to translate between the input format (markdown in my case), and the output format (often HTML, but can be others, I believe). I’m using the &lt;code&gt;pandoc-reader&lt;/code&gt; &lt;a href="https://github.com/liob/pandoc_reader"&gt;plugin&lt;/a&gt;, which passes the input markdown to the &lt;code&gt;pandoc&lt;/code&gt; tool.&lt;/p&gt;
-&lt;p&gt;In order to ensur that &lt;code&gt;pandoc&lt;/code&gt; behaves the way that I want, I pass a number of arguments to the tool. These arguments would normally just be command-line flags, but Pelican will pass them using the following code in my &lt;code&gt;pelicanconf.py&lt;/code&gt; file:&lt;/p&gt;
+&lt;p&gt;Pelican has a concept of ‘readers’, which is what it uses to
+translate between the input format (markdown in my case), and the output
+format (often HTML, but can be others, I believe). I’m using the
+&lt;code&gt;pandoc-reader&lt;/code&gt; &lt;a
+href="https://github.com/liob/pandoc_reader"&gt;plugin&lt;/a&gt;, which passes
+the input markdown to the &lt;code&gt;pandoc&lt;/code&gt; tool.&lt;/p&gt;
+&lt;p&gt;In order to ensur that &lt;code&gt;pandoc&lt;/code&gt; behaves the way that I
+want, I pass a number of arguments to the tool. These arguments would
+normally just be command-line flags, but Pelican will pass them using
+the following code in my &lt;code&gt;pelicanconf.py&lt;/code&gt; file:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;PANDOC_ARGS = [
   &amp;#39;--csl=/path/to/acm-sigchi-proceedings.csl&amp;#39;,
   &amp;#39;--bibliography=/path/to/publications.bib&amp;#39;
@@ -24,289 +67,869 @@ PANDOC_EXTENSIONS = [
   &amp;#39;+smart&amp;#39;,
   &amp;#39;+citations&amp;#39;
 ]&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;In essence, the above arguments are telling pandoc which &lt;code&gt;csl&lt;/code&gt; file to use in formatting a citation, and where to find the &lt;code&gt;.bib&lt;/code&gt; file I use. Further, I use a number of extension flags for &lt;code&gt;pandoc&lt;/code&gt; (which are often available by default when you install &lt;code&gt;pandoc&lt;/code&gt;). I use a &lt;a href="https://jacob.thebault-spieker.com/files/acm-sigchi-proceedings.csl"&gt;slightly modified&lt;/a&gt; &lt;code&gt;csl file&lt;/code&gt;, to generate the full citation. The salient part for this purpose is &lt;code&gt;+citations&lt;/code&gt;, which enables the &lt;code&gt;pandoc&lt;/code&gt; &lt;a href="https://pandoc.org/MANUAL.html#citations"&gt;&lt;code&gt;citations&lt;/code&gt; extension&lt;/a&gt;. Because of my modified CSL file, I think this breaks the inline citation functionality, and I should fix that at some point. However, when I refer to the &lt;code&gt;BibTeX&lt;/code&gt; key in my markdown (e.g. &lt;code&gt;@TOCHI_SharingEconomy&lt;/code&gt;), it will expand to the full citation, like so (though this is block-quoted for emphasis):&lt;/p&gt;
+&lt;p&gt;In essence, the above arguments are telling pandoc which
+&lt;code&gt;csl&lt;/code&gt; file to use in formatting a citation, and where to find
+the &lt;code&gt;.bib&lt;/code&gt; file I use. Further, I use a number of extension
+flags for &lt;code&gt;pandoc&lt;/code&gt; (which are often available by default when
+you install &lt;code&gt;pandoc&lt;/code&gt;). I use a &lt;a
+href="https://jacob.thebault-spieker.com/files/acm-sigchi-proceedings.csl"&gt;slightly
+modified&lt;/a&gt; &lt;code&gt;csl file&lt;/code&gt;, to generate the full citation. The
+salient part for this purpose is &lt;code&gt;+citations&lt;/code&gt;, which enables
+the &lt;code&gt;pandoc&lt;/code&gt; &lt;a
+href="https://pandoc.org/MANUAL.html#citations"&gt;&lt;code&gt;citations&lt;/code&gt;
+extension&lt;/a&gt;. Because of my modified CSL file, I think this breaks the
+inline citation functionality, and I should fix that at some point.
+However, when I refer to the &lt;code&gt;BibTeX&lt;/code&gt; key in my markdown
+(e.g. &lt;code&gt;@TOCHI_SharingEconomy&lt;/code&gt;), it will expand to the full
+citation, like so (though this is block-quoted for emphasis):&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;span class="citation" data-cites="TOCHI_SharingEconomy"&gt;Jacob Thebault-Spieker, Loren Terveen, and Brent Hecht 2017. Toward a Geographic Understanding of the Sharing Economy: Systemic Biases in Uberx and Taskrabbit. &lt;em&gt;ACM Trans. Comput.-Hum. Interact.&lt;/em&gt; 24, 3: 21:1–21:40. &lt;a href="https://doi.org/10.1145/3058499" role="doc-biblioref"&gt;https://doi.org/10.1145/3058499&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="citation"
+data-cites="TOCHI_SharingEconomy"&gt;@TOCHI_SharingEconomy&lt;/span&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id="generating-a-pdf-cv"&gt;Generating a PDF CV&lt;/h3&gt;
-&lt;p&gt;The functionality that &lt;code&gt;pandoc-reader&lt;/code&gt; provides enables my &lt;a href="https://jacob.thebault-spieker.com/papers.html"&gt;Publications page&lt;/a&gt; as well as my &lt;a href="https://jacob.thebault-spieker.com/curriculum-vitae.html"&gt;HTML CV&lt;/a&gt;, both of which have very similar input markdown, but get rendered differently. For my HTML CV, I use &lt;a href="https://jacob.thebault-spieker.com/theme/css/mine.css"&gt;this CSS&lt;/a&gt;, for the HTML that gets rendered from markdown like &lt;a href="https://jacob.thebault-spieker.com/files/cv.txt"&gt;this&lt;/a&gt; (current as of 07/09/2020).&lt;/p&gt;
-&lt;p&gt;The next step, then is to transition my HTML CV page to a PDF. For this, I use a modified version of the Pelican PDF generator. &lt;code&gt;Generators&lt;/code&gt; in Pelican are similar to &lt;code&gt;readers&lt;/code&gt;, and can generate different outputs. For now, I’m going to zip up my version of this and share it &lt;a href="https://jacob.thebault-spieker.com/files/pelican_weasyprint.zip"&gt;here&lt;/a&gt;, but eventually I need to get this on github. Basically, I’ve set up &lt;a href="https://weasyprint.org"&gt;WeasyPrint&lt;/a&gt; to generate a &lt;a href="https://jacob.thebault-spieker.com/thebaultspieker_cv.pdf"&gt;PDF version of my CV&lt;/a&gt; from my &lt;a href="https://jacob.thebault-spieker.com/curriculum-vitae.html"&gt;HTML CV&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The functionality that &lt;code&gt;pandoc-reader&lt;/code&gt; provides enables my
+&lt;a href="https://jacob.thebault-spieker.com/papers.html"&gt;Publications
+page&lt;/a&gt; as well as my &lt;a
+href="https://jacob.thebault-spieker.com/curriculum-vitae.html"&gt;HTML
+CV&lt;/a&gt;, both of which have very similar input markdown, but get rendered
+differently. For my HTML CV, I use &lt;a
+href="https://jacob.thebault-spieker.com/theme/css/mine.css"&gt;this
+CSS&lt;/a&gt;, for the HTML that gets rendered from markdown like &lt;a
+href="https://jacob.thebault-spieker.com/files/cv.txt"&gt;this&lt;/a&gt; (current
+as of 07/09/2020).&lt;/p&gt;
+&lt;p&gt;The next step, then is to transition my HTML CV page to a PDF. For
+this, I use a modified version of the Pelican PDF generator.
+&lt;code&gt;Generators&lt;/code&gt; in Pelican are similar to &lt;code&gt;readers&lt;/code&gt;,
+and can generate different outputs. For now, I’m going to zip up my
+version of this and share it &lt;a
+href="https://jacob.thebault-spieker.com/files/pelican_weasyprint.zip"&gt;here&lt;/a&gt;,
+but eventually I need to get this on github. Basically, I’ve set up &lt;a
+href="https://weasyprint.org"&gt;WeasyPrint&lt;/a&gt; to generate a &lt;a
+href="https://jacob.thebault-spieker.com/thebaultspieker_cv.pdf"&gt;PDF
+version of my CV&lt;/a&gt; from my &lt;a
+href="https://jacob.thebault-spieker.com/curriculum-vitae.html"&gt;HTML
+CV&lt;/a&gt;.&lt;/p&gt;
 </content><category term="ephemera"></category></entry><entry><title>Iron Blogging - Jello Research</title><link href="http://jtsmn.github.io/ephemera/2016/05/10/iron-blogging-jello-research/" rel="alternate"></link><published>2016-05-10T00:00:00-04:00</published><updated>2016-05-10T00:00:00-04:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2016-05-10:/ephemera/2016/05/10/iron-blogging-jello-research/</id><summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
+take that for what you will.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;In &lt;a href="http://www-users.cs.umn.edu/~kluver/jello-research-challenge.html"&gt;his post&lt;/a&gt; earlier this week, &lt;a href="https://twitter.com/OrigamiTeacher/"&gt;Daniel Kluver&lt;/a&gt; outlined the “Jello Research Challenge”, based on a conversation we had.&lt;/p&gt;
+&lt;p&gt;In &lt;a
+href="http://www-users.cs.umn.edu/~kluver/jello-research-challenge.html"&gt;his
+post&lt;/a&gt; earlier this week, &lt;a
+href="https://twitter.com/OrigamiTeacher/"&gt;Daniel Kluver&lt;/a&gt; outlined
+the “Jello Research Challenge”, based on a conversation we had.&lt;/p&gt;
 &lt;p&gt;The rules as outlined are:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ol type="1"&gt;
 &lt;li&gt;You must re-tell the basic narrative arc (the …&lt;/li&gt;&lt;/ol&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
+take that for what you will.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;In &lt;a href="http://www-users.cs.umn.edu/~kluver/jello-research-challenge.html"&gt;his post&lt;/a&gt; earlier this week, &lt;a href="https://twitter.com/OrigamiTeacher/"&gt;Daniel Kluver&lt;/a&gt; outlined the “Jello Research Challenge”, based on a conversation we had.&lt;/p&gt;
+&lt;p&gt;In &lt;a
+href="http://www-users.cs.umn.edu/~kluver/jello-research-challenge.html"&gt;his
+post&lt;/a&gt; earlier this week, &lt;a
+href="https://twitter.com/OrigamiTeacher/"&gt;Daniel Kluver&lt;/a&gt; outlined
+the “Jello Research Challenge”, based on a conversation we had.&lt;/p&gt;
 &lt;p&gt;The rules as outlined are:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ol type="1"&gt;
-&lt;li&gt;You must re-tell the basic narrative arc (the “story”) of one piece of work but make it all about jello.&lt;/li&gt;
-&lt;li&gt;You cannot use any of the major keywords of your work or buzzwords of your field.&lt;/li&gt;
+&lt;li&gt;You must re-tell the basic narrative arc (the “story”) of one piece
+of work but make it all about jello.&lt;/li&gt;
+&lt;li&gt;You cannot use any of the major keywords of your work or buzzwords
+of your field.&lt;/li&gt;
 &lt;li&gt;You do not have to actually explain your work.&lt;/li&gt;
-&lt;li&gt;You do not have to actually identify what work you are explaining.&lt;/li&gt;
+&lt;li&gt;You do not have to actually identify what work you are
+explaining.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;I’d kind of forgotten this until I was &lt;a href="https://mobile.twitter.com/OrigamiTeacher/status/730103571530702848"&gt;ambiently peer-pressured&lt;/a&gt; into it.&lt;/p&gt;
+&lt;p&gt;I’d kind of forgotten this until I was &lt;a
+href="https://mobile.twitter.com/OrigamiTeacher/status/730103571530702848"&gt;ambiently
+peer-pressured&lt;/a&gt; into it.&lt;/p&gt;
 &lt;h3 id="so-here-goes"&gt;So, here goes:&lt;/h3&gt;
-&lt;p&gt;There are these computer systems that involve people helping you make jello, or bringing you jello. It turns out, people who make their jello skills available live in different places than some of the people who might benefit most from jello. The people who share their jello skills don’t like to travel too far to do so, and there aren’t people who share their jello skills in poorer areas (even though poor people probably want jello also).&lt;/p&gt;
-</content><category term="ephemera"></category></entry><entry><title>Thoughts On Facebook News Curation Story</title><link href="http://jtsmn.github.io/ephemera/2016/05/09/thoughts-on-facebook-news-curation-story/" rel="alternate"></link><published>2016-05-09T00:00:00-04:00</published><updated>2016-05-09T00:00:00-04:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2016-05-09:/ephemera/2016/05/09/thoughts-on-facebook-news-curation-story/</id><summary type="html">&lt;p&gt;There’s an &lt;a href="http://gizmodo.com/former-facebook-workers-we-routinely-suppressed-conser-1775461006"&gt;article going around today&lt;/a&gt; reporting that the news curation team at Facebook (the team that chooses what shows as Trending) would either “inject” stories into the platform, or de-value/blacklist stories (in some cases with a conservative bent).&lt;/p&gt;
+&lt;p&gt;There are these computer systems that involve people helping you make
+jello, or bringing you jello. It turns out, people who make their jello
+skills available live in different places than some of the people who
+might benefit most from jello. The people who share their jello skills
+don’t like to travel too far to do so, and there aren’t people who share
+their jello skills in poorer areas (even though poor people probably
+want jello also).&lt;/p&gt;
+</content><category term="ephemera"></category></entry><entry><title>Thoughts On Facebook News Curation Story</title><link href="http://jtsmn.github.io/ephemera/2016/05/09/thoughts-on-facebook-news-curation-story/" rel="alternate"></link><published>2016-05-09T00:00:00-04:00</published><updated>2016-05-09T00:00:00-04:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2016-05-09:/ephemera/2016/05/09/thoughts-on-facebook-news-curation-story/</id><summary type="html">&lt;p&gt;There’s an &lt;a
+href="http://gizmodo.com/former-facebook-workers-we-routinely-suppressed-conser-1775461006"&gt;article
+going around today&lt;/a&gt; reporting that the news curation team at Facebook
+(the team that chooses what shows as Trending) would either “inject”
+stories into the platform, or de-value/blacklist stories (in some cases
+with a conservative bent).&lt;/p&gt;
 &lt;p&gt;The article states&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;In other words, Facebook’s news …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;p&gt;There’s an &lt;a href="http://gizmodo.com/former-facebook-workers-we-routinely-suppressed-conser-1775461006"&gt;article going around today&lt;/a&gt; reporting that the news curation team at Facebook (the team that chooses what shows as Trending) would either “inject” stories into the platform, or de-value/blacklist stories (in some cases with a conservative bent).&lt;/p&gt;
+&lt;p&gt;In other words, Facebook’s news …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;p&gt;There’s an &lt;a
+href="http://gizmodo.com/former-facebook-workers-we-routinely-suppressed-conser-1775461006"&gt;article
+going around today&lt;/a&gt; reporting that the news curation team at Facebook
+(the team that chooses what shows as Trending) would either “inject”
+stories into the platform, or de-value/blacklist stories (in some cases
+with a conservative bent).&lt;/p&gt;
 &lt;p&gt;The article states&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;In other words, Facebook’s news section operates like a traditional newsroom, reflecting the biases of its workers and the institutional imperatives of the corporation.&lt;/p&gt;
+&lt;p&gt;In other words, Facebook’s news section operates like a traditional
+newsroom, reflecting the biases of its workers and the institutional
+imperatives of the corporation.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;which seems likely true. This case reads, to me, as another example of tech companies, and the people they hire, not having a wide-enough view of the world they act in (with large amounts of platform-based power). I’m uncomfortable about that, as I expect many are. This story doesn’t strike me as surprising in that context, but it does serve as another reminder.&lt;/p&gt;
-&lt;p&gt;The interesting part to me, as someone in the field, comes from two directions.&lt;/p&gt;
+&lt;p&gt;which seems likely true. This case reads, to me, as another example
+of tech companies, and the people they hire, not having a wide-enough
+view of the world they act in (with large amounts of platform-based
+power). I’m uncomfortable about that, as I expect many are. This story
+doesn’t strike me as surprising in that context, but it does serve as
+another reminder.&lt;/p&gt;
+&lt;p&gt;The interesting part to me, as someone in the field, comes from two
+directions.&lt;/p&gt;
 &lt;h3 id="algorithmsoftware-as-fact"&gt;Algorithm/Software as Fact&lt;/h3&gt;
-&lt;p&gt;It seems like the underlying tone of the article is summed up by the quote above: this system still acts like previous systems, with people making decisions. The tone of the article is surprise and injustice, and I’m sympathetic to that view, but the core point is this: &lt;em&gt;we expected the trending news to be computationally driven, and when people stick things into it, it breaks what I came to understand about trending news&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;Software, and the stories we tell around software (or fail to tell) shape how people think about interacting with the software. I expected the trending news to be, you know, &lt;em&gt;trending&lt;/em&gt; (which most of it sounds like it is, though the article doesn’t say how much injection or silencing was occurring). I didn’t expect the trending news section to be curated or under editorial control (as a newspaper would be).&lt;/p&gt;
-&lt;p&gt;This expectation comes with a set of assumptions that were broken, and, at least for me, is why the “Facebook is being insidious” conclusion jumps to the forefront.&lt;/p&gt;
+&lt;p&gt;It seems like the underlying tone of the article is summed up by the
+quote above: this system still acts like previous systems, with people
+making decisions. The tone of the article is surprise and injustice, and
+I’m sympathetic to that view, but the core point is this: &lt;em&gt;we
+expected the trending news to be computationally driven, and when people
+stick things into it, it breaks what I came to understand about trending
+news&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Software, and the stories we tell around software (or fail to tell)
+shape how people think about interacting with the software. I expected
+the trending news to be, you know, &lt;em&gt;trending&lt;/em&gt; (which most of it
+sounds like it is, though the article doesn’t say how much injection or
+silencing was occurring). I didn’t expect the trending news section to
+be curated or under editorial control (as a newspaper would be).&lt;/p&gt;
+&lt;p&gt;This expectation comes with a set of assumptions that were broken,
+and, at least for me, is why the “Facebook is being insidious”
+conclusion jumps to the forefront.&lt;/p&gt;
 &lt;h3 id="transparency"&gt;Transparency&lt;/h3&gt;
-&lt;p&gt;&lt;a href="http://www-users.cs.umn.edu/~halfak/"&gt;Aaron Halfaker&lt;/a&gt; has talked about the role of transparency in “algorithms in social spaces” (he’s thinking specifically about &lt;a href="https://meta.m.wikimedia.org/wiki/Research:Revision_scoring_as_a_service"&gt;ORES&lt;/a&gt;, and I believe informed by &lt;a href="https://twitter.com/zeynep"&gt;Zeynep Tufekci&lt;/a&gt;), and how for us to be able to understand the role of this technology, it’s almost an obligation that the providers of the technology provide mechanisms for understanding how they work.&lt;/p&gt;
-&lt;p&gt;In a world where so much of what humans understand is mediated through technology, Aaron’s point seems to extend further: understanding which parts are explicitly human (and thus given the benefit of the doubt, or granted to be operating in good-faith, e.g. newspapers), and which parts are highly automated (though today, this automation is still informed by human judgement) feels important. In the ORES case (automated revision scoring), algorithms are deciding if an edit to Wikipedia is harmful, and above a certain threshold, automatically reverting this edit. These algorithms are informed by human judgements, but have learned to statistically model how humans make those judgements, and can act on that model. Below that threshold though, humans get brought into the loop explicitly, and make a decision about harm of the edit prior to reverting (or not).&lt;/p&gt;
-&lt;p&gt;I can tell you, broadly, how the revision-revert process works in Wikipedia, because it is documented, and because the ORES work is being done in public. Aaron is putting this information in public, and talking about the models he’s using. Facebook’s “now trending” section of the site (and the people behind it), are not. So here’s my question: &lt;strong&gt;would the Gizmodo article be as shocked, surprised, and concerned about insidiousness if we fully understood that there were/are humans making curatorial and editorial decisions about what gets called ‘trending’&lt;/strong&gt;?&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www-users.cs.umn.edu/~halfak/"&gt;Aaron Halfaker&lt;/a&gt; has
+talked about the role of transparency in “algorithms in social spaces”
+(he’s thinking specifically about &lt;a
+href="https://meta.m.wikimedia.org/wiki/Research:Revision_scoring_as_a_service"&gt;ORES&lt;/a&gt;,
+and I believe informed by &lt;a href="https://twitter.com/zeynep"&gt;Zeynep
+Tufekci&lt;/a&gt;), and how for us to be able to understand the role of this
+technology, it’s almost an obligation that the providers of the
+technology provide mechanisms for understanding how they work.&lt;/p&gt;
+&lt;p&gt;In a world where so much of what humans understand is mediated
+through technology, Aaron’s point seems to extend further: understanding
+which parts are explicitly human (and thus given the benefit of the
+doubt, or granted to be operating in good-faith, e.g. newspapers), and
+which parts are highly automated (though today, this automation is still
+informed by human judgement) feels important. In the ORES case
+(automated revision scoring), algorithms are deciding if an edit to
+Wikipedia is harmful, and above a certain threshold, automatically
+reverting this edit. These algorithms are informed by human judgements,
+but have learned to statistically model how humans make those
+judgements, and can act on that model. Below that threshold though,
+humans get brought into the loop explicitly, and make a decision about
+harm of the edit prior to reverting (or not).&lt;/p&gt;
+&lt;p&gt;I can tell you, broadly, how the revision-revert process works in
+Wikipedia, because it is documented, and because the ORES work is being
+done in public. Aaron is putting this information in public, and talking
+about the models he’s using. Facebook’s “now trending” section of the
+site (and the people behind it), are not. So here’s my question:
+&lt;strong&gt;would the Gizmodo article be as shocked, surprised, and
+concerned about insidiousness if we fully understood that there were/are
+humans making curatorial and editorial decisions about what gets called
+‘trending’&lt;/strong&gt;?&lt;/p&gt;
 </content><category term="ephemera"></category></entry><entry><title>Iron Blogging - In Defense of 'Hybrid'</title><link href="http://jtsmn.github.io/ephemera/2016/04/23/iron-blogging-in-defense-of-hybrid/" rel="alternate"></link><published>2016-04-23T00:00:00-04:00</published><updated>2016-04-23T00:00:00-04:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2016-04-23:/ephemera/2016/04/23/iron-blogging-in-defense-of-hybrid/</id><summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
+take that for what you will.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;a href="https://twitter.com/mdekstrand"&gt;Michael Ekstrand&lt;/a&gt; recently &lt;a href="https://md.ekstrandom.net/blog/2016/04/using-r/"&gt;wrote up&lt;/a&gt; his reasons for sticking to using R for data analysis, which included computational efficiency, &lt;code&gt;ggplot2&lt;/code&gt;, and comfort with the workflow.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://twitter.com/mdekstrand"&gt;Michael Ekstrand&lt;/a&gt;
+recently &lt;a href="https://md.ekstrandom.net/blog/2016/04/using-r/"&gt;wrote
+up&lt;/a&gt; his reasons for sticking to using R for data analysis, which
+included computational efficiency, &lt;code&gt;ggplot2&lt;/code&gt;, and comfort
+with the workflow.&lt;/p&gt;
 &lt;p&gt;I don’t have any problem with …&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
+take that for what you will.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;a href="https://twitter.com/mdekstrand"&gt;Michael Ekstrand&lt;/a&gt; recently &lt;a href="https://md.ekstrandom.net/blog/2016/04/using-r/"&gt;wrote up&lt;/a&gt; his reasons for sticking to using R for data analysis, which included computational efficiency, &lt;code&gt;ggplot2&lt;/code&gt;, and comfort with the workflow.&lt;/p&gt;
-&lt;p&gt;I don’t have any problem with his argument, mostly, people should use what they want to use. You may recall, I &lt;a href="http://jacob.thebault-spieker.com/ephemera/2016/01/26/iron-blogging-simplifying-workflows/"&gt;recently&lt;/a&gt; discovered Python/Pandas/GeoPandas/Jupyter, and the benefits that it has for geographic analysis. Michael too has discovered the power of Jupyter, saying:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://twitter.com/mdekstrand"&gt;Michael Ekstrand&lt;/a&gt;
+recently &lt;a href="https://md.ekstrandom.net/blog/2016/04/using-r/"&gt;wrote
+up&lt;/a&gt; his reasons for sticking to using R for data analysis, which
+included computational efficiency, &lt;code&gt;ggplot2&lt;/code&gt;, and comfort
+with the workflow.&lt;/p&gt;
+&lt;p&gt;I don’t have any problem with his argument, mostly, people should use
+what they want to use. You may recall, I &lt;a
+href="http://jacob.thebault-spieker.com/ephemera/2016/01/26/iron-blogging-simplifying-workflows/"&gt;recently&lt;/a&gt;
+discovered Python/Pandas/GeoPandas/Jupyter, and the benefits that it has
+for geographic analysis. Michael too has discovered the power of
+Jupyter, saying:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Even though we’ll keep using R, there’s one huge benefit that we get from the Python data ecosystem: I’ve mostly switched from RStudio to using Jupyter notebooks with IRKernel. It is &lt;em&gt;fantastic.&lt;/em&gt; We’ve also been using Anaconda to install R and it’s worked pretty well.&lt;/p&gt;
+&lt;p&gt;Even though we’ll keep using R, there’s one huge benefit that we get
+from the Python data ecosystem: I’ve mostly switched from RStudio to
+using Jupyter notebooks with IRKernel. It is &lt;em&gt;fantastic.&lt;/em&gt; We’ve
+also been using Anaconda to install R and it’s worked pretty well.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;This is the thing that I think is interesting: he’s decided to stay in R-land, while taking advantage of Jupyter. Don’t get me wrong, more power to him, if that’s what works, it’s what he should use.&lt;/p&gt;
-&lt;p&gt;Personally, I’ve been doing something a little bit different, mostly (although not entirely) as a crutch so I don’t have to jump in the Python deep end and re-learn the things I know how to do in R; I’m using the Rpy2 &lt;code&gt;magic&lt;/code&gt; in Jupyter, which lets me switch environments whenever I want.&lt;/p&gt;
-&lt;p&gt;For instance, I can connect to a Postgres+PostGIS database with GeoPandas, and load up a GeoPandas DataFrame. I can then use the &lt;code&gt;%Rpush&lt;/code&gt;magic to push this DataFrame into R, plot it with &lt;code&gt;ggplot2&lt;/code&gt;, and go back to Python for geographic operations or analysis. I have a notebook now that does all the data manipulation in Python, but I knew the &lt;code&gt;Wilcox.test&lt;/code&gt; command in R, so I just ran that test with the R cell magic.&lt;/p&gt;
-&lt;p&gt;Stepping back a bit, it seems that a significant amount of the power, at least for me, that comes from Jupyter Notebook, and it’s ability use things like IRKernel (and Rpy2), is flexibility. I’m using the tools that are best (or easiest, which &lt;em&gt;is&lt;/em&gt; best when you’re time-constrained) for the job. Michael should do what he needs to do, sounds like R is the best tool for him.&lt;/p&gt;
+&lt;p&gt;This is the thing that I think is interesting: he’s decided to stay
+in R-land, while taking advantage of Jupyter. Don’t get me wrong, more
+power to him, if that’s what works, it’s what he should use.&lt;/p&gt;
+&lt;p&gt;Personally, I’ve been doing something a little bit different, mostly
+(although not entirely) as a crutch so I don’t have to jump in the
+Python deep end and re-learn the things I know how to do in R; I’m using
+the Rpy2 &lt;code&gt;magic&lt;/code&gt; in Jupyter, which lets me switch
+environments whenever I want.&lt;/p&gt;
+&lt;p&gt;For instance, I can connect to a Postgres+PostGIS database with
+GeoPandas, and load up a GeoPandas DataFrame. I can then use the
+&lt;code&gt;%Rpush&lt;/code&gt;magic to push this DataFrame into R, plot it with
+&lt;code&gt;ggplot2&lt;/code&gt;, and go back to Python for geographic operations or
+analysis. I have a notebook now that does all the data manipulation in
+Python, but I knew the &lt;code&gt;Wilcox.test&lt;/code&gt; command in R, so I just
+ran that test with the R cell magic.&lt;/p&gt;
+&lt;p&gt;Stepping back a bit, it seems that a significant amount of the power,
+at least for me, that comes from Jupyter Notebook, and it’s ability use
+things like IRKernel (and Rpy2), is flexibility. I’m using the tools
+that are best (or easiest, which &lt;em&gt;is&lt;/em&gt; best when you’re
+time-constrained) for the job. Michael should do what he needs to do,
+sounds like R is the best tool for him.&lt;/p&gt;
 &lt;p&gt;I just also think that it needn’t be either-or.&lt;/p&gt;
 </content><category term="ephemera"></category></entry><entry><title>Iron Blogging - Big Week? Huuuuuge Week</title><link href="http://jtsmn.github.io/ephemera/2016/04/15/iron-blogging-big-week-huuuuuge-week/" rel="alternate"></link><published>2016-04-15T00:00:00-04:00</published><updated>2016-04-15T00:00:00-04:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2016-04-15:/ephemera/2016/04/15/iron-blogging-big-week-huuuuuge-week/</id><content type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
+take that for what you will.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;a href="http://www.theverge.com/2016/4/11/11406944/emoji-meaning-difference-ios-android"&gt;Big&lt;/a&gt; &lt;a href="http://nymag.com/following/2016/04/people-often-disagree-about-what-emoji-mean.html"&gt;Week&lt;/a&gt;? &lt;a href="http://gizmodo.com/that-emoji-does-not-mean-what-you-think-it-means-1770296372"&gt;Big&lt;/a&gt; &lt;a href="http://www.pcworld.com/article/3053967/consumer-electronics/whats-that-emoji-mean-it-all-depends-on-the-device-youre-using.html"&gt;Week&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://www.slashgear.com/inconsistent-emoji-designs-muddle-conversations-11435782/"&gt;It’s&lt;/a&gt; &lt;a href="http://www.dailydot.com/technology/emoji-miscommunicate/"&gt;been&lt;/a&gt; &lt;a href="http://boingboing.net/2016/04/11/if-you-send-a-grimace-emoji-on.html"&gt;a&lt;/a&gt; &lt;a href="http://www.techinsider.io/science-reveals-the-most-confusing-emoji-2016-4"&gt;pretty&lt;/a&gt; &lt;a href="https://www.washingtonpost.com/news/the-switch/wp/2016/04/12/why-that-emoji-grin-you-sent-might-show-up-as-a-grimace/"&gt;crazy&lt;/a&gt;, &lt;a href="https://www.buzzfeed.com/nicolenguyen/one-emoji-font-to-rule-them-all#.te1K14DzY"&gt;very&lt;/a&gt; &lt;a href="http://metro.co.uk/2016/04/12/what-does-this-emoji-actually-mean-5812057/"&gt;exciting&lt;/a&gt; &lt;a href="http://www.npr.org/sections/thetwo-way/2016/04/12/473965971/lost-in-translation-study-finds-interpretation-of-emojis-can-vary-widely"&gt;week&lt;/a&gt; &lt;a href="http://www.startribune.com/university-of-minnesota-study-finds-emojis-are-just-another-way-to-miscommunicate/375558201/"&gt;here&lt;/a&gt; &lt;a href="http://www.vox.com/2016/4/13/11422886/emoji-interpretation-different"&gt;at&lt;/a&gt; &lt;a href="https://www.youtube.com/watch?v=NUMl6S_KNj4&amp;amp;feature=youtu.be"&gt;GroupLens&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://www.sciencefriday.com/segments/that-emoji-youre-sending-is-open-to-interpretation/"&gt;Best&lt;/a&gt; &lt;a href="http://www.cosmopolitan.com/lifestyle/news/a56705/emoji-miscommunications-emojis-look-different/"&gt;part&lt;/a&gt;? &lt;a href="https://twitter.com/ezraklein/status/720390755794034690"&gt;EZRA KLEIN TWEETED ABOUT IT&lt;/a&gt;.&lt;/p&gt;
-</content><category term="ephemera"></category></entry><entry><title>GropuLens Blog - Investigating the Potential for Miscommunication Using Emoji</title><link href="http://jtsmn.github.io/ephemera/2016/04/05/gropulens-blog-investigating-the-potential-for-miscommunication-using-emoji/" rel="alternate"></link><published>2016-04-05T00:00:00-04:00</published><updated>2016-04-05T00:00:00-04:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2016-04-05:/ephemera/2016/04/05/gropulens-blog-investigating-the-potential-for-miscommunication-using-emoji/</id><content type="html">&lt;p&gt;There’s a &lt;a href="http://grouplens.org/blog/investigating-the-potential-for-miscommunication-using-emoji/"&gt;new blog post&lt;/a&gt; for an ICWSM 2016 study (that I contributed to!) on Emoji and miscommunication, over on the GroupLens blog.&lt;/p&gt;
-&lt;p&gt;It’s worth a &lt;a href="http://grouplens.org/blog/investigating-the-potential-for-miscommunication-using-emoji/"&gt;read&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;In case you haven’t gotten it yet, you can &lt;a href="http://grouplens.org/blog/investigating-the-potential-for-miscommunication-using-emoji/"&gt;find the blog post&lt;/a&gt; at &lt;a href="http://grouplens.org/blog/investigating-the-potential-for-miscommunication-using-emoji/"&gt;http://grouplens.org/blog/investigating-the-potential-for-miscommunication-using-emoji/&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a
+href="http://www.theverge.com/2016/4/11/11406944/emoji-meaning-difference-ios-android"&gt;Big&lt;/a&gt;
+&lt;a
+href="http://nymag.com/following/2016/04/people-often-disagree-about-what-emoji-mean.html"&gt;Week&lt;/a&gt;?
+&lt;a
+href="http://gizmodo.com/that-emoji-does-not-mean-what-you-think-it-means-1770296372"&gt;Big&lt;/a&gt;
+&lt;a
+href="http://www.pcworld.com/article/3053967/consumer-electronics/whats-that-emoji-mean-it-all-depends-on-the-device-youre-using.html"&gt;Week&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a
+href="http://www.slashgear.com/inconsistent-emoji-designs-muddle-conversations-11435782/"&gt;It’s&lt;/a&gt;
+&lt;a
+href="http://www.dailydot.com/technology/emoji-miscommunicate/"&gt;been&lt;/a&gt;
+&lt;a
+href="http://boingboing.net/2016/04/11/if-you-send-a-grimace-emoji-on.html"&gt;a&lt;/a&gt;
+&lt;a
+href="http://www.techinsider.io/science-reveals-the-most-confusing-emoji-2016-4"&gt;pretty&lt;/a&gt;
+&lt;a
+href="https://www.washingtonpost.com/news/the-switch/wp/2016/04/12/why-that-emoji-grin-you-sent-might-show-up-as-a-grimace/"&gt;crazy&lt;/a&gt;,
+&lt;a
+href="https://www.buzzfeed.com/nicolenguyen/one-emoji-font-to-rule-them-all#.te1K14DzY"&gt;very&lt;/a&gt;
+&lt;a
+href="http://metro.co.uk/2016/04/12/what-does-this-emoji-actually-mean-5812057/"&gt;exciting&lt;/a&gt;
+&lt;a
+href="http://www.npr.org/sections/thetwo-way/2016/04/12/473965971/lost-in-translation-study-finds-interpretation-of-emojis-can-vary-widely"&gt;week&lt;/a&gt;
+&lt;a
+href="http://www.startribune.com/university-of-minnesota-study-finds-emojis-are-just-another-way-to-miscommunicate/375558201/"&gt;here&lt;/a&gt;
+&lt;a
+href="http://www.vox.com/2016/4/13/11422886/emoji-interpretation-different"&gt;at&lt;/a&gt;
+&lt;a
+href="https://www.youtube.com/watch?v=NUMl6S_KNj4&amp;amp;feature=youtu.be"&gt;GroupLens&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a
+href="http://www.sciencefriday.com/segments/that-emoji-youre-sending-is-open-to-interpretation/"&gt;Best&lt;/a&gt;
+&lt;a
+href="http://www.cosmopolitan.com/lifestyle/news/a56705/emoji-miscommunications-emojis-look-different/"&gt;part&lt;/a&gt;?
+&lt;a href="https://twitter.com/ezraklein/status/720390755794034690"&gt;EZRA
+KLEIN TWEETED ABOUT IT&lt;/a&gt;.&lt;/p&gt;
+</content><category term="ephemera"></category></entry><entry><title>GropuLens Blog - Investigating the Potential for Miscommunication Using Emoji</title><link href="http://jtsmn.github.io/ephemera/2016/04/05/gropulens-blog-investigating-the-potential-for-miscommunication-using-emoji/" rel="alternate"></link><published>2016-04-05T00:00:00-04:00</published><updated>2016-04-05T00:00:00-04:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2016-04-05:/ephemera/2016/04/05/gropulens-blog-investigating-the-potential-for-miscommunication-using-emoji/</id><content type="html">&lt;p&gt;There’s a &lt;a
+href="http://grouplens.org/blog/investigating-the-potential-for-miscommunication-using-emoji/"&gt;new
+blog post&lt;/a&gt; for an ICWSM 2016 study (that I contributed to!) on Emoji
+and miscommunication, over on the GroupLens blog.&lt;/p&gt;
+&lt;p&gt;It’s worth a &lt;a
+href="http://grouplens.org/blog/investigating-the-potential-for-miscommunication-using-emoji/"&gt;read&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In case you haven’t gotten it yet, you can &lt;a
+href="http://grouplens.org/blog/investigating-the-potential-for-miscommunication-using-emoji/"&gt;find
+the blog post&lt;/a&gt; at &lt;a
+href="http://grouplens.org/blog/investigating-the-potential-for-miscommunication-using-emoji/"&gt;http://grouplens.org/blog/investigating-the-potential-for-miscommunication-using-emoji/&lt;/a&gt;.&lt;/p&gt;
 </content><category term="ephemera"></category></entry><entry><title>Iron Blogging - Ridiculously Complicated Degrees</title><link href="http://jtsmn.github.io/ephemera/2016/03/18/iron-blogging-ridiculously-complicated-degrees/" rel="alternate"></link><published>2016-03-18T00:00:00-04:00</published><updated>2016-03-18T00:00:00-04:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2016-03-18:/ephemera/2016/03/18/iron-blogging-ridiculously-complicated-degrees/</id><summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
+take that for what you will.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Ezra_Klein"&gt;Ezra Klein&lt;/a&gt; (formerly of Wonkblog, now Editor-in-Chief at Vox) has a relatively new podcast, The Ezra Klein Show, wherein he interviews interesting people, from across the political and policy spectrum. One of …&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Ezra_Klein"&gt;Ezra Klein&lt;/a&gt;
+(formerly of Wonkblog, now Editor-in-Chief at Vox) has a relatively new
+podcast, The Ezra Klein Show, wherein he interviews interesting people,
+from across the political and policy spectrum. One of …&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
+take that for what you will.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Ezra_Klein"&gt;Ezra Klein&lt;/a&gt; (formerly of Wonkblog, now Editor-in-Chief at Vox) has a relatively new podcast, The Ezra Klein Show, wherein he interviews interesting people, from across the political and policy spectrum. One of his most recent &lt;a href="https://overcast.fm/+F_9FTZadk"&gt;interviews&lt;/a&gt;(link to the episode) was with &lt;a href="https://en.wikipedia.org/wiki/Jim_Yong_Kim"&gt;Jim Yong Kim&lt;/a&gt;. In their conversation about how Jim Yong Kim got to be President of the World Bank, he was telling the story about a colleague of his during their MD/PhD years (both Jim Yong Kim, and his friend, got MDs and PhDs in Anthropology). Jim Yong Kim, with a particular focus on social justice, framed some of their conversations this way:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Ezra_Klein"&gt;Ezra Klein&lt;/a&gt;
+(formerly of Wonkblog, now Editor-in-Chief at Vox) has a relatively new
+podcast, The Ezra Klein Show, wherein he interviews interesting people,
+from across the political and policy spectrum. One of his most recent &lt;a
+href="https://overcast.fm/+F_9FTZadk"&gt;interviews&lt;/a&gt;(link to the
+episode) was with &lt;a
+href="https://en.wikipedia.org/wiki/Jim_Yong_Kim"&gt;Jim Yong Kim&lt;/a&gt;. In
+their conversation about how Jim Yong Kim got to be President of the
+World Bank, he was telling the story about a colleague of his during
+their MD/PhD years (both Jim Yong Kim, and his friend, got MDs and PhDs
+in Anthropology). Jim Yong Kim, with a particular focus on social
+justice, framed some of their conversations this way:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Given the nature of our ridiculously complicated degrees, what is the nature of our obligation to the world?&lt;/p&gt;
+&lt;p&gt;Given the nature of our ridiculously complicated degrees, what is the
+nature of our obligation to the world?&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;This is a very interesting framing to me: as one is successful, what obligations to society come along with that success?&lt;/p&gt;
-&lt;p&gt;I’m not an MD/PhD student, nor am I the President of the World Bank, but this question is something I think about a lot, and I’m intrigued by the concept of obligatory contribution to the betterment of the world, as one gains more eduction or professional capacity. However, it is also not clear that the incentives of computer science academic career (and probably many other fields) align with the obligation that Jim Yong Kim says has driven his career. I really believe that contribution to social change is an important thing, and Jim Yong Kim’s “obligation” is an idea that really resonates with me.&lt;/p&gt;
-&lt;p&gt;I don’t know that there is an answer to &lt;em&gt;how&lt;/em&gt; one pursues identifying their obligation to the world, but this is something I think is critically important as an academic, and it’s something I want to be a fundamental aspect of any career direction I take.&lt;/p&gt;
-&lt;p&gt;I’d love to have conversations about this with people, so if you have thoughts, please reach out!&lt;/p&gt;
-</content><category term="ephemera"></category></entry><entry><title>CSCW Recap</title><link href="http://jtsmn.github.io/ephemera/2016/03/07/cscw-recap/" rel="alternate"></link><published>2016-03-07T00:00:00-05:00</published><updated>2016-03-07T00:00:00-05:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2016-03-07:/ephemera/2016/03/07/cscw-recap/</id><summary type="html">&lt;p&gt;I recently attended the &lt;a href="http://cscw.acm.org/2016/index.php"&gt;Computer-Supported Cooperative Work and Social Computing&lt;/a&gt; conference, in San Francisco. There were a number of very interesting pieces of work, that I wanted to list and point to. I think it’s useful to think about take-aways after the incredibly dense information overload that is a …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I recently attended the &lt;a href="http://cscw.acm.org/2016/index.php"&gt;Computer-Supported Cooperative Work and Social Computing&lt;/a&gt; conference, in San Francisco. There were a number of very interesting pieces of work, that I wanted to list and point to. I think it’s useful to think about take-aways after the incredibly dense information overload that is a conference, so I figured I would do that here.&lt;/p&gt;
-&lt;h3 id="standing-out-from-the-crowd-emotional-labor-body-labor-and-temporal-labor-in-ridesharing-by-noopur-raval"&gt;&lt;strong&gt;1. Standing Out from the Crowd: Emotional Labor, Body Labor, and Temporal Labor in Ridesharing&lt;/strong&gt; by &lt;em&gt;Noopur Raval&lt;/em&gt;&lt;/h3&gt;
-&lt;p&gt;This work was incredibly ethnographic, and explored the different &lt;em&gt;kinds&lt;/em&gt; of labor conducted by Uber drivers. They talk about, and argue for, the idea that Uber drivers (and presumably other gig-workers as well) conduct many forms of labor, beyond those they’re being paid for. This could include anything from seeking to portray themselves in a particular light, to the specific kinds of labor conducted in crisis times. For instance, one person they talk to went above and beyond the actual job of Uber to provide transportation, and check in on safety of their riders, during the Baltimore protests.&lt;/p&gt;
-&lt;h3 id="the-crowd-is-a-collaborative-network-by-mary-gray"&gt;&lt;strong&gt;2. The Crowd is a Collaborative Network&lt;/strong&gt; by &lt;em&gt;Mary Gray&lt;/em&gt;:&lt;/h3&gt;
-&lt;p&gt;I found this work really compelling. It describes and provides strong evidence for the idea that humans find a way to be social, even when the technology doesn’t support it. This is similar to something I’ve heard &lt;a href="http://twitter.com/halfak"&gt;Aaron&lt;/a&gt; talk about in the context of Wikipedia in the past, but it really resonated. Mary Gray and her coauthor have longitudinal data, across 4 different online gig platforms (including Mechanical Turk), and argue that workers are communicating, period. The overall conclusion of their argument is simple: &lt;em&gt;facilitate communication among workers, but don’t seek to engineer particular mechanisms because workers route around them anyway&lt;/em&gt;.&lt;/p&gt;
-&lt;h3 id="does-the-sharing-economy-do-any-good-panel-with-tawanna-dillahunt-airi-lampinen-jacki-oneil-and-loren-terveen"&gt;&lt;strong&gt;3. Does the Sharing Economy Do Any Good?&lt;/strong&gt; panel with &lt;em&gt;Tawanna Dillahunt&lt;/em&gt;, &lt;em&gt;Airi Lampinen&lt;/em&gt;, &lt;em&gt;Jacki O’Neil&lt;/em&gt;, and &lt;em&gt;Loren Terveen&lt;/em&gt;:&lt;/h3&gt;
-&lt;p&gt;This particular panel hits pretty close to home for me, since a non-trivial component of it consisted of the work I did with &lt;a href="http://www-users.cs.umn.edu/~terveen/"&gt;Loren&lt;/a&gt; and &lt;a href="http://brenthecht.com"&gt;Brent&lt;/a&gt;. The high-level question is right in the title: is the sharing economy able to do good? Jacki O’Neil contributed a lot to this panel, because her she is working with auto-rickshaws in India, and has a natural observational structure that allows her to &lt;em&gt;compare&lt;/em&gt; auto-rickshaws using an Uber-esque app, and ones that are not. A big takeaweay from her work is that, at least in the context of her study, gig economy platforms (or peer-to-peer platforms) do not actually provide the certainty of work that one might hope for. She argues that we need to &lt;em&gt;acknowledge that we’re re-designing work&lt;/em&gt; as we build these platforms, and that has a lot of power (and potential for failure). Finally, &lt;a href="http://airilampinen.fi"&gt;Airi&lt;/a&gt; poses an interesting way to think about the impact of gig economy platforms: &lt;em&gt;how common is it for workers to also be consumers of the peer economy they work in?&lt;/em&gt;&lt;/p&gt;
-&lt;h3 id="parting-crowds-characterizing-divergent-interpretations-in-crowdsourced-annotation-tasks-by-sanjay-kairam"&gt;&lt;strong&gt;4. Parting Crowds: Characterizing Divergent Interpretations in Crowdsourced Annotation Tasks&lt;/strong&gt; by &lt;em&gt;Sanjay Kairam&lt;/em&gt;:&lt;/h3&gt;
-&lt;p&gt;This was an interesting technical contribution, that I think has a lot of potential when thinking about crowd work. The framing for this work comes from crowdsourcing text annotations, for the purposes of labeling a linguistic dataset. What Kairam argues is that one can cluster the individual responses given by crowd workers, and that these clusters represent &lt;em&gt;systematic areas of disagreement&lt;/em&gt; between crowd workers, and may mean there are &lt;em&gt;multiple, equally valid&lt;/em&gt; responses to the question being asked (e.g. some crowd workers labelled the &lt;em&gt;type of organization&lt;/em&gt; represented by a Twitter account, whereas others did not label the Twitter account name at all). I think there are a lot of interesting implications for geographic crowd tasks, particularly for data collection and spatial annotation.&lt;/p&gt;
+&lt;p&gt;This is a very interesting framing to me: as one is successful, what
+obligations to society come along with that success?&lt;/p&gt;
+&lt;p&gt;I’m not an MD/PhD student, nor am I the President of the World Bank,
+but this question is something I think about a lot, and I’m intrigued by
+the concept of obligatory contribution to the betterment of the world,
+as one gains more eduction or professional capacity. However, it is also
+not clear that the incentives of computer science academic career (and
+probably many other fields) align with the obligation that Jim Yong Kim
+says has driven his career. I really believe that contribution to social
+change is an important thing, and Jim Yong Kim’s “obligation” is an idea
+that really resonates with me.&lt;/p&gt;
+&lt;p&gt;I don’t know that there is an answer to &lt;em&gt;how&lt;/em&gt; one pursues
+identifying their obligation to the world, but this is something I think
+is critically important as an academic, and it’s something I want to be
+a fundamental aspect of any career direction I take.&lt;/p&gt;
+&lt;p&gt;I’d love to have conversations about this with people, so if you have
+thoughts, please reach out!&lt;/p&gt;
+</content><category term="ephemera"></category></entry><entry><title>CSCW Recap</title><link href="http://jtsmn.github.io/ephemera/2016/03/07/cscw-recap/" rel="alternate"></link><published>2016-03-07T00:00:00-05:00</published><updated>2016-03-07T00:00:00-05:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2016-03-07:/ephemera/2016/03/07/cscw-recap/</id><summary type="html">&lt;p&gt;I recently attended the &lt;a
+href="http://cscw.acm.org/2016/index.php"&gt;Computer-Supported Cooperative
+Work and Social Computing&lt;/a&gt; conference, in San Francisco. There were a
+number of very interesting pieces of work, that I wanted to list and
+point to. I think it’s useful to think about take-aways after the
+incredibly dense information overload that is a …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I recently attended the &lt;a
+href="http://cscw.acm.org/2016/index.php"&gt;Computer-Supported Cooperative
+Work and Social Computing&lt;/a&gt; conference, in San Francisco. There were a
+number of very interesting pieces of work, that I wanted to list and
+point to. I think it’s useful to think about take-aways after the
+incredibly dense information overload that is a conference, so I figured
+I would do that here.&lt;/p&gt;
+&lt;h3
+id="standing-out-from-the-crowd-emotional-labor-body-labor-and-temporal-labor-in-ridesharing-by-noopur-raval"&gt;&lt;strong&gt;1.
+Standing Out from the Crowd: Emotional Labor, Body Labor, and Temporal
+Labor in Ridesharing&lt;/strong&gt; by &lt;em&gt;Noopur Raval&lt;/em&gt;&lt;/h3&gt;
+&lt;p&gt;This work was incredibly ethnographic, and explored the different
+&lt;em&gt;kinds&lt;/em&gt; of labor conducted by Uber drivers. They talk about, and
+argue for, the idea that Uber drivers (and presumably other gig-workers
+as well) conduct many forms of labor, beyond those they’re being paid
+for. This could include anything from seeking to portray themselves in a
+particular light, to the specific kinds of labor conducted in crisis
+times. For instance, one person they talk to went above and beyond the
+actual job of Uber to provide transportation, and check in on safety of
+their riders, during the Baltimore protests.&lt;/p&gt;
+&lt;h3 id="the-crowd-is-a-collaborative-network-by-mary-gray"&gt;&lt;strong&gt;2.
+The Crowd is a Collaborative Network&lt;/strong&gt; by &lt;em&gt;Mary
+Gray&lt;/em&gt;:&lt;/h3&gt;
+&lt;p&gt;I found this work really compelling. It describes and provides strong
+evidence for the idea that humans find a way to be social, even when the
+technology doesn’t support it. This is similar to something I’ve heard
+&lt;a href="http://twitter.com/halfak"&gt;Aaron&lt;/a&gt; talk about in the context
+of Wikipedia in the past, but it really resonated. Mary Gray and her
+coauthor have longitudinal data, across 4 different online gig platforms
+(including Mechanical Turk), and argue that workers are communicating,
+period. The overall conclusion of their argument is simple:
+&lt;em&gt;facilitate communication among workers, but don’t seek to engineer
+particular mechanisms because workers route around them anyway&lt;/em&gt;.&lt;/p&gt;
+&lt;h3
+id="does-the-sharing-economy-do-any-good-panel-with-tawanna-dillahunt-airi-lampinen-jacki-oneil-and-loren-terveen"&gt;&lt;strong&gt;3.
+Does the Sharing Economy Do Any Good?&lt;/strong&gt; panel with &lt;em&gt;Tawanna
+Dillahunt&lt;/em&gt;, &lt;em&gt;Airi Lampinen&lt;/em&gt;, &lt;em&gt;Jacki O’Neil&lt;/em&gt;, and
+&lt;em&gt;Loren Terveen&lt;/em&gt;:&lt;/h3&gt;
+&lt;p&gt;This particular panel hits pretty close to home for me, since a
+non-trivial component of it consisted of the work I did with &lt;a
+href="http://www-users.cs.umn.edu/~terveen/"&gt;Loren&lt;/a&gt; and &lt;a
+href="http://brenthecht.com"&gt;Brent&lt;/a&gt;. The high-level question is right
+in the title: is the sharing economy able to do good? Jacki O’Neil
+contributed a lot to this panel, because her she is working with
+auto-rickshaws in India, and has a natural observational structure that
+allows her to &lt;em&gt;compare&lt;/em&gt; auto-rickshaws using an Uber-esque app,
+and ones that are not. A big takeaweay from her work is that, at least
+in the context of her study, gig economy platforms (or peer-to-peer
+platforms) do not actually provide the certainty of work that one might
+hope for. She argues that we need to &lt;em&gt;acknowledge that we’re
+re-designing work&lt;/em&gt; as we build these platforms, and that has a lot
+of power (and potential for failure). Finally, &lt;a
+href="http://airilampinen.fi"&gt;Airi&lt;/a&gt; poses an interesting way to think
+about the impact of gig economy platforms: &lt;em&gt;how common is it for
+workers to also be consumers of the peer economy they work in?&lt;/em&gt;&lt;/p&gt;
+&lt;h3
+id="parting-crowds-characterizing-divergent-interpretations-in-crowdsourced-annotation-tasks-by-sanjay-kairam"&gt;&lt;strong&gt;4.
+Parting Crowds: Characterizing Divergent Interpretations in Crowdsourced
+Annotation Tasks&lt;/strong&gt; by &lt;em&gt;Sanjay Kairam&lt;/em&gt;:&lt;/h3&gt;
+&lt;p&gt;This was an interesting technical contribution, that I think has a
+lot of potential when thinking about crowd work. The framing for this
+work comes from crowdsourcing text annotations, for the purposes of
+labeling a linguistic dataset. What Kairam argues is that one can
+cluster the individual responses given by crowd workers, and that these
+clusters represent &lt;em&gt;systematic areas of disagreement&lt;/em&gt; between
+crowd workers, and may mean there are &lt;em&gt;multiple, equally valid&lt;/em&gt;
+responses to the question being asked (e.g. some crowd workers labelled
+the &lt;em&gt;type of organization&lt;/em&gt; represented by a Twitter account,
+whereas others did not label the Twitter account name at all). I think
+there are a lot of interesting implications for geographic crowd tasks,
+particularly for data collection and spatial annotation.&lt;/p&gt;
 </content><category term="ephemera"></category></entry><entry><title>Welcome To Pelican</title><link href="http://jtsmn.github.io/ephemera/2016/03/07/welcome-to-pelican/" rel="alternate"></link><published>2016-03-07T00:00:00-05:00</published><updated>2016-03-07T00:00:00-05:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2016-03-07:/ephemera/2016/03/07/welcome-to-pelican/</id><summary type="html">&lt;hr /&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
+take that for what you will.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;You know, I’ve really started to come around on python.&lt;/p&gt;
-&lt;p&gt;What this actually means, in this case, is that I’ve completely moved away from &lt;a href="http://nanoc.ws"&gt;nanoc&lt;/a&gt;, and now my site is …&lt;/p&gt;</summary><content type="html">&lt;hr /&gt;
+&lt;p&gt;What this actually means, in this case, is that I’ve completely moved
+away from &lt;a href="http://nanoc.ws"&gt;nanoc&lt;/a&gt;, and now my site is …&lt;/p&gt;</summary><content type="html">&lt;hr /&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
+take that for what you will.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;You know, I’ve really started to come around on python.&lt;/p&gt;
-&lt;p&gt;What this actually means, in this case, is that I’ve completely moved away from &lt;a href="http://nanoc.ws"&gt;nanoc&lt;/a&gt;, and now my site is generated by &lt;a href="http://blog.getpelican.com"&gt;Pelican&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;The transition was relatively straightforward, although there may still be some bugs here and there.&lt;/p&gt;
-&lt;p&gt;One major change, at this point, is that my URLs have completely changed, which is probably not ideal? I don’t really know that it matters, but I’ll be looking to see if I can to rewrites on URLs with &lt;code&gt;nginx&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;The biggest benefit, to me, is auto-generation of a publication page. Specifically &lt;code&gt;pelican-bibtex&lt;/code&gt;. This lets me put a BibTeX file in a directory, generate a specific page to post these papers on, and &lt;code&gt;pelican-bibtex&lt;/code&gt; does the rest. I ended up &lt;a href="https://github.com/jtsmn/pelican-bibtex"&gt;forking&lt;/a&gt; it a bit, so that I can do some hacky things (like call “unpublished” bibtex entries ‘Posters and Extended Abstracts’, and ‘inproceedings’ bibtex entries ‘Papers’), as well as allowing for ACM Author-izer links in the BibTeX file. Overall though, this means I can put my publications in one spot, and my site generator adds it to my &lt;a href="http://jacob.thebault-spieker.com/papers.html"&gt;publications page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;What this actually means, in this case, is that I’ve completely moved
+away from &lt;a href="http://nanoc.ws"&gt;nanoc&lt;/a&gt;, and now my site is
+generated by &lt;a href="http://blog.getpelican.com"&gt;Pelican&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The transition was relatively straightforward, although there may
+still be some bugs here and there.&lt;/p&gt;
+&lt;p&gt;One major change, at this point, is that my URLs have completely
+changed, which is probably not ideal? I don’t really know that it
+matters, but I’ll be looking to see if I can to rewrites on URLs with
+&lt;code&gt;nginx&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The biggest benefit, to me, is auto-generation of a publication page.
+Specifically &lt;code&gt;pelican-bibtex&lt;/code&gt;. This lets me put a BibTeX file
+in a directory, generate a specific page to post these papers on, and
+&lt;code&gt;pelican-bibtex&lt;/code&gt; does the rest. I ended up &lt;a
+href="https://github.com/jtsmn/pelican-bibtex"&gt;forking&lt;/a&gt; it a bit, so
+that I can do some hacky things (like call “unpublished” bibtex entries
+‘Posters and Extended Abstracts’, and ‘inproceedings’ bibtex entries
+‘Papers’), as well as allowing for ACM Author-izer links in the BibTeX
+file. Overall though, this means I can put my publications in one spot,
+and my site generator adds it to my &lt;a
+href="http://jacob.thebault-spieker.com/papers.html"&gt;publications
+page&lt;/a&gt;.&lt;/p&gt;
 </content><category term="ephemera"></category></entry><entry><title>Iron Blogging - CSCW Stop Gap</title><link href="http://jtsmn.github.io/ephemera/2016/03/06/iron-blogging-cscw-stop-gap/" rel="alternate"></link><published>2016-03-06T00:00:00-05:00</published><updated>2016-03-06T00:00:00-05:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2016-03-06:/ephemera/2016/03/06/iron-blogging-cscw-stop-gap/</id><summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
+take that for what you will.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;I’m cheating a little bit, and committing to two things, but not writing either of them now.&lt;/p&gt;
+&lt;p&gt;I’m cheating a little bit, and committing to two things, but not
+writing either of them now.&lt;/p&gt;
 &lt;ol type="1"&gt;
-&lt;li&gt;I will write-up a summary of my favorite papers at the recent CSCSW 2016 …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.&lt;/em&gt;&lt;/p&gt;
+&lt;li&gt;I will write-up a summary of my favorite papers at the recent CSCSW
+2016 …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
+take that for what you will.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;I’m cheating a little bit, and committing to two things, but not writing either of them now.&lt;/p&gt;
+&lt;p&gt;I’m cheating a little bit, and committing to two things, but not
+writing either of them now.&lt;/p&gt;
 &lt;ol type="1"&gt;
-&lt;li&gt;I will write-up a summary of my favorite papers at the recent CSCSW 2016 conference I attended. There’s a lot of cool work coming out of the community, and I want to write-up the pieces that I tank are worth paying attention to.&lt;/li&gt;
-&lt;li&gt;I’m in the middle of transitioning this website to &lt;a href="http://blog.getpelican.com"&gt;Pelican&lt;/a&gt;, from &lt;a href="http://nanoc.ws"&gt;nanoc&lt;/a&gt;.I want to explain why that is, but it definitely relates to my &lt;a href="http://jacob.thebault-spieker.com/ephemera/2016-01-26-iron-blogging:-simplifying-workflows/"&gt;continued infatuation with Python&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;I will write-up a summary of my favorite papers at the recent CSCSW
+2016 conference I attended. There’s a lot of cool work coming out of the
+community, and I want to write-up the pieces that I tank are worth
+paying attention to.&lt;/li&gt;
+&lt;li&gt;I’m in the middle of transitioning this website to &lt;a
+href="http://blog.getpelican.com"&gt;Pelican&lt;/a&gt;, from &lt;a
+href="http://nanoc.ws"&gt;nanoc&lt;/a&gt;.I want to explain why that is, but it
+definitely relates to my &lt;a
+href="http://jacob.thebault-spieker.com/ephemera/2016-01-26-iron-blogging:-simplifying-workflows/"&gt;continued
+infatuation with Python&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;So, that’s that. I’m not writing either of these for now, but I’m writing about writing them.&lt;/p&gt;
+&lt;p&gt;So, that’s that. I’m not writing either of these for now, but I’m
+writing about writing them.&lt;/p&gt;
 </content><category term="ephemera"></category></entry><entry><title>Iron Blogging - Nerd Alert – Rumored OS X 10.12 Siri and the Role of Introversion</title><link href="http://jtsmn.github.io/ephemera/2016/02/24/iron-blogging-nerd-alert-rumored-os-x-1012-siri-and-the-role-of-introversion/" rel="alternate"></link><published>2016-02-24T00:00:00-05:00</published><updated>2016-02-24T00:00:00-05:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2016-02-24:/ephemera/2016/02/24/iron-blogging-nerd-alert-rumored-os-x-1012-siri-and-the-role-of-introversion/</id><summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
+take that for what you will.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;a href="http://9to5mac.com/2016/02/24/apple-siri-osx-10-12-2016/"&gt;OS X 10.12 is rumored to have Siri integrated in&lt;/a&gt;. That’s exciting to me.&lt;/p&gt;
-&lt;p&gt;The natural language piece of Siri is phenomenal, and it’s something I’ve been wanting …&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://9to5mac.com/2016/02/24/apple-siri-osx-10-12-2016/"&gt;OS
+X 10.12 is rumored to have Siri integrated in&lt;/a&gt;. That’s exciting to
+me.&lt;/p&gt;
+&lt;p&gt;The natural language piece of Siri is phenomenal, and it’s something
+I’ve been wanting …&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
+take that for what you will.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;a href="http://9to5mac.com/2016/02/24/apple-siri-osx-10-12-2016/"&gt;OS X 10.12 is rumored to have Siri integrated in&lt;/a&gt;. That’s exciting to me.&lt;/p&gt;
-&lt;p&gt;The natural language piece of Siri is phenomenal, and it’s something I’ve been wanting on my mac for a long time. On my phone I use it for reminders, I use it for lists, I use it to turn on music, and I use it for timers while cooking. I want this for my computer. I want to be able to instruct me computer to ‘remind me about this at 4pm’.&lt;/p&gt;
-&lt;p&gt;Except, I work in an office, at a desk, with a lot of other people. Maybe that’s uncommon, but probably not (what with the Cool Open Office Spaces that exist in many companies). What I &lt;em&gt;don’t&lt;/em&gt; want is to have the only way to interact with this language-understanding assistant is through voice.&lt;/p&gt;
-&lt;p&gt;As HCI and social computing pushes into machine-learning backed assistants, and these assistants begin to permeate our lives, it feels important to figure out how they fit in to our normal social interactions. More concretely, it feels important to make sure these assistants aren’t &lt;em&gt;breaking&lt;/em&gt; social norms like “talk to people and not objects”.&lt;/p&gt;
-&lt;p&gt;Consider this a call for introverted AI assistants, who really would prefer you not call attention to them, unless the social situation allows for it.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://9to5mac.com/2016/02/24/apple-siri-osx-10-12-2016/"&gt;OS
+X 10.12 is rumored to have Siri integrated in&lt;/a&gt;. That’s exciting to
+me.&lt;/p&gt;
+&lt;p&gt;The natural language piece of Siri is phenomenal, and it’s something
+I’ve been wanting on my mac for a long time. On my phone I use it for
+reminders, I use it for lists, I use it to turn on music, and I use it
+for timers while cooking. I want this for my computer. I want to be able
+to instruct me computer to ‘remind me about this at 4pm’.&lt;/p&gt;
+&lt;p&gt;Except, I work in an office, at a desk, with a lot of other people.
+Maybe that’s uncommon, but probably not (what with the Cool Open Office
+Spaces that exist in many companies). What I &lt;em&gt;don’t&lt;/em&gt; want is to
+have the only way to interact with this language-understanding assistant
+is through voice.&lt;/p&gt;
+&lt;p&gt;As HCI and social computing pushes into machine-learning backed
+assistants, and these assistants begin to permeate our lives, it feels
+important to figure out how they fit in to our normal social
+interactions. More concretely, it feels important to make sure these
+assistants aren’t &lt;em&gt;breaking&lt;/em&gt; social norms like “talk to people
+and not objects”.&lt;/p&gt;
+&lt;p&gt;Consider this a call for introverted AI assistants, who really would
+prefer you not call attention to them, unless the social situation
+allows for it.&lt;/p&gt;
 </content><category term="ephemera"></category></entry><entry><title>Iron Blogging - Simplifying Workflows</title><link href="http://jtsmn.github.io/ephemera/2016/01/26/iron-blogging-simplifying-workflows/" rel="alternate"></link><published>2016-01-26T00:00:00-05:00</published><updated>2016-01-26T00:00:00-05:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2016-01-26:/ephemera/2016/01/26/iron-blogging-simplifying-workflows/</id><summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
+take that for what you will.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;I do a fair amount of spatial data analysis, particularly in the space of trying to understand geographic disparity, and its effects on systems.&lt;/p&gt;
+&lt;p&gt;I do a fair amount of spatial data analysis, particularly in the
+space of trying to understand geographic disparity, and its effects on
+systems.&lt;/p&gt;
 &lt;p&gt;This workflow used to go something like:&lt;/p&gt;
 &lt;ol type="1"&gt;
 &lt;li&gt;Setup …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
+take that for what you will.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;I do a fair amount of spatial data analysis, particularly in the space of trying to understand geographic disparity, and its effects on systems.&lt;/p&gt;
+&lt;p&gt;I do a fair amount of spatial data analysis, particularly in the
+space of trying to understand geographic disparity, and its effects on
+systems.&lt;/p&gt;
 &lt;p&gt;This workflow used to go something like:&lt;/p&gt;
 &lt;ol type="1"&gt;
-&lt;li&gt;Setup a &lt;a href="http://www.postgresql.org"&gt;Postgresql&lt;/a&gt;/&lt;a href="http://postgis.net"&gt;PostGIS&lt;/a&gt; database&lt;/li&gt;
-&lt;li&gt;import all the data (including points or polygons that reflect geographic regions)
+&lt;li&gt;Setup a &lt;a href="http://www.postgresql.org"&gt;Postgresql&lt;/a&gt;/&lt;a
+href="http://postgis.net"&gt;PostGIS&lt;/a&gt; database&lt;/li&gt;
+&lt;li&gt;import all the data (including points or polygons that reflect
+geographic regions)
 &lt;ul&gt;
-&lt;li&gt;this often involves replicating geometries because there are individual data points that apply to the same geometry&lt;/li&gt;
+&lt;li&gt;this often involves replicating geometries because there are
+individual data points that apply to the same geometry&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;do any aggregation or summary statistics &lt;em&gt;per geometry&lt;/em&gt; that I needed to do, and apply these values to each Postgres record&lt;/li&gt;
-&lt;li&gt;use &lt;code&gt;pgsql2shp&lt;/code&gt; command, to dump a database table (or a subset of the table, by query) to get a &lt;a href="https://en.wikipedia.org/wiki/Shapefile"&gt;shapefile&lt;/a&gt;
+&lt;li&gt;do any aggregation or summary statistics &lt;em&gt;per geometry&lt;/em&gt; that
+I needed to do, and apply these values to each Postgres record&lt;/li&gt;
+&lt;li&gt;use &lt;code&gt;pgsql2shp&lt;/code&gt; command, to dump a database table (or a
+subset of the table, by query) to get a &lt;a
+href="https://en.wikipedia.org/wiki/Shapefile"&gt;shapefile&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;this often involves at least one &lt;code&gt;GROUP BY&lt;/code&gt; clause&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Open this shapefile in &lt;a href="http://qgis.org/en/site/"&gt;QGIS&lt;/a&gt;, to do some exploratory mapping, and save the data as a CSV file for later&lt;/li&gt;
-&lt;li&gt;Open this shapefile in &lt;a href="https://geodacenter.asu.edu/software/downloads"&gt;GeoDa&lt;/a&gt;, to do some simple exploratory analysis&lt;/li&gt;
-&lt;li&gt;Import the aforementiond CSV file into R, and then write R code to do any data transformation needed&lt;/li&gt;
-&lt;li&gt;Use R for any analysis (normally spatial regressions, with &lt;code&gt;spdep&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Open this shapefile in &lt;a href="http://qgis.org/en/site/"&gt;QGIS&lt;/a&gt;,
+to do some exploratory mapping, and save the data as a CSV file for
+later&lt;/li&gt;
+&lt;li&gt;Open this shapefile in &lt;a
+href="https://geodacenter.asu.edu/software/downloads"&gt;GeoDa&lt;/a&gt;, to do
+some simple exploratory analysis&lt;/li&gt;
+&lt;li&gt;Import the aforementiond CSV file into R, and then write R code to
+do any data transformation needed&lt;/li&gt;
+&lt;li&gt;Use R for any analysis (normally spatial regressions, with
+&lt;code&gt;spdep&lt;/code&gt;)&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;You’ll notice here, that around step 7, we lose any concept of the geometry of this geographic data. Unfortunately, this means that if I any of the things below, that I need to start again at Step 3:&lt;/p&gt;
+&lt;p&gt;You’ll notice here, that around step 7, we lose any concept of the
+geometry of this geographic data. Unfortunately, this means that if I
+any of the things below, that I need to start again at Step 3:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;a different geographic subset of the data for analysis, or&lt;/li&gt;
 &lt;li&gt;a different geographic function (say, population density), or&lt;/li&gt;
 &lt;li&gt;anything at the R stage that isn’t already there&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;There is a better world.&lt;/p&gt;
-&lt;p&gt;For a different project, I recently started using &lt;a href="http://Jupyter.org"&gt;Jupyter&lt;/a&gt;, for easier collaboration.&lt;/p&gt;
-&lt;p&gt;At first, it was nice, because I could just import CSVs into Jupyter, and use &lt;em&gt;Python&lt;/em&gt; (specifically pandas, which is incredibly nice) for the data transformation. This is better for me than R. However, I quickly started wondering if there is a way insert Jupyter and python earlier into my workflow.&lt;/p&gt;
-&lt;p&gt;As it turns out, a lot of the geographic analysis software (QGIS, GeoDa, steps 5 and 6 respectively) is built on top of existing python libraries. That’s a good sign, but it made me worry I’d have to drop down a level and code more, which would be a time sink. Enter: &lt;a href="http://geopandas.org"&gt;GeoPandas&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;GeoPandas, or geographic extension to &lt;a href="http://pandas.pydata.org"&gt;Pandas&lt;/a&gt;, is a whole new game. GeoPandas lets me load a GeoDataFrame (you know, a DataFrame, with &lt;em&gt;geography&lt;/em&gt;) either from a shapefile (we’re now at step 4), or even better &lt;em&gt;directly from PostGIS&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;Because Pandas (and subsequently GeoPandas) has such nice &lt;code&gt;groupby()&lt;/code&gt; and &lt;code&gt;agg()&lt;/code&gt; functionality, I don’t need to write these things in SQL. Because GeoPandas also has a concept of geometric operations (point in polygon, intersection, etc.) and &lt;em&gt;spatial joins&lt;/em&gt; (merging datasets based on geographic overlap) I can insert the Python/Jupyter workflow &lt;em&gt;after Step 2&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;I mentioned before that a lot of the geographic analysis software was built on python libraries. As it turns out, GeoDa is built on top of a library called &lt;a href="https://geodacenter.asu.edu/pysal"&gt;pysal&lt;/a&gt;. This means that I can do any analysis supported by GeoDa (including spatial regressions) directly from python.&lt;/p&gt;
+&lt;p&gt;For a different project, I recently started using &lt;a
+href="http://Jupyter.org"&gt;Jupyter&lt;/a&gt;, for easier collaboration.&lt;/p&gt;
+&lt;p&gt;At first, it was nice, because I could just import CSVs into Jupyter,
+and use &lt;em&gt;Python&lt;/em&gt; (specifically pandas, which is incredibly nice)
+for the data transformation. This is better for me than R. However, I
+quickly started wondering if there is a way insert Jupyter and python
+earlier into my workflow.&lt;/p&gt;
+&lt;p&gt;As it turns out, a lot of the geographic analysis software (QGIS,
+GeoDa, steps 5 and 6 respectively) is built on top of existing python
+libraries. That’s a good sign, but it made me worry I’d have to drop
+down a level and code more, which would be a time sink. Enter: &lt;a
+href="http://geopandas.org"&gt;GeoPandas&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;GeoPandas, or geographic extension to &lt;a
+href="http://pandas.pydata.org"&gt;Pandas&lt;/a&gt;, is a whole new game.
+GeoPandas lets me load a GeoDataFrame (you know, a DataFrame, with
+&lt;em&gt;geography&lt;/em&gt;) either from a shapefile (we’re now at step 4), or
+even better &lt;em&gt;directly from PostGIS&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Because Pandas (and subsequently GeoPandas) has such nice
+&lt;code&gt;groupby()&lt;/code&gt; and &lt;code&gt;agg()&lt;/code&gt; functionality, I don’t
+need to write these things in SQL. Because GeoPandas also has a concept
+of geometric operations (point in polygon, intersection, etc.) and
+&lt;em&gt;spatial joins&lt;/em&gt; (merging datasets based on geographic overlap) I
+can insert the Python/Jupyter workflow &lt;em&gt;after Step 2&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;I mentioned before that a lot of the geographic analysis software was
+built on python libraries. As it turns out, GeoDa is built on top of a
+library called &lt;a href="https://geodacenter.asu.edu/pysal"&gt;pysal&lt;/a&gt;.
+This means that I can do any analysis supported by GeoDa (including
+spatial regressions) directly from python.&lt;/p&gt;
 &lt;p&gt;My workflow now looks like:&lt;/p&gt;
 &lt;ol type="1"&gt;
 &lt;li&gt;Setup a Postgresql/PostGIS database&lt;/li&gt;
-&lt;li&gt;import all the data (including points or polygons that reflect geographic regions)
+&lt;li&gt;import all the data (including points or polygons that reflect
+geographic regions)
 &lt;ul&gt;
-&lt;li&gt;this often involves replicating geometries because there are individual data points that apply to the same geometry&lt;/li&gt;
+&lt;li&gt;this often involves replicating geometries because there are
+individual data points that apply to the same geometry&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Load this table into Jupyter (with GeoPandas), and perform any aggregation, summary statistics, or data transformation I need, which either become a new column, or perhaps a transformed GeoDataFrame (remember &lt;code&gt;groupby()&lt;/code&gt;?)&lt;/li&gt;
-&lt;li&gt;Do any exploratory mapping, exploratory analysis, or more involved spatial analysis &lt;em&gt;directly within Jupyter&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Load this table into Jupyter (with GeoPandas), and perform any
+aggregation, summary statistics, or data transformation I need, which
+either become a new column, or perhaps a transformed GeoDataFrame
+(remember &lt;code&gt;groupby()&lt;/code&gt;?)&lt;/li&gt;
+&lt;li&gt;Do any exploratory mapping, exploratory analysis, or more involved
+spatial analysis &lt;em&gt;directly within Jupyter&lt;/em&gt;.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;So, I’ve now cut the number of different steps in half, and dropped the number of different ways I work with this data (including different languages used) from 5 to 1 (or maybe 2, if you count the single line of SQL I’m writing to dump data out of my database).&lt;/p&gt;
-&lt;p&gt;I’ve long resisted Python, because I know Java or Javascript, and it wasn’t clear what Python got me.&lt;/p&gt;
+&lt;p&gt;So, I’ve now cut the number of different steps in half, and dropped
+the number of different ways I work with this data (including different
+languages used) from 5 to 1 (or maybe 2, if you count the single line of
+SQL I’m writing to dump data out of my database).&lt;/p&gt;
+&lt;p&gt;I’ve long resisted Python, because I know Java or Javascript, and it
+wasn’t clear what Python got me.&lt;/p&gt;
 &lt;p&gt;I was so wrong.&lt;/p&gt;
 </content><category term="ephemera"></category></entry><entry><title>Iron Blogging - Non-Writing Recidivism</title><link href="http://jtsmn.github.io/ephemera/2016/01/17/iron-blogging-non-writing-recidivism/" rel="alternate"></link><published>2016-01-17T00:00:00-05:00</published><updated>2016-01-17T00:00:00-05:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2016-01-17:/ephemera/2016/01/17/iron-blogging-non-writing-recidivism/</id><summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
+take that for what you will.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Well, I’ve continued to not write. That’s a failing. I’ve been trying to do other things, because there is never enough time in the day.&lt;/p&gt;
+&lt;p&gt;Well, I’ve continued to not write. That’s a failing. I’ve been trying
+to do other things, because there is never enough time in the day.&lt;/p&gt;
 &lt;p&gt;That’s not justification …&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
+take that for what you will.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Well, I’ve continued to not write. That’s a failing. I’ve been trying to do other things, because there is never enough time in the day.&lt;/p&gt;
-&lt;p&gt;That’s not justification. However, I am finishing up a piece of analysis that I want to show off about at some point, on the &lt;a href="http://jacob.thebault-spieker.com/ephemera/2015-11-13-iron-blogging:-inequality-indices-for-platform-accountability/"&gt;Spatial Decomposition of the Theil Index&lt;/a&gt;. I’m hoping to get that out next week.&lt;/p&gt;
+&lt;p&gt;Well, I’ve continued to not write. That’s a failing. I’ve been trying
+to do other things, because there is never enough time in the day.&lt;/p&gt;
+&lt;p&gt;That’s not justification. However, I am finishing up a piece of
+analysis that I want to show off about at some point, on the &lt;a
+href="http://jacob.thebault-spieker.com/ephemera/2015-11-13-iron-blogging:-inequality-indices-for-platform-accountability/"&gt;Spatial
+Decomposition of the Theil Index&lt;/a&gt;. I’m hoping to get that out next
+week.&lt;/p&gt;
 &lt;p&gt;That’s all for now folks. Good night, and good luck.&lt;/p&gt;
 </content><category term="ephemera"></category></entry><entry><title>Iron Blogging - 'Protected Classes' in Online Systems</title><link href="http://jtsmn.github.io/ephemera/2015/12/06/iron-blogging-protected-classes-in-online-systems/" rel="alternate"></link><published>2015-12-06T00:00:00-05:00</published><updated>2015-12-06T00:00:00-05:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2015-12-06:/ephemera/2015/12/06/iron-blogging-protected-classes-in-online-systems/</id><summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
+take that for what you will.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;a href="http://socio-technologist.blogspot.com/2015/12/disparate-impact-of-damage-detection-on.html"&gt;Aaron Halfaker&lt;/a&gt; just (like, you know, &lt;em&gt;today&lt;/em&gt;) posted some of his thoughts and early work based on a conversation we had about disparate impact in Wikipedia, both in terms of actual effect …&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a
+href="http://socio-technologist.blogspot.com/2015/12/disparate-impact-of-damage-detection-on.html"&gt;Aaron
+Halfaker&lt;/a&gt; just (like, you know, &lt;em&gt;today&lt;/em&gt;) posted some of his
+thoughts and early work based on a conversation we had about disparate
+impact in Wikipedia, both in terms of actual effect …&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
+take that for what you will.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;a href="http://socio-technologist.blogspot.com/2015/12/disparate-impact-of-damage-detection-on.html"&gt;Aaron Halfaker&lt;/a&gt; just (like, you know, &lt;em&gt;today&lt;/em&gt;) posted some of his thoughts and early work based on a conversation we had about disparate impact in Wikipedia, both in terms of actual effect on individuals, and as a metaphor or framing for how to think about issues of bias and systemic disparity. Go read his thing, he does a good job of introducing the topic, and that’s not my point here.&lt;/p&gt;
+&lt;p&gt;&lt;a
+href="http://socio-technologist.blogspot.com/2015/12/disparate-impact-of-damage-detection-on.html"&gt;Aaron
+Halfaker&lt;/a&gt; just (like, you know, &lt;em&gt;today&lt;/em&gt;) posted some of his
+thoughts and early work based on a conversation we had about disparate
+impact in Wikipedia, both in terms of actual effect on individuals, and
+as a metaphor or framing for how to think about issues of bias and
+systemic disparity. Go read his thing, he does a good job of introducing
+the topic, and that’s not my point here.&lt;/p&gt;
 &lt;p&gt;He says:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Protected Class&lt;/strong&gt;. In US law, it seems that this term is generally reserved for race, gender, and ability. In the case of Wikipedia, we don’t know these demographics. They could be involved and I think they likely are, but I think that anonymous editors and newcomers should also be considered a protected class in Wikipedia.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Protected Class&lt;/strong&gt;. In US law, it seems that this term
+is generally reserved for race, gender, and ability. In the case of
+Wikipedia, we don’t know these demographics. They could be involved and
+I think they likely are, but I think that anonymous editors and
+newcomers should also be considered a protected class in Wikipedia.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;There’s some interesting stuff here that I want to try to unpack.&lt;/p&gt;
-&lt;p&gt;Aaron is right, &lt;strong&gt;protected class&lt;/strong&gt; has a legal definition.&lt;a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; Laws are the societally defined set of ways we delineate what is acceptable. Societally, we have decided that there are (and ought to be) legal ramifications if there is discrimination (or disparately impactful discriminatory processes), in the United States.&lt;/p&gt;
-&lt;p&gt;He also argues for &lt;em&gt;expanding&lt;/em&gt; the definition of &lt;strong&gt;protected class&lt;/strong&gt;, because the sociotechnical systems that Wikipedia has built (like ORES) put barriers in place for newcomers and anonymous editors to be successful. Wikipedia (or really, people who work on Wikipedia) has a community-defined set of ways to delineate what is acceptable.&lt;/p&gt;
-&lt;p&gt;In general society, the groups of people we consider members of a protected class are defined in law, based on history and value judgements made at the time (Voting Rights Act, etc.). If, at some point in time, society sought to change these categories, there would be an expectation of accountability to this process, and one would be expected to show strong evidence that any groups being removed wouldn’t be harmed, and that groups being added have received a certain degree of societal harm (i.e. it would be difficult to argue that white men who make $1,000,000 or more ought to be a protected class).&lt;/p&gt;
-&lt;p&gt;In Wikipedia, the algorithms and statistics that back them decides who gets treated as a protected class, this is the point Aaron is seeking to address. But what does accountability of this process look like? What is the &lt;em&gt;computationally actionable&lt;/em&gt; threshold for adding or removing groups from the models being used? &lt;em&gt;Who&lt;/em&gt; decides which groups hit this threshold? &lt;em&gt;How&lt;/em&gt; do groups who do feel they’re being disparately impacted voice this concern and build their case? Can this be dynamically, sociotechnically available?&lt;/p&gt;
-&lt;p&gt;I don’t raise these questions to suggest mistrust towards Aaron nor Wikimedia (the shepherds of ORES right now), quite the opposite. I’m very excited by the work he and they are doing, I think ORES has a strong ability to even out some of the disparities that likely exist. However, I also believe this is &lt;em&gt;only true&lt;/em&gt; when ORES is able to dynamically mitigate disparate impact for groups that are being disadvantaged.&lt;/p&gt;
-&lt;p&gt;I’m super interested in these ideas, and Aaron and I will keep talking about them, but I’d be interested in other’s thoughts as well.&lt;/p&gt;
-&lt;section class="footnotes" role="doc-endnotes"&gt;
+&lt;p&gt;Aaron is right, &lt;strong&gt;protected class&lt;/strong&gt; has a legal
+definition &lt;a href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;. Laws are the societally defined set
+of ways we delineate what is acceptable. Societally, we have decided
+that there are (and ought to be) legal ramifications if there is
+discrimination (or disparately impactful discriminatory processes), in
+the United States.&lt;/p&gt;
+&lt;p&gt;He also argues for &lt;em&gt;expanding&lt;/em&gt; the definition of
+&lt;strong&gt;protected class&lt;/strong&gt;, because the sociotechnical systems
+that Wikipedia has built (like ORES) put barriers in place for newcomers
+and anonymous editors to be successful. Wikipedia (or really, people who
+work on Wikipedia) has a community-defined set of ways to delineate what
+is acceptable.&lt;/p&gt;
+&lt;p&gt;In general society, the groups of people we consider members of a
+protected class are defined in law, based on history and value
+judgements made at the time (Voting Rights Act, etc.). If, at some point
+in time, society sought to change these categories, there would be an
+expectation of accountability to this process, and one would be expected
+to show strong evidence that any groups being removed wouldn’t be
+harmed, and that groups being added have received a certain degree of
+societal harm (i.e. it would be difficult to argue that white men who
+make $1,000,000 or more ought to be a protected class).&lt;/p&gt;
+&lt;p&gt;In Wikipedia, the algorithms and statistics that back them decides
+who gets treated as a protected class, this is the point Aaron is
+seeking to address. But what does accountability of this process look
+like? What is the &lt;em&gt;computationally actionable&lt;/em&gt; threshold for
+adding or removing groups from the models being used? &lt;em&gt;Who&lt;/em&gt;
+decides which groups hit this threshold? &lt;em&gt;How&lt;/em&gt; do groups who do
+feel they’re being disparately impacted voice this concern and build
+their case? Can this be dynamically, sociotechnically available?&lt;/p&gt;
+&lt;p&gt;I don’t raise these questions to suggest mistrust towards Aaron nor
+Wikimedia (the shepherds of ORES right now), quite the opposite. I’m
+very excited by the work he and they are doing, I think ORES has a
+strong ability to even out some of the disparities that likely exist.
+However, I also believe this is &lt;em&gt;only true&lt;/em&gt; when ORES is able to
+dynamically mitigate disparate impact for groups that are being
+disadvantaged.&lt;/p&gt;
+&lt;p&gt;I’m super interested in these ideas, and Aaron and I will keep
+talking about them, but I’d be interested in other’s thoughts as
+well.&lt;/p&gt;
+&lt;section class="footnotes footnotes-end-of-document"
+role="doc-endnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
-&lt;li id="fn1" role="doc-endnote"&gt;&lt;p&gt;via &lt;a href="https://en.wikipedia.org/wiki/Protected_class#cite_note-Finduslaw-1"&gt;Wikipedia&lt;/a&gt;, which cites law&lt;a href="#fnref1" class="footnote-back" role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn1" role="doc-endnote"&gt;&lt;p&gt;via &lt;a
+href="https://en.wikipedia.org/wiki/Protected_class#cite_note-Finduslaw-1"&gt;Wikipedia&lt;/a&gt;,
+which cites law&lt;a href="#fnref1" class="footnote-back"
+role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
 </content><category term="ephemera"></category></entry><entry><title>Iron Blogging - Consistent Clarity of Thought</title><link href="http://jtsmn.github.io/ephemera/2015/12/02/iron-blogging-consistent-clarity-of-thought/" rel="alternate"></link><published>2015-12-02T00:00:00-05:00</published><updated>2015-12-02T00:00:00-05:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2015-12-02:/ephemera/2015/12/02/iron-blogging-consistent-clarity-of-thought/</id><summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
+take that for what you will.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;One of the things that seems to be necessary (if not sufficient) for success in academia is how consistent and efficient people can be with their &lt;em&gt;clarity&lt;/em&gt; of thought, rather than the …&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;One of the things that seems to be necessary (if not sufficient) for
+success in academia is how consistent and efficient people can be with
+their &lt;em&gt;clarity&lt;/em&gt; of thought, rather than the …&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
+take that for what you will.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;One of the things that seems to be necessary (if not sufficient) for success in academia is how consistent and efficient people can be with their &lt;em&gt;clarity&lt;/em&gt; of thought, rather than the capacity for good thought.&lt;/p&gt;
-&lt;p&gt;This is something I find myself struggling with a lot. I often have vague notions of something that seems interesting, but I’m not always very good at articulating or clearly defining the thought that I’m having.&lt;/p&gt;
-&lt;p&gt;The other odd part about this is that it seems entirely opaque to me &lt;em&gt;what helps build&lt;/em&gt; this clarity of thinking, and how you achieves the high rate of consistency and efficiency of clear, put together lines of thought.&lt;/p&gt;
-&lt;p&gt;I’ve often wondered if there is personal infrastructure I can put in place that supports habituation of thinking clearly, or if it’s just a thing one has to be mindful of always. If you’ve got ideas, I’d love to hear them.&lt;/p&gt;
+&lt;p&gt;One of the things that seems to be necessary (if not sufficient) for
+success in academia is how consistent and efficient people can be with
+their &lt;em&gt;clarity&lt;/em&gt; of thought, rather than the capacity for good
+thought.&lt;/p&gt;
+&lt;p&gt;This is something I find myself struggling with a lot. I often have
+vague notions of something that seems interesting, but I’m not always
+very good at articulating or clearly defining the thought that I’m
+having.&lt;/p&gt;
+&lt;p&gt;The other odd part about this is that it seems entirely opaque to me
+&lt;em&gt;what helps build&lt;/em&gt; this clarity of thinking, and how you achieves
+the high rate of consistency and efficiency of clear, put together lines
+of thought.&lt;/p&gt;
+&lt;p&gt;I’ve often wondered if there is personal infrastructure I can put in
+place that supports habituation of thinking clearly, or if it’s just a
+thing one has to be mindful of always. If you’ve got ideas, I’d love to
+hear them.&lt;/p&gt;
 </content><category term="ephemera"></category></entry><entry><title>Iron Blogging - Inequality Indices For Platform Accountability</title><link href="http://jtsmn.github.io/ephemera/2015/11/13/iron-blogging-inequality-indices-for-platform-accountability/" rel="alternate"></link><published>2015-11-13T00:00:00-05:00</published><updated>2015-11-13T00:00:00-05:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2015-11-13:/ephemera/2015/11/13/iron-blogging-inequality-indices-for-platform-accountability/</id><summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
+take that for what you will.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;I’ve been thinking about systemic accountability recently: &lt;em&gt;how can we hold systems accountable to a set of expectations?&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;In Ecology, the ecological systems (or, you know, &lt;em&gt;ecosystems&lt;/em&gt;, I guess) they study …&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;I’ve been thinking about systemic accountability recently: &lt;em&gt;how
+can we hold systems accountable to a set of expectations?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;In Ecology, the ecological systems (or, you know,
+&lt;em&gt;ecosystems&lt;/em&gt;, I guess) they study …&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
+take that for what you will.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;I’ve been thinking about systemic accountability recently: &lt;em&gt;how can we hold systems accountable to a set of expectations?&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;In Ecology, the ecological systems (or, you know, &lt;em&gt;ecosystems&lt;/em&gt;, I guess) they study exist in a world where they need to be valued by humans for conservation to occur. One framing for this value is &lt;a href="https://en.wikipedia.org/wiki/Ecosystem_services"&gt;Ecosystem Services&lt;/a&gt;, which, as I understand it, has been pretty significant as a conservation argument for the preservation of some ecosystems.&lt;/p&gt;
-&lt;p&gt;Broadly, ecosystem services give ecologists a way to talk about the specific things that ecosystems do, and actionable metrics on which to gauge what “value” the ecosystem provides.&lt;/p&gt;
-&lt;p&gt;When we think about sociotechnical platforms, a different set of metrics might be important, but it seems useful to think about &lt;em&gt;what&lt;/em&gt; and &lt;em&gt;how&lt;/em&gt; the platform or system is producing or providing.&lt;/p&gt;
-&lt;p&gt;There are straightforward approaches to some kinds metrics, specifically for inequality (like the Gini coefficient, or the lesser-known Theil Index), but in a geographic context, these, like most other statistical measures, break down because of &lt;a href="https://en.wikipedia.org/wiki/Tobler%27s_first_law_of_geography"&gt;Tobler’s First Law of Geography&lt;/a&gt;, and the spatial auto-correlation that comes from it.&lt;/p&gt;
-&lt;p&gt;However, the Theil Index is &lt;a href="https://en.wikipedia.org/wiki/Theil_index#Decomposability"&gt;decomposable&lt;/a&gt;, which means that it is an average of weighted subgroups, plus the inequality within these subgroups. Spatially, one could use the spatial autocorrelation (using something like a standard neighbors-weights matrix that reflects how related neighbors are to each other) to define subgroups, and compute spatially distinct subgroups&lt;a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;. This decomposability means that we can derive the amount of inequality within each subgroup, and how much each subgroup contributes to overall inequality.&lt;/p&gt;
-&lt;p&gt;More broadly though, this seems like it also gives us a straightforward metric through which we can start understanding &lt;em&gt;how equal the platform is spatially&lt;/em&gt;. Inequality metrics are often used for things like housing, or income inequality, but what about sociotechnical platforms that interact in the physical world? How does this metric enable us to hold platforms accountable to geographic equality? What does that sort of transparency and accountability look like?&lt;/p&gt;
-&lt;p&gt;In a follow-up post, I hope to have an example of a spatial version of the Theil index, because I think this might be an interesting design direction.&lt;/p&gt;
-&lt;section class="footnotes" role="doc-endnotes"&gt;
+&lt;p&gt;I’ve been thinking about systemic accountability recently: &lt;em&gt;how
+can we hold systems accountable to a set of expectations?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;In Ecology, the ecological systems (or, you know,
+&lt;em&gt;ecosystems&lt;/em&gt;, I guess) they study exist in a world where they
+need to be valued by humans for conservation to occur. One framing for
+this value is &lt;a
+href="https://en.wikipedia.org/wiki/Ecosystem_services"&gt;Ecosystem
+Services&lt;/a&gt;, which, as I understand it, has been pretty significant as
+a conservation argument for the preservation of some ecosystems.&lt;/p&gt;
+&lt;p&gt;Broadly, ecosystem services give ecologists a way to talk about the
+specific things that ecosystems do, and actionable metrics on which to
+gauge what “value” the ecosystem provides.&lt;/p&gt;
+&lt;p&gt;When we think about sociotechnical platforms, a different set of
+metrics might be important, but it seems useful to think about
+&lt;em&gt;what&lt;/em&gt; and &lt;em&gt;how&lt;/em&gt; the platform or system is producing or
+providing.&lt;/p&gt;
+&lt;p&gt;There are straightforward approaches to some kinds metrics,
+specifically for inequality (like the Gini coefficient, or the
+lesser-known Theil Index), but in a geographic context, these, like most
+other statistical measures, break down because of &lt;a
+href="https://en.wikipedia.org/wiki/Tobler%27s_first_law_of_geography"&gt;Tobler’s
+First Law of Geography&lt;/a&gt;, and the spatial auto-correlation that comes
+from it.&lt;/p&gt;
+&lt;p&gt;However, the Theil Index is &lt;a
+href="https://en.wikipedia.org/wiki/Theil_index#Decomposability"&gt;decomposable&lt;/a&gt;,
+which means that it is an average of weighted subgroups, plus the
+inequality within these subgroups. Spatially, one could use the spatial
+autocorrelation (using something like a standard neighbors-weights
+matrix that reflects how related neighbors are to each other) to define
+subgroups, and compute spatially distinct subgroups&lt;a href="#fn1"
+class="footnote-ref" id="fnref1" role="doc-noteref"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;.
+This decomposability means that we can derive the amount of inequality
+within each subgroup, and how much each subgroup contributes to overall
+inequality.&lt;/p&gt;
+&lt;p&gt;More broadly though, this seems like it also gives us a
+straightforward metric through which we can start understanding &lt;em&gt;how
+equal the platform is spatially&lt;/em&gt;. Inequality metrics are often used
+for things like housing, or income inequality, but what about
+sociotechnical platforms that interact in the physical world? How does
+this metric enable us to hold platforms accountable to geographic
+equality? What does that sort of transparency and accountability look
+like?&lt;/p&gt;
+&lt;p&gt;In a follow-up post, I hope to have an example of a spatial version
+of the Theil index, because I think this might be an interesting design
+direction.&lt;/p&gt;
+&lt;section class="footnotes footnotes-end-of-document"
+role="doc-endnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
-&lt;li id="fn1" role="doc-endnote"&gt;&lt;p&gt;I’m glossing over some details here because I am not intimately familiar with the math.&lt;a href="#fnref1" class="footnote-back" role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn1" role="doc-endnote"&gt;&lt;p&gt;I’m glossing over some details here
+because I am not intimately familiar with the math.&lt;a href="#fnref1"
+class="footnote-back" role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
 </content><category term="ephemera"></category></entry><entry><title>Iron Blogging - Network Effects of Shared (Wrong) Belief</title><link href="http://jtsmn.github.io/ephemera/2015/09/13/iron-blogging-network-effects-of-shared-wrong-belief/" rel="alternate"></link><published>2015-09-13T00:00:00-04:00</published><updated>2015-09-13T00:00:00-04:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2015-09-13:/ephemera/2015/09/13/iron-blogging-network-effects-of-shared-wrong-belief/</id><summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
+take that for what you will.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;From &lt;a href="http://www.thedailybeast.com/articles/2015/09/13/what-do-you-say-to-a-roanoke-truther.html"&gt;Ben Collins&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;From &lt;a
+href="http://www.thedailybeast.com/articles/2015/09/13/what-do-you-say-to-a-roanoke-truther.html"&gt;Ben
+Collins&lt;/a&gt;:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Every day now, Chris wakes up to find strangers’ hate on his Facebook wall that he has to personally delete. Or he’ll Google Alison to find the people …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Every day now, Chris wakes up to find strangers’ hate on his Facebook
+wall that he has to personally delete. Or he’ll Google Alison to find
+the people …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
+take that for what you will.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;From &lt;a href="http://www.thedailybeast.com/articles/2015/09/13/what-do-you-say-to-a-roanoke-truther.html"&gt;Ben Collins&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;From &lt;a
+href="http://www.thedailybeast.com/articles/2015/09/13/what-do-you-say-to-a-roanoke-truther.html"&gt;Ben
+Collins&lt;/a&gt;:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Every day now, Chris wakes up to find strangers’ hate on his Facebook wall that he has to personally delete. Or he’ll Google Alison to find the people he has to thank for donating to her scholarships and he’ll see, instead, another conspiracy theory YouTube video, viewed 800,000 times over, that says Alison was in on it all along, and that she’s been given a new life and maybe plastic surgery by the government.&lt;/p&gt;
+&lt;p&gt;Every day now, Chris wakes up to find strangers’ hate on his Facebook
+wall that he has to personally delete. Or he’ll Google Alison to find
+the people he has to thank for donating to her scholarships and he’ll
+see, instead, another conspiracy theory YouTube video, viewed 800,000
+times over, that says Alison was in on it all along, and that she’s been
+given a new life and maybe plastic surgery by the government.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;The above paragraph describes an increasingly common scenario where an individual is targeted by large numbers of people, and is on the receiving end of their anger and vitriol. In this particular case, the target is the boyfriend of a woman killed on while she was being filmed is being told repeatedly (and seemingly angrily) that her death, and sometimes his existence, were a falsified story (“false flag”) being put forward by a government in order to distract from or justify totalitarian actions.&lt;/p&gt;
-&lt;p&gt;There’s a lot of conspiracy-theory weirdness in this particular story, but that doesn’t detract from the horribleness that Chris (or in general, the person being targeted) experiences. Nor does it change the way that this horribleness occurs – over the internet, leveraging the immense scale and network-effect that the internet and social media enable.&lt;/p&gt;
-&lt;p&gt;If you’ve been paying attention, you can likely name a number of different instances of this sort of thing occurring: to the Dentist (and his family) that killed Cecil the Lion, to Justine Sacco as she tweeted something offensive while she was getting on a plane. The list goes on.&lt;/p&gt;
-&lt;p&gt;In these two cases, I think, people would generally agree that the target did something gross: hunting endangered animals and saying racist things are generally considered bad. Intelligent people can have conversations about the severity of the lashback for the “crime”, and many have. I generally believe the scale is disproportionate to the act, but that’s a conversation for another time. Let’s grant for a moment what The Dentist and Ms. Sacco did warrant some form of social response to help delineate what the collective considers acceptable behavior. Platforms can, should and &lt;a href="http://readwrite.com/2015/02/27/twitter-harassment-countermeasures-not-enough"&gt;are (sort of)&lt;/a&gt; do something about the severity of the response.&lt;/p&gt;
-&lt;p&gt;There’s a difference though, when the target of this distributed lashback is being targeted &lt;em&gt;because of conspiracy theory&lt;/em&gt;. It seems that the difference is explicitly about the &lt;em&gt;validity of the reason&lt;/em&gt;. When the &lt;em&gt;validity of the reason&lt;/em&gt; for this kind of response is called into question (setting aside how valid the severity of the response is), perhaps there’s more platforms ought to be doing.&lt;/p&gt;
-&lt;p&gt;This is a tricky problem. In a related space, Kate Starbird believes that censorship (or “nipping false information in the bud”, to be charitable) breaks social processes in other ways.&lt;/p&gt;
+&lt;p&gt;The above paragraph describes an increasingly common scenario where
+an individual is targeted by large numbers of people, and is on the
+receiving end of their anger and vitriol. In this particular case, the
+target is the boyfriend of a woman killed on while she was being filmed
+is being told repeatedly (and seemingly angrily) that her death, and
+sometimes his existence, were a falsified story (“false flag”) being put
+forward by a government in order to distract from or justify
+totalitarian actions.&lt;/p&gt;
+&lt;p&gt;There’s a lot of conspiracy-theory weirdness in this particular
+story, but that doesn’t detract from the horribleness that Chris (or in
+general, the person being targeted) experiences. Nor does it change the
+way that this horribleness occurs – over the internet, leveraging the
+immense scale and network-effect that the internet and social media
+enable.&lt;/p&gt;
+&lt;p&gt;If you’ve been paying attention, you can likely name a number of
+different instances of this sort of thing occurring: to the Dentist (and
+his family) that killed Cecil the Lion, to Justine Sacco as she tweeted
+something offensive while she was getting on a plane. The list goes
+on.&lt;/p&gt;
+&lt;p&gt;In these two cases, I think, people would generally agree that the
+target did something gross: hunting endangered animals and saying racist
+things are generally considered bad. Intelligent people can have
+conversations about the severity of the lashback for the “crime”, and
+many have. I generally believe the scale is disproportionate to the act,
+but that’s a conversation for another time. Let’s grant for a moment
+what The Dentist and Ms. Sacco did warrant some form of social response
+to help delineate what the collective considers acceptable behavior.
+Platforms can, should and &lt;a
+href="http://readwrite.com/2015/02/27/twitter-harassment-countermeasures-not-enough"&gt;are
+(sort of)&lt;/a&gt; do something about the severity of the response.&lt;/p&gt;
+&lt;p&gt;There’s a difference though, when the target of this distributed
+lashback is being targeted &lt;em&gt;because of conspiracy theory&lt;/em&gt;. It
+seems that the difference is explicitly about the &lt;em&gt;validity of the
+reason&lt;/em&gt;. When the &lt;em&gt;validity of the reason&lt;/em&gt; for this kind of
+response is called into question (setting aside how valid the severity
+of the response is), perhaps there’s more platforms ought to be
+doing.&lt;/p&gt;
+&lt;p&gt;This is a tricky problem. In a related space, Kate Starbird believes
+that censorship (or “nipping false information in the bud”, to be
+charitable) breaks social processes in other ways.&lt;/p&gt;
 &lt;blockquote class="twitter-tweet" lang="en"&gt;
 &lt;p lang="en" dir="ltr"&gt;
-Rumoring is natural part of collective sensemaking that takes place after disasters. Censoring it likely a bad idea &lt;a href="https://t.co/MIIxxiSdyG"&gt;https://t.co/MIIxxiSdyG&lt;/a&gt;
+Rumoring is natural part of collective sensemaking that takes place
+after disasters. Censoring it likely a bad idea
+&lt;a href="https://t.co/MIIxxiSdyG"&gt;https://t.co/MIIxxiSdyG&lt;/a&gt;
 &lt;/p&gt;
-— Kate Starbird (@katestarbird) &lt;a href="https://twitter.com/katestarbird/status/638472736394743808"&gt;August 31, 2015&lt;/a&gt;
+— Kate Starbird (@katestarbird)
+&lt;a href="https://twitter.com/katestarbird/status/638472736394743808"&gt;August
+31, 2015&lt;/a&gt;
 &lt;/blockquote&gt;
 &lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
-&lt;p&gt;Regardless of how tricky of a problem it may be, strategies for mitigating the harmful outcomes of social network scale anger and vitriol seem critically important. The power of network-effect scale is both what makes the internet such an exciting communication platform, and what lets it turn into a mob. This is a bit of a chicken and egg problem, ideally we’d have the positives of network-effects, while minimizing or getting rid of the negatives. I’m not well versed in this space, but it seems that there’s an interesting, really hard set of problems at the intersection of “tools to mitigate distributed emotional attack” and “keeping the things that people use social networks for”.&lt;/p&gt;
+&lt;p&gt;Regardless of how tricky of a problem it may be, strategies for
+mitigating the harmful outcomes of social network scale anger and
+vitriol seem critically important. The power of network-effect scale is
+both what makes the internet such an exciting communication platform,
+and what lets it turn into a mob. This is a bit of a chicken and egg
+problem, ideally we’d have the positives of network-effects, while
+minimizing or getting rid of the negatives. I’m not well versed in this
+space, but it seems that there’s an interesting, really hard set of
+problems at the intersection of “tools to mitigate distributed emotional
+attack” and “keeping the things that people use social networks
+for”.&lt;/p&gt;
 </content><category term="ephemera"></category></entry><entry><title>Iron Blogging - Iterations on Iterations on Iterations</title><link href="http://jtsmn.github.io/ephemera/2015/08/27/iron-blogging-iterations-on-iterations-on-iterations/" rel="alternate"></link><published>2015-08-27T00:00:00-04:00</published><updated>2015-08-27T00:00:00-04:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2015-08-27:/ephemera/2015/08/27/iron-blogging-iterations-on-iterations-on-iterations/</id><summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
+take that for what you will.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Recently, I’ve been bouncing between a few different projects:&lt;/p&gt;
 &lt;ol type="1"&gt;
@@ -314,8 +937,10 @@ Rumoring is natural part of collective sensemaking that takes place after disast
 &lt;li&gt;Designing an Experiment&lt;/li&gt;
 &lt;li&gt;Deep-dive on Spatial Statistics&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;The thing that ties all of these together, from a day-to-day perspective is that …&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The thing that ties all of these together, from a day-to-day
+perspective is that …&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
+take that for what you will.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Recently, I’ve been bouncing between a few different projects:&lt;/p&gt;
 &lt;ol type="1"&gt;
@@ -323,114 +948,390 @@ Rumoring is natural part of collective sensemaking that takes place after disast
 &lt;li&gt;Designing an Experiment&lt;/li&gt;
 &lt;li&gt;Deep-dive on Spatial Statistics&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;The thing that ties all of these together, from a day-to-day perspective is that they’re all explicitly iterations on projects I’ve been working on for what feels like a long time.&lt;/p&gt;
-&lt;p&gt;I don’t always recognize pulling projects towards completion as an iterative process. Often, I find myself feeling like I’m doing and re-doing, and re-doing, and getting more frustrated at each stage of re-doing.&lt;/p&gt;
-&lt;p&gt;Recognition of procedure as &lt;em&gt;part of the process&lt;/em&gt; helps me, because then it’s “just a part of doing the thing”, and not “I’m not making any progress at all”.&lt;/p&gt;
-&lt;p&gt;So, that’s my conclusion for Iron Blogging this week: When I’m aware of the process I’m undertaking, accepting the iterative/repetitive nature of the work becomes easier to push through.&lt;/p&gt;
-&lt;p&gt;Over the next couple weeks, I may be writing about some of the few different things I’m doing, or various parts of it.&lt;/p&gt;
+&lt;p&gt;The thing that ties all of these together, from a day-to-day
+perspective is that they’re all explicitly iterations on projects I’ve
+been working on for what feels like a long time.&lt;/p&gt;
+&lt;p&gt;I don’t always recognize pulling projects towards completion as an
+iterative process. Often, I find myself feeling like I’m doing and
+re-doing, and re-doing, and getting more frustrated at each stage of
+re-doing.&lt;/p&gt;
+&lt;p&gt;Recognition of procedure as &lt;em&gt;part of the process&lt;/em&gt; helps me,
+because then it’s “just a part of doing the thing”, and not “I’m not
+making any progress at all”.&lt;/p&gt;
+&lt;p&gt;So, that’s my conclusion for Iron Blogging this week: When I’m aware
+of the process I’m undertaking, accepting the iterative/repetitive
+nature of the work becomes easier to push through.&lt;/p&gt;
+&lt;p&gt;Over the next couple weeks, I may be writing about some of the few
+different things I’m doing, or various parts of it.&lt;/p&gt;
 </content><category term="ephemera"></category></entry><entry><title>Iron Blogging - Protest and Community Organizing in an On-Demand World</title><link href="http://jtsmn.github.io/ephemera/2015/08/06/iron-blogging-protest-and-community-organizing-in-an-on-demand-world/" rel="alternate"></link><published>2015-08-06T00:00:00-04:00</published><updated>2015-08-13T00:00:00-04:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2015-08-06:/ephemera/2015/08/06/iron-blogging-protest-and-community-organizing-in-an-on-demand-world/</id><summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
+take that for what you will.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Labor movements, over time (at least in the United States), have had success because of collective action; many voices acting as one unified front. Often, this starts as an organizational process by …&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Labor movements, over time (at least in the United States), have had
+success because of collective action; many voices acting as one unified
+front. Often, this starts as an organizational process by …&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
+take that for what you will.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Labor movements, over time (at least in the United States), have had success because of collective action; many voices acting as one unified front. Often, this starts as an organizational process by workers, or their representatives in a union. When employers and workers cannot come to an agreement that meets the needs of the workers, this can lead to picketing or a strike. Sometimes this form of protest works, and the employer gives the workers what they’re looking for.&lt;/p&gt;
-&lt;p&gt;There’s historical precedence of employers bringing in “scab” workers, or temporary workers that keep the business running. In unions, and with people who are concerned about labor rights, it is and was considered a breach of solidarity for workers to show up to work and get paid, or customers that continued to do business with the employer, during a strike. The idea being, of course, that workers should be participating in the strike, and customers should be boycotting the employer, if they care about fair working conditions. There is even a phrase: “don’t cross the picket line”.&lt;/p&gt;
-&lt;p&gt;In a world where we continue to automate jobs, and forms of knowledge-work become more and more algorithmically mediated through platforms and mobile apps (like the peer/gig/on-demand/sharing economy), what changes?&lt;/p&gt;
-&lt;p&gt;There are a number of examples of people and projects developing technologies,&lt;a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;, or doing community organizing,&lt;a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt; to help meet the infrastructural needs of collective action in the peer/gig/on-demand/sharing economy. People are thinking about &lt;em&gt;how&lt;/em&gt; workers strike, in this new technologically-mediated economy. So, it seems like a natural extension to ask the question: what happens when employers and workers (&lt;em&gt;&lt;em&gt;ahem&lt;/em&gt;&lt;/em&gt;: they’re &lt;em&gt;not&lt;/em&gt; employees) &lt;em&gt;do&lt;/em&gt; disagree, and unionized or empowered workers strike?&lt;/p&gt;
-&lt;p&gt;I mentioned solidarity, and that’s a pretty loaded political word, but in this context, it seems to mean a collaborative agreement, across the worker-consumer boundary, that the employer isn’t being reasonable. By picketing, workers delineated a geographic and symbolic border, and said, essentially: “if you agree with us, don’t enter this area”. What does a “picket line” look like when workers travel &lt;em&gt;to the customer&lt;/em&gt;, and there is no centralized place where workers and customers interact? How do peer/gig/on-demand/sharing economy workers delineate a border, that people who agree with striking workers (other workers and consumers alike) know not to cross? Software mediates the interaction between workers and consumers or employers, just as physical space did before. How do workers delineate a picket line in a software-mediated world? How do consumers understand this picket line, and choose to act accordingly, in solidarity?&lt;/p&gt;
-&lt;section class="footnotes" role="doc-endnotes"&gt;
+&lt;p&gt;Labor movements, over time (at least in the United States), have had
+success because of collective action; many voices acting as one unified
+front. Often, this starts as an organizational process by workers, or
+their representatives in a union. When employers and workers cannot come
+to an agreement that meets the needs of the workers, this can lead to
+picketing or a strike. Sometimes this form of protest works, and the
+employer gives the workers what they’re looking for.&lt;/p&gt;
+&lt;p&gt;There’s historical precedence of employers bringing in “scab”
+workers, or temporary workers that keep the business running. In unions,
+and with people who are concerned about labor rights, it is and was
+considered a breach of solidarity for workers to show up to work and get
+paid, or customers that continued to do business with the employer,
+during a strike. The idea being, of course, that workers should be
+participating in the strike, and customers should be boycotting the
+employer, if they care about fair working conditions. There is even a
+phrase: “don’t cross the picket line”.&lt;/p&gt;
+&lt;p&gt;In a world where we continue to automate jobs, and forms of
+knowledge-work become more and more algorithmically mediated through
+platforms and mobile apps (like the peer/gig/on-demand/sharing economy),
+what changes?&lt;/p&gt;
+&lt;p&gt;There are a number of examples of people and projects developing
+technologies &lt;a href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;a href="#fn2" class="footnote-ref"
+id="fnref2" role="doc-noteref"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;, or doing community
+organizing &lt;a href="#fn3" class="footnote-ref" id="fnref3"
+role="doc-noteref"&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;, to help meet the infrastructural
+needs of collective action in the peer/gig/on-demand/sharing economy.
+People are thinking about &lt;em&gt;how&lt;/em&gt; workers strike, in this new
+technologically-mediated economy. So, it seems like a natural extension
+to ask the question: what happens when employers and workers
+(&lt;em&gt;&lt;em&gt;ahem&lt;/em&gt;&lt;/em&gt;: they’re &lt;em&gt;not&lt;/em&gt; employees) &lt;em&gt;do&lt;/em&gt;
+disagree, and unionized or empowered workers strike?&lt;/p&gt;
+&lt;p&gt;I mentioned solidarity, and that’s a pretty loaded political word,
+but in this context, it seems to mean a collaborative agreement, across
+the worker-consumer boundary, that the employer isn’t being reasonable.
+By picketing, workers delineated a geographic and symbolic border, and
+said, essentially: “if you agree with us, don’t enter this area”. What
+does a “picket line” look like when workers travel &lt;em&gt;to the
+customer&lt;/em&gt;, and there is no centralized place where workers and
+customers interact? How do peer/gig/on-demand/sharing economy workers
+delineate a border, that people who agree with striking workers (other
+workers and consumers alike) know not to cross? Software mediates the
+interaction between workers and consumers or employers, just as physical
+space did before. How do workers delineate a picket line in a
+software-mediated world? How do consumers understand this picket line,
+and choose to act accordingly, in solidarity?&lt;/p&gt;
+&lt;section class="footnotes footnotes-end-of-document"
+role="doc-endnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
-&lt;li id="fn1" role="doc-endnote"&gt;&lt;p&gt;&lt;a href="http://www.wearedynamo.org"&gt;Dyanmo&lt;/a&gt;&lt;a href="#fnref1" class="footnote-back" role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id="fn2" role="doc-endnote"&gt;&lt;p&gt;&lt;a href="http://blog.fuselabs.org/post/125185306896/worker-centric-labor-markets"&gt;MSR FUSE Labs&lt;/a&gt;&lt;a href="#fnref2" class="footnote-back" role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id="fn3" role="doc-endnote"&gt;&lt;p&gt;&lt;a href="https://twitter.com/lippytak/status/628044902127923200" class="uri"&gt;https://twitter.com/lippytak/status/628044902127923200&lt;/a&gt;&lt;a href="#fnref3" class="footnote-back" role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn1" role="doc-endnote"&gt;&lt;p&gt;&lt;a
+href="http://www.wearedynamo.org"&gt;Dyanmo&lt;/a&gt;&lt;a href="#fnref1"
+class="footnote-back" role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn2" role="doc-endnote"&gt;&lt;p&gt;&lt;a
+href="http://blog.fuselabs.org/post/125185306896/worker-centric-labor-markets"&gt;MSR
+FUSE Labs&lt;/a&gt;&lt;a href="#fnref2" class="footnote-back"
+role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn3" role="doc-endnote"&gt;&lt;p&gt;&lt;a
+href="https://twitter.com/lippytak/status/628044902127923200"
+class="uri"&gt;https://twitter.com/lippytak/status/628044902127923200&lt;/a&gt;&lt;a
+href="#fnref3" class="footnote-back" role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
 </content><category term="ephemera"></category></entry><entry><title>Iron Blogging - Introduction</title><link href="http://jtsmn.github.io/ephemera/2015/08/03/iron-blogging-introduction/" rel="alternate"></link><published>2015-08-03T00:00:00-04:00</published><updated>2015-08-03T00:00:00-04:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2015-08-03:/ephemera/2015/08/03/iron-blogging-introduction/</id><summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
+take that for what you will.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;It’s been a while since I’ve written here.&lt;/p&gt;
-&lt;p&gt;Hopefully, at least for a period of time, posting will be a lot more frequent.&lt;/p&gt;
+&lt;p&gt;Hopefully, at least for a period of time, posting will be a lot more
+frequent.&lt;/p&gt;
 &lt;p&gt;A few of us in GroupLens have …&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so take that for what you will.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
+take that for what you will.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;It’s been a while since I’ve written here.&lt;/p&gt;
-&lt;p&gt;Hopefully, at least for a period of time, posting will be a lot more frequent.&lt;/p&gt;
-&lt;p&gt;A few of us in GroupLens have decided to try our hands at Iron Blogging, which is a process to create accountability for writing every week, and building writing skill, on topics related to our field.&lt;/p&gt;
-&lt;p&gt;So, I’ll be using the “Iron Blogging” prefix to posts that are associated with this effort. It’ll likely be a combination of thoughts about topics I’m academically interested in, paper reviews, and other ephemera.&lt;/p&gt;
-</content><category term="ephemera"></category></entry><entry><title>You're not that tricky: Imposter Syndrome as localized conspiracy theory</title><link href="http://jtsmn.github.io/ephemera/2014/12/13/youre-not-that-tricky-imposter-syndrome-as-localized-conspiracy-theory/" rel="alternate"></link><published>2014-12-13T00:00:00-05:00</published><updated>2014-12-15T00:00:00-05:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2014-12-13:/ephemera/2014/12/13/youre-not-that-tricky-imposter-syndrome-as-localized-conspiracy-theory/</id><summary type="html">&lt;p&gt;I, and I think many graduate students, have feelings of inadequacy, or feel that I’m the wrong person to be doing what I’m doing. It’s not constant, but it is relatively common, in a &lt;a href="http://en.wikipedia.org/wiki/Post_hoc_ergo_propter_hoc"&gt;&lt;em&gt;post hoc ergo propter hoc&lt;/em&gt;&lt;/a&gt; way.&lt;/p&gt;
-&lt;p&gt;However, I recently received a PhD Review …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I, and I think many graduate students, have feelings of inadequacy, or feel that I’m the wrong person to be doing what I’m doing. It’s not constant, but it is relatively common, in a &lt;a href="http://en.wikipedia.org/wiki/Post_hoc_ergo_propter_hoc"&gt;&lt;em&gt;post hoc ergo propter hoc&lt;/em&gt;&lt;/a&gt; way.&lt;/p&gt;
-&lt;p&gt;However, I recently received a PhD Review email urging me to keep doing good work, and to begin thinking about a Thesis Proposal. I shared this with someone, which sparked a conversation that I found oddly cathartic. For the sake of her privacy, I’ll refer to her as J below. The conversation went something like (paraphrased):&lt;/p&gt;
+&lt;p&gt;Hopefully, at least for a period of time, posting will be a lot more
+frequent.&lt;/p&gt;
+&lt;p&gt;A few of us in GroupLens have decided to try our hands at Iron
+Blogging, which is a process to create accountability for writing every
+week, and building writing skill, on topics related to our field.&lt;/p&gt;
+&lt;p&gt;So, I’ll be using the “Iron Blogging” prefix to posts that are
+associated with this effort. It’ll likely be a combination of thoughts
+about topics I’m academically interested in, paper reviews, and other
+ephemera.&lt;/p&gt;
+</content><category term="ephemera"></category></entry><entry><title>You're not that tricky: Imposter Syndrome as localized conspiracy theory</title><link href="http://jtsmn.github.io/ephemera/2014/12/13/youre-not-that-tricky-imposter-syndrome-as-localized-conspiracy-theory/" rel="alternate"></link><published>2014-12-13T00:00:00-05:00</published><updated>2014-12-15T00:00:00-05:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2014-12-13:/ephemera/2014/12/13/youre-not-that-tricky-imposter-syndrome-as-localized-conspiracy-theory/</id><summary type="html">&lt;p&gt;I, and I think many graduate students, have feelings of inadequacy,
+or feel that I’m the wrong person to be doing what I’m doing. It’s not
+constant, but it is relatively common, in a &lt;a
+href="http://en.wikipedia.org/wiki/Post_hoc_ergo_propter_hoc"&gt;&lt;em&gt;post
+hoc ergo propter hoc&lt;/em&gt;&lt;/a&gt; way.&lt;/p&gt;
+&lt;p&gt;However, I recently received a PhD Review …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I, and I think many graduate students, have feelings of inadequacy,
+or feel that I’m the wrong person to be doing what I’m doing. It’s not
+constant, but it is relatively common, in a &lt;a
+href="http://en.wikipedia.org/wiki/Post_hoc_ergo_propter_hoc"&gt;&lt;em&gt;post
+hoc ergo propter hoc&lt;/em&gt;&lt;/a&gt; way.&lt;/p&gt;
+&lt;p&gt;However, I recently received a PhD Review email urging me to keep
+doing good work, and to begin thinking about a Thesis Proposal. I shared
+this with someone, which sparked a conversation that I found oddly
+cathartic. For the sake of her privacy, I’ll refer to her as J below.
+The conversation went something like (paraphrased):&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Me:&lt;/strong&gt; [showing J the email]&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;J:&lt;/strong&gt; See? You’re not a bad grad student&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Me:&lt;/strong&gt; Unless I’ve tricked the department into thinking otherwise&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Me:&lt;/strong&gt; Unless I’ve tricked the department into thinking
+otherwise&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;J:&lt;/strong&gt; Yeah, but I know you, you’re not that tricky&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;em&gt;You’re not that tricky&lt;/em&gt;. When she said that to me, it was sort of illuminating. The implication in “you’re not that tricky” is “Do you actually believe you’ve orchestrated everything to get to where you are?”.&lt;/p&gt;
-&lt;p&gt;Duh. That’s just it, isn’t it? Sometimes I don’t believe I’m good enough to be a PhD student, but I do believe that I’m capable of maintaining a multi-year con on a department full of very intelligent people?&lt;/p&gt;
-&lt;p&gt;There’s this concept used to question conspiracy theories that goes something like “Do you believe that the number of people required to orchestrate this would have been able to keep quiet about it this long?”, to which the non-conspiracy answer is “no, probably not”.&lt;/p&gt;
-&lt;p&gt;That is, however, what I seem able to convince myself when I’m questioning my skills or capacity: that I’ve somehow orchestrated trickery that began when I was an undergraduate by requesting letters of recommendation, and has somehow continued into the 4th year of my PhD, &lt;em&gt;while no one noticed&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;This seems like the localized version of “wouldn’t someone have said something?”: “wouldn’t someone have noticed?”. Of course, the people who wrote my letters of recommendation, my advisor, mentors at my IBM internship, and other colleagues are all people I have great respect and admiration for. They’re all very intelligent, capable people. Not the kind of people who would easily be duped into the level of local conspiracy that it would take for me to get to where I am.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;You’re not that tricky&lt;/em&gt;. “Do you believe the number of people required to be duped haven’t noticed for this long?” No, of course not, and that’s the point. If that’s not possible, there’s another reason I’m here, not massive trickery on my part. Their support must be because they believe something about my actual capacity.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;You’re not that tricky&lt;/em&gt;. When she said that to me, it was
+sort of illuminating. The implication in “you’re not that tricky” is “Do
+you actually believe you’ve orchestrated everything to get to where you
+are?”.&lt;/p&gt;
+&lt;p&gt;Duh. That’s just it, isn’t it? Sometimes I don’t believe I’m good
+enough to be a PhD student, but I do believe that I’m capable of
+maintaining a multi-year con on a department full of very intelligent
+people?&lt;/p&gt;
+&lt;p&gt;There’s this concept used to question conspiracy theories that goes
+something like “Do you believe that the number of people required to
+orchestrate this would have been able to keep quiet about it this
+long?”, to which the non-conspiracy answer is “no, probably not”.&lt;/p&gt;
+&lt;p&gt;That is, however, what I seem able to convince myself when I’m
+questioning my skills or capacity: that I’ve somehow orchestrated
+trickery that began when I was an undergraduate by requesting letters of
+recommendation, and has somehow continued into the 4th year of my PhD,
+&lt;em&gt;while no one noticed&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;This seems like the localized version of “wouldn’t someone have said
+something?”: “wouldn’t someone have noticed?”. Of course, the people who
+wrote my letters of recommendation, my advisor, mentors at my IBM
+internship, and other colleagues are all people I have great respect and
+admiration for. They’re all very intelligent, capable people. Not the
+kind of people who would easily be duped into the level of local
+conspiracy that it would take for me to get to where I am.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;You’re not that tricky&lt;/em&gt;. “Do you believe the number of people
+required to be duped haven’t noticed for this long?” No, of course not,
+and that’s the point. If that’s not possible, there’s another reason I’m
+here, not massive trickery on my part. Their support must be because
+they believe something about my actual capacity.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;I’m not that tricky.&lt;/em&gt;&lt;/p&gt;
-</content><category term="ephemera"></category></entry><entry><title>builders. systems. society.</title><link href="http://jtsmn.github.io/ephemera/2014/11/24/builders-systems-society/" rel="alternate"></link><published>2014-11-24T00:00:00-05:00</published><updated>2014-11-25T00:00:00-05:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2014-11-24:/ephemera/2014/11/24/builders-systems-society/</id><summary type="html">&lt;p&gt;&lt;em&gt;I’m starting to write this ~2 hours and 45 minutes after the decision not to indict Darren Wilson (the police office who killed 18-year-old Mike Brown, a black man) was handed down by the Grand Jury in this case. As such, my thoughts on this are very defined by …&lt;/em&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;em&gt;I’m starting to write this ~2 hours and 45 minutes after the decision not to indict Darren Wilson (the police office who killed 18-year-old Mike Brown, a black man) was handed down by the Grand Jury in this case. As such, my thoughts on this are very defined by this context, leading me to write this post. &lt;strong&gt;Please&lt;/strong&gt; If you haven’t, &lt;strong&gt;go read stuff by people who aren’t like me&lt;/strong&gt;&lt;a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;. If you have, do some more, then come back if you want&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;As academics, we’re in a unique position. We have (or are developing) the skills to understand how systems-design affects people. People using the system, people interacting with people using the system, or even people living in a society where the system has influence.&lt;/p&gt;
-&lt;p&gt;As technologists, system builders, we’re also in a unique position. We are very explicitly (as programming languages are wont to impose) making design, engineering, and interaction decisions that influence the effect our systems have. Our decisions impact people&lt;a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;In watching the developements in Ferguson, MO over these last few months, culminating in tonight, I’m overwhelmed by a feeling that our broader societal system has broken down. It is naïve to say that this societal system (the one we call “society”) is broken in all ways, or that it has broken recently. Even so, parts feel broken. There are a lot of ways to talk about “broken”, and there are a lot of ways to ascribe blame or fault. I don’t wish to do either here, but our &lt;a href="http://www.people-press.org/2014/06/12/political-polarization-in-the-american-public/"&gt;society is as polarized as it has been in 2 decades&lt;/a&gt;, and that’s not because we all perceive everything to be fine. I would venture to say that most people would say society has broken down in some way&lt;a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt; (this could range from infrastructure, to gun laws in either direction, even to money in politics).&lt;/p&gt;
-&lt;p&gt;In the context of my reasons for writing this: consider, for a moment, police forces as a “technology” (and I mean this in a very loose way, as a societal role that provides certain things), with affordances society is generally interested in. What are the design, engineering, and interaction decisions&lt;a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt; that create and cause the unwanted, unintended behavior&lt;a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"&gt;&lt;sup&gt;5&lt;/sup&gt;&lt;/a&gt; (like militarization of our police forces, or the continued killing of young, black, men and boys)? What are these anti-patterns?&lt;/p&gt;
-&lt;p&gt;As technologist, system-building, academics, what can we bring to the table? I don’t believe we’re the only people who can understand systems, nor do I believe the techno-utopian suggestion that technology solves all bad in the world. But, are we asking ourselves this question enough? Are we thinking enough about our role in the societal system, and the interactions that our work has with the “parent-system” (society)? Are the “child-systems” we build reflecting and amplifying the break-downs of the parent-system we inherit from? Or can we work to counteract these break-downs? How much is our own concept of “us” (that is, the people we bring into our field) affecting our capacity to ask or address these questions?&lt;/p&gt;
-&lt;p&gt;As technologists, system builders, what happens when a system breaks? What happens when there is an architectural issue so deep within the system that it’s causing unwanted, unintended behavior? We patch it, we fix it, in some cases, we re-build it from the ground up. If we ignore it, we’re doing a disservice.&lt;/p&gt;
-&lt;p&gt;As academics, what impact does a broken system have on the people using it? What impact does a broken system have on people interacting with people using the system? What impact does a broken system have on people living in a society where the broken system has influence?&lt;/p&gt;
-&lt;p&gt;I have a lot of questions, and not a lot of answers. But: this topic is why I’m a PhD student.&lt;/p&gt;
-&lt;section class="footnotes" role="doc-endnotes"&gt;
+</content><category term="ephemera"></category></entry><entry><title>builders. systems. society.</title><link href="http://jtsmn.github.io/ephemera/2014/11/24/builders-systems-society/" rel="alternate"></link><published>2014-11-24T00:00:00-05:00</published><updated>2014-11-25T00:00:00-05:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2014-11-24:/ephemera/2014/11/24/builders-systems-society/</id><summary type="html">&lt;p&gt;&lt;em&gt;I’m starting to write this ~2 hours and 45 minutes after the
+decision not to indict Darren Wilson (the police office who killed
+18-year-old Mike Brown, a black man) was handed down by the Grand Jury
+in this case. As such, my thoughts on this are very defined by …&lt;/em&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;em&gt;I’m starting to write this ~2 hours and 45 minutes after the
+decision not to indict Darren Wilson (the police office who killed
+18-year-old Mike Brown, a black man) was handed down by the Grand Jury
+in this case. As such, my thoughts on this are very defined by this
+context, leading me to write this post. &lt;strong&gt;Please&lt;/strong&gt; If you
+haven’t, &lt;strong&gt;go read stuff by people who aren’t like me&lt;/strong&gt;&lt;a
+href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;. If you have, do some more, then
+come back if you want&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;As academics, we’re in a unique position. We have (or are developing)
+the skills to understand how systems-design affects people. People using
+the system, people interacting with people using the system, or even
+people living in a society where the system has influence.&lt;/p&gt;
+&lt;p&gt;As technologists, system builders, we’re also in a unique position.
+We are very explicitly (as programming languages are wont to impose)
+making design, engineering, and interaction decisions that influence the
+effect our systems have. Our decisions impact people&lt;a href="#fn2"
+class="footnote-ref" id="fnref2"
+role="doc-noteref"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In watching the developements in Ferguson, MO over these last few
+months, culminating in tonight, I’m overwhelmed by a feeling that our
+broader societal system has broken down. It is naïve to say that this
+societal system (the one we call “society”) is broken in all ways, or
+that it has broken recently. Even so, parts feel broken. There are a lot
+of ways to talk about “broken”, and there are a lot of ways to ascribe
+blame or fault. I don’t wish to do either here, but our &lt;a
+href="http://www.people-press.org/2014/06/12/political-polarization-in-the-american-public/"&gt;society
+is as polarized as it has been in 2 decades&lt;/a&gt;, and that’s not because
+we all perceive everything to be fine. I would venture to say that most
+people would say society has broken down in some way&lt;a href="#fn3"
+class="footnote-ref" id="fnref3" role="doc-noteref"&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;
+(this could range from infrastructure, to gun laws in either direction,
+even to money in politics).&lt;/p&gt;
+&lt;p&gt;In the context of my reasons for writing this: consider, for a
+moment, police forces as a “technology” (and I mean this in a very loose
+way, as a societal role that provides certain things), with affordances
+society is generally interested in. What are the design, engineering,
+and interaction decisions&lt;a href="#fn4" class="footnote-ref" id="fnref4"
+role="doc-noteref"&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt; that create and cause the unwanted,
+unintended behavior&lt;a href="#fn5" class="footnote-ref" id="fnref5"
+role="doc-noteref"&gt;&lt;sup&gt;5&lt;/sup&gt;&lt;/a&gt; (like militarization of our police
+forces, or the continued killing of young, black, men and boys)? What
+are these anti-patterns?&lt;/p&gt;
+&lt;p&gt;As technologist, system-building, academics, what can we bring to the
+table? I don’t believe we’re the only people who can understand systems,
+nor do I believe the techno-utopian suggestion that technology solves
+all bad in the world. But, are we asking ourselves this question enough?
+Are we thinking enough about our role in the societal system, and the
+interactions that our work has with the “parent-system” (society)? Are
+the “child-systems” we build reflecting and amplifying the break-downs
+of the parent-system we inherit from? Or can we work to counteract these
+break-downs? How much is our own concept of “us” (that is, the people we
+bring into our field) affecting our capacity to ask or address these
+questions?&lt;/p&gt;
+&lt;p&gt;As technologists, system builders, what happens when a system breaks?
+What happens when there is an architectural issue so deep within the
+system that it’s causing unwanted, unintended behavior? We patch it, we
+fix it, in some cases, we re-build it from the ground up. If we ignore
+it, we’re doing a disservice.&lt;/p&gt;
+&lt;p&gt;As academics, what impact does a broken system have on the people
+using it? What impact does a broken system have on people interacting
+with people using the system? What impact does a broken system have on
+people living in a society where the broken system has influence?&lt;/p&gt;
+&lt;p&gt;I have a lot of questions, and not a lot of answers. But: this topic
+is why I’m a PhD student.&lt;/p&gt;
+&lt;section class="footnotes footnotes-end-of-document"
+role="doc-endnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
-&lt;li id="fn1" role="doc-endnote"&gt;&lt;p&gt;I’m a white, middle-class, cisgendered man, and a PhD student. I’m implicitly privileged.&lt;a href="#fnref1" class="footnote-back" role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id="fn2" role="doc-endnote"&gt;&lt;p&gt;“People using the system, people interacting with people using the system, or even people living in a society where the system has influence.”&lt;a href="#fnref2" class="footnote-back" role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id="fn3" role="doc-endnote"&gt;&lt;p&gt;For me, in this moment, this feeling is coming from our treatment of black people in this country. At other times it derives from the societal treatment of women, people living in this country without the proper documentation, LGBTQ people, and other oppressed groups.&lt;a href="#fnref3" class="footnote-back" role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id="fn4" role="doc-endnote"&gt;&lt;p&gt;Or “locally optimal” decisions that lead to emergent behaviors, but that’s a conversation for another time.&lt;a href="#fnref4" class="footnote-back" role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id="fn5" role="doc-endnote"&gt;&lt;p&gt;Historically, perhaps not always unintended, but again, conversation for another time.&lt;a href="#fnref5" class="footnote-back" role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn1" role="doc-endnote"&gt;&lt;p&gt;I’m a white, middle-class,
+cisgendered man, and a PhD student. I’m implicitly privileged.&lt;a
+href="#fnref1" class="footnote-back" role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn2" role="doc-endnote"&gt;&lt;p&gt;“People using the system, people
+interacting with people using the system, or even people living in a
+society where the system has influence.”&lt;a href="#fnref2"
+class="footnote-back" role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn3" role="doc-endnote"&gt;&lt;p&gt;For me, in this moment, this feeling
+is coming from our treatment of black people in this country. At other
+times it derives from the societal treatment of women, people living in
+this country without the proper documentation, LGBTQ people, and other
+oppressed groups.&lt;a href="#fnref3" class="footnote-back"
+role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn4" role="doc-endnote"&gt;&lt;p&gt;Or “locally optimal” decisions that
+lead to emergent behaviors, but that’s a conversation for another
+time.&lt;a href="#fnref4" class="footnote-back"
+role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn5" role="doc-endnote"&gt;&lt;p&gt;Historically, perhaps not always
+unintended, but again, conversation for another time.&lt;a href="#fnref5"
+class="footnote-back" role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
-</content><category term="ephemera"></category></entry><entry><title>Sociotechnical Systems as Agents of Change</title><link href="http://jtsmn.github.io/ephemera/2014/08/23/sociotechnical-systems-as-agents-of-change/" rel="alternate"></link><published>2014-08-23T00:00:00-04:00</published><updated>2014-08-23T00:00:00-04:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2014-08-23:/ephemera/2014/08/23/sociotechnical-systems-as-agents-of-change/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; According to the article danah boyd sent out, Twitter says:&lt;/p&gt;
+</content><category term="ephemera"></category></entry><entry><title>Sociotechnical Systems as Agents of Change</title><link href="http://jtsmn.github.io/ephemera/2014/08/23/sociotechnical-systems-as-agents-of-change/" rel="alternate"></link><published>2014-08-23T00:00:00-04:00</published><updated>2014-08-23T00:00:00-04:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2014-08-23:/ephemera/2014/08/23/sociotechnical-systems-as-agents-of-change/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; According to the article danah boyd sent
+out, Twitter says:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;We select each tweet using a variety of signals, including how popular it is and how people in your network are interacting with it.&lt;/p&gt;
+&lt;p&gt;We select each tweet using a variety of signals, including how
+popular it is and how people in your network are interacting with
+it.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;As &lt;a href="http://jeffreynichols.com"&gt;Jeff Nichols&lt;/a&gt; (&lt;a href="http://twitter.com/jwnichls"&gt;@jwnichls&lt;/a&gt; on Twitter) pointed out, this can be a positive thing, and …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; According to the article danah boyd sent out, Twitter says:&lt;/p&gt;
+&lt;p&gt;As &lt;a href="http://jeffreynichols.com"&gt;Jeff Nichols&lt;/a&gt; (&lt;a
+href="http://twitter.com/jwnichls"&gt;@jwnichls&lt;/a&gt; on Twitter) pointed
+out, this can be a positive thing, and …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; According to the article danah boyd sent
+out, Twitter says:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;We select each tweet using a variety of signals, including how popular it is and how people in your network are interacting with it.&lt;/p&gt;
+&lt;p&gt;We select each tweet using a variety of signals, including how
+popular it is and how people in your network are interacting with
+it.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;As &lt;a href="http://jeffreynichols.com"&gt;Jeff Nichols&lt;/a&gt; (&lt;a href="http://twitter.com/jwnichls"&gt;@jwnichls&lt;/a&gt; on Twitter) pointed out, this can be a positive thing, and for some is what they use Twitter for. This strikes me as not anti-homophily, the way danah boyd suggests, but instead what Recommender Systems people call “serendipity”. It seems it can’t be anti-homphily if this is partially based on people in your network’s interactions. I’m not certain this changes the higher-level point of the original posting, but it does add some context. I’ve modified the original posting to reflect this context.&lt;/p&gt;
+&lt;p&gt;As &lt;a href="http://jeffreynichols.com"&gt;Jeff Nichols&lt;/a&gt; (&lt;a
+href="http://twitter.com/jwnichls"&gt;@jwnichls&lt;/a&gt; on Twitter) pointed
+out, this can be a positive thing, and for some is what they use Twitter
+for. This strikes me as not anti-homophily, the way danah boyd suggests,
+but instead what Recommender Systems people call “serendipity”. It seems
+it can’t be anti-homphily if this is partially based on people in your
+network’s interactions. I’m not certain this changes the higher-level
+point of the original posting, but it does add some context. I’ve
+modified the original posting to reflect this context.&lt;/p&gt;
 &lt;p&gt;–&lt;/p&gt;
-&lt;p&gt;Twitter has been inserting tweets into other people’s timelines, based on the favoriting patterns of those tweets and how your own social network is interacting with these tweets. That is, it’s possible for me to favorite a tweet, and because I’ve done so, it will appear in others’ timelines.&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://www.danah.org"&gt;danah boyd&lt;/a&gt; (&lt;a href="http://twitter.com/zephoria"&gt;@zephoria&lt;/a&gt; on Twitter) suggests that this may be an anti-homophily move:&lt;/p&gt;
+&lt;p&gt;Twitter has been inserting tweets into other people’s timelines,
+based on the favoriting patterns of those tweets and how your own social
+network is interacting with these tweets. That is, it’s possible for me
+to favorite a tweet, and because I’ve done so, it will appear in others’
+timelines.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.danah.org"&gt;danah boyd&lt;/a&gt; (&lt;a
+href="http://twitter.com/zephoria"&gt;@zephoria&lt;/a&gt; on Twitter) suggests
+that this may be an anti-homophily move:&lt;/p&gt;
 &lt;blockquote class="twitter-tweet" lang="en"&gt;
 &lt;p&gt;
-I'm not surprised that people don't like being exposed to random tweets, but I see this as an anti-homophily move: &lt;a href="http://t.co/RDst21PoZ8"&gt;http://t.co/RDst21PoZ8&lt;/a&gt;
+I'm not surprised that people don't like being exposed to random tweets,
+but I see this as an anti-homophily move:
+&lt;a href="http://t.co/RDst21PoZ8"&gt;http://t.co/RDst21PoZ8&lt;/a&gt;
 &lt;/p&gt;
-— danah boyd (@zephoria) &lt;a href="https://twitter.com/zephoria/statuses/503273388442652673"&gt;August 23, 2014&lt;/a&gt;
+— danah boyd (@zephoria)
+&lt;a href="https://twitter.com/zephoria/statuses/503273388442652673"&gt;August
+23, 2014&lt;/a&gt;
 &lt;/blockquote&gt;
 &lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
 &lt;blockquote class="twitter-tweet" lang="en"&gt;
 &lt;p&gt;
-What would it take for people to actually get excited by being exposed to perspectives from strangers? &lt;a href="https://twitter.com/hashtag/dreaming?src=hash"&gt;#dreaming&lt;/a&gt;
+What would it take for people to actually get excited by being exposed
+to perspectives from strangers?
+&lt;a href="https://twitter.com/hashtag/dreaming?src=hash"&gt;#dreaming&lt;/a&gt;
 &lt;/p&gt;
-— danah boyd (@zephoria) &lt;a href="https://twitter.com/zephoria/statuses/503273545263480832"&gt;August 23, 2014&lt;/a&gt;
+— danah boyd (@zephoria)
+&lt;a href="https://twitter.com/zephoria/statuses/503273545263480832"&gt;August
+23, 2014&lt;/a&gt;
 &lt;/blockquote&gt;
 &lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
-&lt;p&gt;I find this argument very intriguing, because I have two orthogonal reactions to this idea. I am going break these ideas into sections, because I think they deserve their own treatment.&lt;/p&gt;
-&lt;h2 id="the-role-of-the-platform-ought-to-be-neutral"&gt;The role of the platform ought to be neutral&lt;/h2&gt;
-&lt;p&gt;My first reaction to this concept was approximately “&lt;em&gt;why does Twitter get to decide that I need less homophily in my timeline?&lt;/em&gt;”. I think this fair from an autonomy perspective, don’t people deserve to choose what they view? There’s a number of ways Twitter could also use this mechanism that isn’t a “pure” anti-homophily effort, from advertising to a curated “Twitter” experience designed to keep you engaged on their site. Under this framing, inserting others’ tweets into my timeline struck me as invasive, and the opposite of the reason I use Twitter. I &lt;em&gt;like&lt;/em&gt; the process of choosing what shows in my timeline. &lt;em&gt;I&lt;/em&gt; get to choose to be homophilic or not.&lt;/p&gt;
-&lt;h2 id="the-platform-ought-to-recognize-the-power-that-it-has-and-pursue-social-good."&gt;The platform ought to recognize the power that it has, and pursue “social good”.&lt;/h2&gt;
-&lt;p&gt;However, the recent events in Ferguson are a stark reminder of the socialized, institutionalized racism that still occurs in the United States. How does society combat this? There are structural approaches, like oversight of police forces. However, there are a number of underlying mechanisms (historical, or legal structures) at play that lead to this sort of racialized response (let alone the shooting of Michael Brown that sparked these protests). One of these mechanisms has been said to be &lt;a href="http://en.wikipedia.org/wiki/Social_Distance_Corollary"&gt;social distance&lt;/a&gt;, which leads to &lt;a href="http://en.wikipedia.org/wiki/Othering"&gt;othering&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Twitter, as a medium, played a role in dissemination of information on the ground, discussion of race issues, and a more timely exposure to these events than other news media. It also served as a platform for people saying very bigoted, racist things, while supporting the actions of the police. Homophily allowed people to choose which side of this issue they were exposed to through Twitter. Anti-homophily &lt;em&gt;could&lt;/em&gt; have served to expose those who were ambivalent, or supporting the police action, to an alternative view of these events (there are questions of safety and harassment that would need to be addressed, certainly).&lt;/p&gt;
-&lt;p&gt;As the platform owners, Twitter is in a unique position to make these kinds of decisions. Is being “exposed to perspectives from strangers” a positive thing? Conceivably, a move by Twitter to counteract homophily could serve to decrease social distance and reducing the othering effects.&lt;/p&gt;
+&lt;p&gt;I find this argument very intriguing, because I have two orthogonal
+reactions to this idea. I am going break these ideas into sections,
+because I think they deserve their own treatment.&lt;/p&gt;
+&lt;h2 id="the-role-of-the-platform-ought-to-be-neutral"&gt;The role of the
+platform ought to be neutral&lt;/h2&gt;
+&lt;p&gt;My first reaction to this concept was approximately “&lt;em&gt;why does
+Twitter get to decide that I need less homophily in my timeline?&lt;/em&gt;”.
+I think this fair from an autonomy perspective, don’t people deserve to
+choose what they view? There’s a number of ways Twitter could also use
+this mechanism that isn’t a “pure” anti-homophily effort, from
+advertising to a curated “Twitter” experience designed to keep you
+engaged on their site. Under this framing, inserting others’ tweets into
+my timeline struck me as invasive, and the opposite of the reason I use
+Twitter. I &lt;em&gt;like&lt;/em&gt; the process of choosing what shows in my
+timeline. &lt;em&gt;I&lt;/em&gt; get to choose to be homophilic or not.&lt;/p&gt;
+&lt;h2
+id="the-platform-ought-to-recognize-the-power-that-it-has-and-pursue-social-good."&gt;The
+platform ought to recognize the power that it has, and pursue “social
+good”.&lt;/h2&gt;
+&lt;p&gt;However, the recent events in Ferguson are a stark reminder of the
+socialized, institutionalized racism that still occurs in the United
+States. How does society combat this? There are structural approaches,
+like oversight of police forces. However, there are a number of
+underlying mechanisms (historical, or legal structures) at play that
+lead to this sort of racialized response (let alone the shooting of
+Michael Brown that sparked these protests). One of these mechanisms has
+been said to be &lt;a
+href="http://en.wikipedia.org/wiki/Social_Distance_Corollary"&gt;social
+distance&lt;/a&gt;, which leads to &lt;a
+href="http://en.wikipedia.org/wiki/Othering"&gt;othering&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Twitter, as a medium, played a role in dissemination of information
+on the ground, discussion of race issues, and a more timely exposure to
+these events than other news media. It also served as a platform for
+people saying very bigoted, racist things, while supporting the actions
+of the police. Homophily allowed people to choose which side of this
+issue they were exposed to through Twitter. Anti-homophily
+&lt;em&gt;could&lt;/em&gt; have served to expose those who were ambivalent, or
+supporting the police action, to an alternative view of these events
+(there are questions of safety and harassment that would need to be
+addressed, certainly).&lt;/p&gt;
+&lt;p&gt;As the platform owners, Twitter is in a unique position to make these
+kinds of decisions. Is being “exposed to perspectives from strangers” a
+positive thing? Conceivably, a move by Twitter to counteract homophily
+could serve to decrease social distance and reducing the othering
+effects.&lt;/p&gt;
 &lt;h2 id="overall"&gt;Overall&lt;/h2&gt;
-&lt;p&gt;This is an example of what anti-homophily could bring to bear on the Twitter platform, and danah boyd certainly seems to believe that non-homophily is a good thing (at least if people are excited by it on their own).&lt;/p&gt;
-&lt;p&gt;If she is right, and Twitter is using favorites as a way to counteract homophily on their platform, what obligations do they have? What is Twitter’s purpose behind anti-homophily measures? How do builders of sociotechnical systems choose the attributes that support “social good” (for whatever that means in a given context)?&lt;/p&gt;
-&lt;p&gt;If Twitter can make the argument that favorites-as-anti-homophily does decrease social distance among their users, or perhaps even supports users choosing to counteract homophily on their own, I find this argument compelling. It situates platforms as “social change” shephards, or perhaps in extreme cases, digital community organizers. Is this a role platform owners identify as one they’re taking on? How does one separate the algorithmic change imposed on their users, and the obligation to monitor and curate this change, even if the change is for business purposes?&lt;/p&gt;
-</content><category term="ephemera"></category></entry><entry><title>Welcome</title><link href="http://jtsmn.github.io/ephemera/2013/09/11/welcome/" rel="alternate"></link><published>2013-09-11T00:00:00-04:00</published><updated>2013-09-11T00:00:00-04:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2013-09-11:/ephemera/2013/09/11/welcome/</id><summary type="html">&lt;p&gt;This is the first, welcome post on the blog here. I hope to write fairly regularly. I'll likely post thoughts on current events related to CS/HCI broadly, or topics that interest me related to social change movements and efforts, and the (potential) role that technology plays. Additionally, I'll summary …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is the first, welcome post on the blog here. I hope to write fairly regularly. I'll likely post thoughts on current events related to CS/HCI broadly, or topics that interest me related to social change movements and efforts, and the (potential) role that technology plays. Additionally, I'll summary posts about papers of mine that have been accepted, and potentially other topics as I see fit.&lt;/p&gt;
+&lt;p&gt;This is an example of what anti-homophily could bring to bear on the
+Twitter platform, and danah boyd certainly seems to believe that
+non-homophily is a good thing (at least if people are excited by it on
+their own).&lt;/p&gt;
+&lt;p&gt;If she is right, and Twitter is using favorites as a way to
+counteract homophily on their platform, what obligations do they have?
+What is Twitter’s purpose behind anti-homophily measures? How do
+builders of sociotechnical systems choose the attributes that support
+“social good” (for whatever that means in a given context)?&lt;/p&gt;
+&lt;p&gt;If Twitter can make the argument that favorites-as-anti-homophily
+does decrease social distance among their users, or perhaps even
+supports users choosing to counteract homophily on their own, I find
+this argument compelling. It situates platforms as “social change”
+shephards, or perhaps in extreme cases, digital community organizers. Is
+this a role platform owners identify as one they’re taking on? How does
+one separate the algorithmic change imposed on their users, and the
+obligation to monitor and curate this change, even if the change is for
+business purposes?&lt;/p&gt;
+</content><category term="ephemera"></category></entry><entry><title>Welcome</title><link href="http://jtsmn.github.io/ephemera/2013/09/11/welcome/" rel="alternate"></link><published>2013-09-11T00:00:00-04:00</published><updated>2013-09-11T00:00:00-04:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2013-09-11:/ephemera/2013/09/11/welcome/</id><summary type="html">&lt;p&gt;This is the first, welcome post on the blog here. I hope to write
+fairly regularly. I'll likely post thoughts on current events related to
+CS/HCI broadly, or topics that interest me related to social change
+movements and efforts, and the (potential) role that technology plays.
+Additionally, I'll summary …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is the first, welcome post on the blog here. I hope to write
+fairly regularly. I'll likely post thoughts on current events related to
+CS/HCI broadly, or topics that interest me related to social change
+movements and efforts, and the (potential) role that technology plays.
+Additionally, I'll summary posts about papers of mine that have been
+accepted, and potentially other topics as I see fit.&lt;/p&gt;
 &lt;p&gt;So, welcome.&lt;/p&gt;
 </content><category term="ephemera"></category></entry></feed>
