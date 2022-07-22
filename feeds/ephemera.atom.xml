@@ -83,8 +83,12 @@ However, when I refer to the &lt;code&gt;BibTeX&lt;/code&gt; key in my markdown
 (e.g. &lt;code&gt;@TOCHI_SharingEconomy&lt;/code&gt;), it will expand to the full
 citation, like so (though this is block-quoted for emphasis):&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;span class="citation"
-data-cites="TOCHI_SharingEconomy"&gt;@TOCHI_SharingEconomy&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="citation" data-cites="TOCHI_SharingEconomy"&gt;Jacob
+Thebault-Spieker, Loren Terveen, and Brent Hecht 2017. Toward a
+Geographic Understanding of the Sharing Economy: Systemic Biases in
+UberX and TaskRabbit. &lt;em&gt;ACM Trans. Comput.-Hum. Interact.&lt;/em&gt; 24, 3:
+21:1–21:40. &lt;a href="https://doi.org/10.1145/3058499"
+role="doc-biblioref"&gt;https://doi.org/10.1145/3058499&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id="generating-a-pdf-cv"&gt;Generating a PDF CV&lt;/h3&gt;
 &lt;p&gt;The functionality that &lt;code&gt;pandoc-reader&lt;/code&gt; provides enables my
