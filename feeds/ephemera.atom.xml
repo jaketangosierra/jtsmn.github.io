@@ -87,8 +87,8 @@ citation, like so (though this is block-quoted for emphasis):&lt;/p&gt;
 Thebault-Spieker, Loren Terveen, and Brent Hecht 2017. Toward a
 Geographic Understanding of the Sharing Economy: Systemic Biases in
 UberX and TaskRabbit. &lt;em&gt;ACM Trans. Comput.-Hum. Interact.&lt;/em&gt; 24, 3:
-21:1–21:40. &lt;a href="https://doi.org/10.1145/3058499"
-role="doc-biblioref"&gt;https://doi.org/10.1145/3058499&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+21:1–21:40. &lt;a
+href="https://doi.org/10.1145/3058499"&gt;https://doi.org/10.1145/3058499&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id="generating-a-pdf-cv"&gt;Generating a PDF CV&lt;/h3&gt;
 &lt;p&gt;The functionality that &lt;code&gt;pandoc-reader&lt;/code&gt; provides enables my
@@ -743,7 +743,7 @@ disadvantaged.&lt;/p&gt;
 &lt;p&gt;I’m super interested in these ideas, and Aaron and I will keep
 talking about them, but I’d be interested in other’s thoughts as
 well.&lt;/p&gt;
-&lt;aside id="footnotes" class="footnotes footnotes-end-of-document"
+&lt;section id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -752,7 +752,7 @@ href="https://en.wikipedia.org/wiki/Protected_class#cite_note-Finduslaw-1"&gt;Wi
 which cites law&lt;a href="#fnref1" class="footnote-back"
 role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/aside&gt;
+&lt;/section&gt;
 </content><category term="ephemera"></category></entry><entry><title>Iron Blogging - Consistent Clarity of Thought</title><link href="http://jtsmn.github.io/ephemera/2015/12/02/iron-blogging-consistent-clarity-of-thought/" rel="alternate"></link><published>2015-12-02T00:00:00-05:00</published><updated>2015-12-02T00:00:00-05:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2015-12-02:/ephemera/2015/12/02/iron-blogging-consistent-clarity-of-thought/</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
 take that for what you will.&lt;/em&gt;&lt;/p&gt;
@@ -835,7 +835,7 @@ like?&lt;/p&gt;
 &lt;p&gt;In a follow-up post, I hope to have an example of a spatial version
 of the Theil index, because I think this might be an interesting design
 direction.&lt;/p&gt;
-&lt;aside id="footnotes" class="footnotes footnotes-end-of-document"
+&lt;section id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -843,7 +843,7 @@ role="doc-endnotes"&gt;
 intimately familiar with the math.&lt;a href="#fnref1"
 class="footnote-back" role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/aside&gt;
+&lt;/section&gt;
 </content><category term="ephemera"></category></entry><entry><title>Iron Blogging - Network Effects of Shared (Wrong) Belief</title><link href="http://jtsmn.github.io/ephemera/2015/09/13/iron-blogging-network-effects-of-shared-wrong-belief/" rel="alternate"></link><published>2015-09-13T00:00:00-04:00</published><updated>2015-09-13T00:00:00-04:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2015-09-13:/ephemera/2015/09/13/iron-blogging-network-effects-of-shared-wrong-belief/</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
 take that for what you will.&lt;/em&gt;&lt;/p&gt;
@@ -1023,7 +1023,7 @@ interaction between workers and consumers or employers, just as physical
 space did before. How do workers delineate a picket line in a
 software-mediated world? How do consumers understand this picket line,
 and choose to act accordingly, in solidarity?&lt;/p&gt;
-&lt;aside id="footnotes" class="footnotes footnotes-end-of-document"
+&lt;section id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -1038,7 +1038,7 @@ href="https://twitter.com/lippytak/status/628044902127923200"
 class="uri"&gt;https://twitter.com/lippytak/status/628044902127923200&lt;/a&gt;&lt;a
 href="#fnref3" class="footnote-back" role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/aside&gt;
+&lt;/section&gt;
 </content><category term="ephemera"></category></entry><entry><title>Iron Blogging - Introduction</title><link href="http://jtsmn.github.io/ephemera/2015/08/03/iron-blogging-introduction/" rel="alternate"></link><published>2015-08-03T00:00:00-04:00</published><updated>2015-08-03T00:00:00-04:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2015-08-03:/ephemera/2015/08/03/iron-blogging-introduction/</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;&lt;em&gt;This post is a part of the GroupLens Iron Blogging effort, so
 take that for what you will.&lt;/em&gt;&lt;/p&gt;
@@ -1180,7 +1180,7 @@ with people using the system? What impact does a broken system have on
 people living in a society where the broken system has influence?&lt;/p&gt;
 &lt;p&gt;I have a lot of questions, and not a lot of answers. But: this topic
 is why I’m a PhD student.&lt;/p&gt;
-&lt;aside id="footnotes" class="footnotes footnotes-end-of-document"
+&lt;section id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -1204,7 +1204,7 @@ class="footnote-back" role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&g
 conversation for another time.&lt;a href="#fnref5" class="footnote-back"
 role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/aside&gt;
+&lt;/section&gt;
 </content><category term="ephemera"></category></entry><entry><title>Sociotechnical Systems as Agents of Change</title><link href="http://jtsmn.github.io/ephemera/2014/08/23/sociotechnical-systems-as-agents-of-change/" rel="alternate"></link><published>2014-08-23T00:00:00-04:00</published><updated>2014-08-23T00:00:00-04:00</updated><author><name>Jacob Thebault-Spieker</name></author><id>tag:jtsmn.github.io,2014-08-23:/ephemera/2014/08/23/sociotechnical-systems-as-agents-of-change/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; According to the article danah boyd sent
 out, Twitter says:&lt;/p&gt;
 &lt;blockquote&gt;
